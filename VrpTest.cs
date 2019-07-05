@@ -14,7 +14,7 @@ namespace VrpTest
     {
         public static void Main(String[] args)
         {
-
+            int max_vehicles = 150;
             
            
             // Instantiate the data problem.
@@ -22,20 +22,30 @@ namespace VrpTest
             DataOutput dataOutput = new DataOutput();//Output interface
             VrpProblem vrpProblem = new VrpProblem();
 
-            dataInput.SetVehicleNumber(4);
+            dataInput.SetVehicleNumber(1);
 
             vrpProblem.SolveVrpProblem(dataInput, dataOutput);
 
+            int i = 2;
+
+            while (dataOutput.PrintStatus(vrpProblem.routing) != 1 && i < max_vehicles)
+            {
+                
+                dataInput.SetVehicleNumber(i);
+
+                vrpProblem.SolveVrpProblem(dataInput, dataOutput);
+
+                i++;
+            }
             // Print solution on console.
             if (dataOutput.PrintStatus(vrpProblem.routing) == 1)
             {
                 dataOutput.PrintSolution(vrpProblem.data, vrpProblem.routing, vrpProblem.manager, vrpProblem.solution);
             }
-            
+       
             
             dataOutput.PrintStatus(vrpProblem.routing);
-
-
+            
             Console.ReadLine();
             return;
         }
