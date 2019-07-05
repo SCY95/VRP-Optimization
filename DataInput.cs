@@ -6,6 +6,8 @@ namespace VrpTest
 {
     public class DataInput : IDataInput
     {
+        private int VehicleNumber;
+
         public List<string> GetAddresses()
         {
             List<string> addresses = new List<string> {
@@ -33,8 +35,15 @@ namespace VrpTest
 
         public int GetVehicleNumber()
         {
-            return 4;
+            return VehicleNumber;
         }
+
+        public int SetVehicleNumber(int VehicleNumber)
+        {
+            this.VehicleNumber = VehicleNumber;
+            return this.VehicleNumber;
+        }
+
         public int GetDepot()
         {
             return 0;

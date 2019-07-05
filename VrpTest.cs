@@ -20,105 +20,20 @@ namespace VrpTest
             // Instantiate the data problem.
             DataInput dataInput = new DataInput();//Config interface
             DataOutput dataOutput = new DataOutput();//Output interface
-            DataModel data = new DataModel(dataInput);
+            VrpProblem vrpProblem = new VrpProblem();
 
-            DistanceMatrixInit(data);//Google Distance Matrix API (Duration matrix)
+            dataInput.SetVehicleNumber(4);
 
-            
+            vrpProblem.SolveVrpProblem(dataInput, dataOutput);
 
-
-            // Create Routing Index Manager
-            RoutingIndexManager manager = new RoutingIndexManager(
-                data.DistanceMatrix.GetLength(0),
-                data.VehicleNumber,
-                data.Depot);
-
-
-            // Create Routing Model.
-            RoutingModel routing = new RoutingModel(manager);
-
-            // Create and register a transit callback.
-            int transitCallbackIndex = routing.RegisterTransitCallback(
-                (long fromIndex, long toIndex) =>
-                {
-                // Convert from routing variable Index to distance matrix NodeIndex.
-                var fromNode = manager.IndexToNode(fromIndex);
-                    var toNode = manager.IndexToNode(toIndex);
-                return data.DistanceMatrix[fromNode, toNode];
-                }
-                );
-
-            // Define cost of each arc.
-            routing.SetArcCostEvaluatorOfAllVehicles(transitCallbackIndex);
-
-            // Add Distance constraint.
-            
-            if (data.TimeWindowsActive != true)
-            {
-                routing.AddDimension(transitCallbackIndex, 0, 700000,
-                                true,  // start cumul to zero
-                                "Distance");
-                RoutingDimension distanceDimension = routing.GetMutableDimension("Distance");
-                distanceDimension.SetGlobalSpanCostCoefficient(100);
-            }
-            else
-            {
-                            routing.AddDimension(
-               transitCallbackIndex, // transit callback
-               1000,// allow waiting time
-               1000, // vehicle maximum capacities
-               false,  // start cumul to zero
-               "Time");
-
-                TimeWindowInit(data, routing, manager);//Set Time Window Constraints
-
-            }
-            if(data.MaxVisitsActive != 0)
-            {
-                            int demandCallbackIndex = routing.RegisterUnaryTransitCallback(
-                   (long fromIndex) => {
-                      // Convert from routing variable Index to demand NodeIndex.
-                      var fromNode = manager.IndexToNode(fromIndex);
-                       return data.Demands[fromNode];
-                   }
-                 );
-                routing.AddDimensionWithVehicleCapacity(
-                  demandCallbackIndex, 0,  // null capacity slack
-                  data.VehicleCapacities,   // vehicle maximum capacities
-                  true,                      // start cumul to zero
-                  "Capacity");
-            }
-         
-
-
-
-
-            // Setting first solution heuristic.
-            RoutingSearchParameters searchParameters =
-              operations_research_constraint_solver.DefaultRoutingSearchParameters();
-
-
-            searchParameters.FirstSolutionStrategy =
-              FirstSolutionStrategy.Types.Value.PathCheapestArc;
-
-            //metaheuristic
-            searchParameters.LocalSearchMetaheuristic = LocalSearchMetaheuristic.Types.Value.GuidedLocalSearch;
-            searchParameters.TimeLimit = new Duration { Seconds = data.SolutionDuration };
-            searchParameters.LogSearch = true;
-
-            // Solve the problem.
-            Assignment solution = routing.SolveWithParameters(searchParameters);
-            dataOutput.PrintStatus(routing);
-            
             // Print solution on console.
-            if (dataOutput.PrintStatus(routing) == 1)
+            if (dataOutput.PrintStatus(vrpProblem.routing) == 1)
             {
-                dataOutput.PrintSolution(data, routing, manager, solution);
+                dataOutput.PrintSolution(vrpProblem.data, vrpProblem.routing, vrpProblem.manager, vrpProblem.solution);
             }
             
             
-
-            dataOutput.PrintStatus(routing);
+            dataOutput.PrintStatus(vrpProblem.routing);
 
 
             Console.ReadLine();

@@ -9,7 +9,7 @@ using Google.Protobuf.WellKnownTypes;//Duration
 
 namespace VrpTest
 {
-    public partial class VrpTest
+    public partial class VrpProblem
     {
         static void DistanceMatrixInit(DataModel data)
         {

@@ -32,6 +32,7 @@
     <Compile Include="IDataInput.cs" />
     <Compile Include="IDataOutput.cs" />
     <Compile Include="JsonClasses.cs" />
+    <Compile Include="VrpProblem.cs" />
     <Compile Include="VrpTest.cs" />
     <Compile Include="TimeWindowInit.cs" />
     <PackageReference Include="Google.OrTools" Version="7.1.*" />

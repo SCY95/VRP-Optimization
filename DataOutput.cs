@@ -19,13 +19,13 @@ namespace VrpTest
 
         public int PrintStatus(RoutingModel routing)
         {
+
+
             switch (routing.GetStatus())
             {
                 case 0:
                     Console.WriteLine("Problem not solved yet.");
-                    return 0;
-                 
-
+                    return 0;            
                 case 1:
                     Console.WriteLine("Problem solved successfully.");
                     return 1;
