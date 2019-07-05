@@ -6,7 +6,7 @@ using System.Diagnostics;
 
 namespace VrpTest
 {
-    public class DataOutput
+    public class DataOutput : IDataOutput
     {
         public void PrintSolution(in DataModel data,
             in RoutingModel routing,
@@ -15,6 +15,33 @@ namespace VrpTest
         {
             PrintToConsole(data, routing, manager, solution);
             ShowOnMap(data, routing, manager, solution);
+        }
+
+        public int PrintStatus(RoutingModel routing)
+        {
+            switch (routing.GetStatus())
+            {
+                case 0:
+                    Console.WriteLine("Problem not solved yet.");
+                    return 0;
+                 
+
+                case 1:
+                    Console.WriteLine("Problem solved successfully.");
+                    return 1;
+                case 2:
+                    Console.WriteLine("No solution found to the problem.");
+                    return 2;
+                case 3:
+                    Console.WriteLine("Time limit reached before finding a solution.");
+                    return 3;
+                case 4:
+                    Console.WriteLine("Model, model parameters, or flags are not valid.");
+                    return 4;
+                default:
+                    return -1;                    
+            }
+            
         }
 
         void ShowOnMap(in DataModel data,

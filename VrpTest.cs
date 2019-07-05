@@ -102,18 +102,23 @@ namespace VrpTest
               FirstSolutionStrategy.Types.Value.PathCheapestArc;
 
             //metaheuristic
-            searchParameters.LocalSearchMetaheuristic = LocalSearchMetaheuristic.Types.Value.SimulatedAnnealing;
+            searchParameters.LocalSearchMetaheuristic = LocalSearchMetaheuristic.Types.Value.GuidedLocalSearch;
             searchParameters.TimeLimit = new Duration { Seconds = data.SolutionDuration };
             searchParameters.LogSearch = true;
 
             // Solve the problem.
             Assignment solution = routing.SolveWithParameters(searchParameters);
+            dataOutput.PrintStatus(routing);
             
             // Print solution on console.
-            dataOutput.PrintSolution(data, routing, manager, solution);
+            if (dataOutput.PrintStatus(routing) == 1)
+            {
+                dataOutput.PrintSolution(data, routing, manager, solution);
+            }
+            
+            
 
-
-
+            dataOutput.PrintStatus(routing);
 
 
             Console.ReadLine();

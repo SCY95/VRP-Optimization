@@ -45,7 +45,7 @@ namespace VrpTest
         }
         public int GetSolutionDuration()
         {
-            return 4;
+            return 6;
         }
         public bool GetTimeWindowActive()
         {
@@ -92,8 +92,13 @@ namespace VrpTest
 
         public long[] GetVehicleCapacities()
         {
-            long[] VehicleCapacities = { GetMaxVisitsActive() * 10, GetMaxVisitsActive() * 10, GetMaxVisitsActive() * 10, GetMaxVisitsActive() * 10 };
+            long[] VehicleCapacities = new long[GetVehicleNumber()];
 
+
+            for (int i = 0; i < GetVehicleNumber(); i++)
+            {
+                VehicleCapacities[i] = GetMaxVisitsActive() * 10;
+            }
             return VehicleCapacities;
         }
 
