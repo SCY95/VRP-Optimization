@@ -8,7 +8,6 @@ namespace VrpTest
     {
         public long[,] DistanceMatrix;//Duration 
         public long[,] TimeWindows;
-
         public int VehicleNumber;
         public int Depot;
         public string API_key;
@@ -18,23 +17,32 @@ namespace VrpTest
         public long[] Demands;
         public long[] VehicleCapacities;
 
+        IDataInput dataInput;
+
         public List<string> addresses;
 
 
         public DataModel(IDataInput dataInput)
         {
-            addresses = dataInput.GetAddresses();
-            VehicleNumber = dataInput.GetVehicleNumber();
-            Depot = dataInput.GetDepot();
-            API_key = dataInput.GetAPI_key();
+            this.dataInput = dataInput;
+            addresses = this.dataInput.GetAddresses();
+            VehicleNumber = this.dataInput.GetVehicleNumber();
+            Depot = this.dataInput.GetDepot();
+            API_key = this.dataInput.GetAPI_key();
             DistanceMatrix = new long[addresses.Count, addresses.Count];//TODO
-            SolutionDuration = dataInput.GetSolutionDuration();
+            SolutionDuration = this.dataInput.GetSolutionDuration();
             TimeWindows = new long[addresses.Count, addresses.Count];
-            TimeWindows = dataInput.GetTimeWindows(this);
-            TimeWindowsActive = dataInput.GetTimeWindowActive();
-            MaxVisitsActive = dataInput.GetMaxVisitsActive();
-            Demands = dataInput.GetDemands();
-            VehicleCapacities = dataInput.GetVehicleCapacities();
+            TimeWindows = this.dataInput.GetTimeWindows(this);
+            TimeWindowsActive = this.dataInput.GetTimeWindowActive();
+            MaxVisitsActive = this.dataInput.GetMaxVisitsActive();
+            Demands = this.dataInput.GetDemands();
+            VehicleCapacities = this.dataInput.GetVehicleCapacities(VehicleNumber);            
+        }
+
+        public void SetVehicleNumber(int VehicleNumber)
+        {
+            this.VehicleNumber = VehicleNumber;
+            this.VehicleCapacities = dataInput.GetVehicleCapacities(VehicleNumber);
         }
 
 

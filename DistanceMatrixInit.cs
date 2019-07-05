@@ -8,12 +8,12 @@ using Newtonsoft.Json;
 using Google.Protobuf.WellKnownTypes;//Duration
 
 namespace VrpTest
-{
-    public partial class VrpProblem
+{  
+    public partial class VrpTest
     {
         static void DistanceMatrixInit(DataModel data)
         {
-            create_distance_matrix(data);
+                create_distance_matrix(data);         
         }
 
 

@@ -15,6 +15,6 @@ namespace VrpTest
         bool GetTimeWindowActive();
         int GetMaxVisitsActive();
         long[] GetDemands();
-        long[] GetVehicleCapacities();
+        long[] GetVehicleCapacities(int VehicleNumber);
     }
 }

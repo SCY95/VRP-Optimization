@@ -11,7 +11,7 @@ using System.Diagnostics;
 namespace VrpTest
 {
     public partial class VrpTest
-    {
+    {       
         public static void Main(String[] args)
         {
             int max_vehicles = 150;
@@ -21,19 +21,23 @@ namespace VrpTest
             DataInput dataInput = new DataInput();//Config interface
             DataOutput dataOutput = new DataOutput();//Output interface
             VrpProblem vrpProblem = new VrpProblem();
+            
 
-            dataInput.SetVehicleNumber(1);
 
-            vrpProblem.SolveVrpProblem(dataInput, dataOutput);
+            DataModel data = new DataModel(dataInput);
+
+            DistanceMatrixInit(data);
+
+            vrpProblem.SolveVrpProblem(data);
 
             int i = 2;
 
             while (dataOutput.PrintStatus(vrpProblem.routing) != 1 && i < max_vehicles)
             {
                 
-                dataInput.SetVehicleNumber(i);
+                data.SetVehicleNumber(i);
 
-                vrpProblem.SolveVrpProblem(dataInput, dataOutput);
+                vrpProblem.SolveVrpProblem(data);
 
                 i++;
             }

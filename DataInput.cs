@@ -6,8 +6,6 @@ namespace VrpTest
 {
     public class DataInput : IDataInput
     {
-        private int VehicleNumber;
-
         public List<string> GetAddresses()
         {
             List<string> addresses = new List<string> {
@@ -35,14 +33,8 @@ namespace VrpTest
 
         public int GetVehicleNumber()
         {
-            return VehicleNumber;
-        }
-
-        public int SetVehicleNumber(int VehicleNumber)
-        {
-            this.VehicleNumber = VehicleNumber;
-            return this.VehicleNumber;
-        }
+            return 1;
+        }   
 
         public int GetDepot()
         {
@@ -99,12 +91,12 @@ namespace VrpTest
             return Demands;
         }
 
-        public long[] GetVehicleCapacities()
+        public long[] GetVehicleCapacities(int VehicleNumber)
         {
-            long[] VehicleCapacities = new long[GetVehicleNumber()];
+            long[] VehicleCapacities = new long[VehicleNumber];
 
 
-            for (int i = 0; i < GetVehicleNumber(); i++)
+            for (int i = 0; i < VehicleNumber; i++)
             {
                 VehicleCapacities[i] = GetMaxVisitsActive() * 10;
             }

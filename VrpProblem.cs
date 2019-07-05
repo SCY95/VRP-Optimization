@@ -18,11 +18,11 @@ namespace VrpTest
         public RoutingIndexManager manager;
         public Assignment solution;
 
-        public void SolveVrpProblem(IDataInput dataInput, IDataOutput dataOutput)
+        public void SolveVrpProblem(DataModel data)
         {
-            data = new DataModel(dataInput);
+            this.data = data;
 
-            DistanceMatrixInit(data);//Google Distance Matrix API (Duration matrix)
+            //Google Distance Matrix API (Duration matrix)
 
 
 
