@@ -6,31 +6,35 @@ namespace VrpTest
 {
     public class DataInput : IDataInput
     {
-        List<string> addresses = new List<string> {
-                "3610+Hacks+Cross+Rd+Memphis+TN", // depot
-                       "Piperton+Tennessee",//3,7
-                       "205+Windbrook+Dr+Collierville+TN",//11,14
-                       "55+Ballard+Rd+Collierville+TN",//7,10
-                       "1532+Madison+Ave+Memphis+TN",//0,6
-                       "Pleasant+Hill+Mississippi+38654",//5,8
-                       "3641+Central+Ave+Memphis+TN",//10,15
+        List<string> addresses;
 
-                        "Lewisburg+Mississippi+38654",//2,6
-                       "4339+Park+Ave+Memphis+TN",//7,12
-                       "600+Goodwyn+St+Memphis+TN",//16,18
-                       "2000+North+Pkwy+Memphis+TN",//20,23
-                       "262+Danny+Thomas+Pl+Memphis+TN",//4,8
-                       "125+N+Front+St+Memphis+TN",//6,10
-                       "5959+Park+Ave+Memphis+TN",//0,5
-                       "814+Scott+St+Memphis+TN",//15,19
-                       "1005+Tillman+St+Memphis+TN"//16,18
+        public DataInput()
+        {
+            addresses = new List<string> {
+                    "3610+Hacks+Cross+Rd+Memphis+TN", // depot
+                    "Piperton+Tennessee",//3,7
+                    "205+Windbrook+Dr+Collierville+TN",//11,14
+                    "55+Ballard+Rd+Collierville+TN",//7,10
+                    "1532+Madison+Ave+Memphis+TN",//0,6
+                    "Pleasant+Hill+Mississippi+38654",//5,8
+                    "3641+Central+Ave+Memphis+TN",//10,15
+
+                    "Lewisburg+Mississippi+38654",//2,6
+                    "4339+Park+Ave+Memphis+TN",//7,12
+                    "600+Goodwyn+St+Memphis+TN",//16,18
+                    "2000+North+Pkwy+Memphis+TN",//20,23
+                    "262+Danny+Thomas+Pl+Memphis+TN",//4,8
+                    "125+N+Front+St+Memphis+TN",//6,10
+                    "5959+Park+Ave+Memphis+TN",//0,5
+                    "814+Scott+St+Memphis+TN",//15,19
+                    "1005+Tillman+St+Memphis+TN"//16,18
 
                 };
+        }      
 
 
         public List<string> GetAddresses()
-        {
-            
+        {            
             return addresses;
         }
 

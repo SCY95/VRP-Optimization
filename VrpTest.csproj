@@ -28,10 +28,13 @@
     <Compile Include="DataInput.cs" />
     <Compile Include="DataModel.cs" />
     <Compile Include="DataOutput.cs" />
+    <Compile Include="Day.cs" />
     <Compile Include="DistanceMatrixInit.cs" />
     <Compile Include="IDataInput.cs" />
     <Compile Include="IDataOutput.cs" />
     <Compile Include="JsonClasses.cs" />
+    <Compile Include="Period.cs" />
+    <Compile Include="Vehicle.cs" />
     <Compile Include="VrpProblem.cs" />
     <Compile Include="VrpTest.cs" />
     <Compile Include="TimeWindowInit.cs" />

@@ -19,6 +19,7 @@ namespace VrpTest
         public bool locationDropped;
         public long penalty;
         List<List<List<int>>> days;
+        public Period period;
 
         IDataInput dataInput;
 
@@ -41,6 +42,7 @@ namespace VrpTest
             Demands = this.dataInput.GetDemands();
             VehicleCapacities = this.dataInput.GetVehicleCapacities(VehicleNumber);
             locationDropped = true;
+            period = new Period(this.dataInput.GetDayNumber());
         }
 
         public void SetVehicleNumber(int VehicleNumber)

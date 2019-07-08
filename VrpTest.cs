@@ -20,7 +20,7 @@ namespace VrpTest
             DataInput dataInput = new DataInput();//Config interface
             DataOutput dataOutput = new DataOutput();//Output interface
             VrpProblem vrpProblem = new VrpProblem();
-
+ 
             DataModel data = new DataModel(dataInput);
 
             DistanceMatrixInit(data);
@@ -35,7 +35,7 @@ namespace VrpTest
 
                 vrpProblem.SolveVrpProblem(data);
                 dataOutput.PrintSolution(vrpProblem.data, vrpProblem.routing, vrpProblem.manager, vrpProblem.solution);
-
+                
                 i++;
             }
             
