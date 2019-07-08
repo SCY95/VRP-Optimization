@@ -8,6 +8,7 @@ namespace VrpTest
     {
         List<string> GetAddresses();
         int GetVehicleNumber();
+        int GetDayNumber();
         int GetDepot();
         string GetAPI_key();
         int GetSolutionDuration();

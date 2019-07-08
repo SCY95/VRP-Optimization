@@ -6,9 +6,7 @@ namespace VrpTest
 {
     public class DataInput : IDataInput
     {
-        public List<string> GetAddresses()
-        {
-            List<string> addresses = new List<string> {
+        List<string> addresses = new List<string> {
                 "3610+Hacks+Cross+Rd+Memphis+TN", // depot
                        "Piperton+Tennessee",//3,7
                        "205+Windbrook+Dr+Collierville+TN",//11,14
@@ -28,13 +26,23 @@ namespace VrpTest
                        "1005+Tillman+St+Memphis+TN"//16,18
 
                 };
+
+
+        public List<string> GetAddresses()
+        {
+            
             return addresses;
         }
 
         public int GetVehicleNumber()
         {
             return 1;
-        }   
+        }
+
+        public int GetDayNumber()
+        {
+            return 2;
+        }
 
         public int GetDepot()
         {
