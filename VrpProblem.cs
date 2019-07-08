@@ -13,8 +13,6 @@ namespace VrpTest
 {
     public partial class VrpProblem
     {
-        
-
         public DataModel data;
         public RoutingModel routing;
         public RoutingIndexManager manager;
@@ -25,8 +23,6 @@ namespace VrpTest
             this.data = data;
 
             //Google Distance Matrix API (Duration matrix)
-
-
 
 
             // Create Routing Index Manager
@@ -92,15 +88,11 @@ namespace VrpTest
             }
 
             // Allow to drop nodes.
-            long penalty = 100000;
             for (int i = 1; i < data.DistanceMatrix.GetLength(0); ++i)
             {
                 routing.AddDisjunction(
-                    new long[] { manager.NodeToIndex(i) }, penalty);
+                    new long[] { manager.NodeToIndex(i) }, data.penalty+1000);
             }
-
-            
-
 
             // Setting first solution heuristic.
             RoutingSearchParameters searchParameters =
@@ -117,11 +109,6 @@ namespace VrpTest
 
             // Solve the problem.
             solution = routing.SolveWithParameters(searchParameters);
-            
-
-
-
         }
-
     }
 }

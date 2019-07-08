@@ -43,10 +43,6 @@ namespace VrpTest
                 routing.AddVariableMinimizedByFinalizer(
                     timeDimension.CumulVar(routing.End(i)));
             }
-
         }
-
-
     }
-
 }
