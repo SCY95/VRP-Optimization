@@ -16,8 +16,6 @@ namespace VrpTest
                 create_distance_matrix(data);         
         }
 
-
-
         static void create_distance_matrix(DataModel data)
         {
             string API_key;
@@ -32,11 +30,8 @@ namespace VrpTest
             List<string> origin_addresses;
 
 
-
-
             addresses = data.addresses;
             API_key = data.API_key;
-
 
 
             max_elements = 100;//api limit
@@ -63,14 +58,7 @@ namespace VrpTest
                 build_distance_matrix(response, data, i * max_rows, r);
             }
 
-
-
-
-
         }
-
-
-
 
 
         static JsonClasses.Rootobject send_request(List<string> origin_addresses, List<string> dest_addresses, string API_key)
@@ -84,9 +72,6 @@ namespace VrpTest
 
             request_str = request_str + "&origins=" + origin_address_str + "&destinations=" +
                            dest_address_str + "&key=" + API_key;
-
-
-
 
 
             HttpWebRequest request =
@@ -128,13 +113,11 @@ namespace VrpTest
 
         static void build_distance_matrix(JsonClasses.Rootobject response, DataModel data, int size, int max_rows)
         {
-
-
             int rownum = 0;
-
+           
             for (int i = size; i < size + max_rows; i++)
             {
-
+                
                 //row_list = [row['elements'][j]['distance']['value'] for j in range(len(row['elements']))];
                 for (int j = 0; j < response.rows[rownum].elements.Length; j++)
                 {
@@ -148,21 +131,13 @@ namespace VrpTest
                         data.DistanceMatrix[i, j] = response.rows[rownum].elements[j].duration.value/60;
                     }
                     //Console.WriteLine(data.DistanceMatrix[i,j]);
-
+                    data.penalty += response.rows[rownum].elements[j].duration.value;
 
                 }
                 //distance_matrix.append(row_list);
                 rownum++;
 
             }
-
-
-
-
-
         }
-
-
     }
-
 }

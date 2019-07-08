@@ -39,16 +39,12 @@ namespace VrpTest
                 i++;
             }
             
-        
-
             dataOutput.PrintStatus(vrpProblem.routing);
             
             Console.ReadLine();
             return;
-        }
-                                    
+        }                                   
     }
-
 }
 
 

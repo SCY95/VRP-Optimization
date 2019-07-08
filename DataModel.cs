@@ -17,6 +17,7 @@ namespace VrpTest
         public long[] Demands;
         public long[] VehicleCapacities;
         public bool locationDropped;
+        public long penalty;
 
         IDataInput dataInput;
 
