@@ -13,6 +13,8 @@ namespace VrpTest
 {
     public partial class VrpProblem
     {
+        
+
         public DataModel data;
         public RoutingModel routing;
         public RoutingIndexManager manager;
@@ -89,8 +91,15 @@ namespace VrpTest
                   "Capacity");
             }
 
+            // Allow to drop nodes.
+            long penalty = 100000;
+            for (int i = 1; i < data.DistanceMatrix.GetLength(0); ++i)
+            {
+                routing.AddDisjunction(
+                    new long[] { manager.NodeToIndex(i) }, penalty);
+            }
 
-
+            
 
 
             // Setting first solution heuristic.
@@ -113,5 +122,6 @@ namespace VrpTest
 
 
         }
+
     }
 }

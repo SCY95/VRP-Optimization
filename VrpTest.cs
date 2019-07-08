@@ -16,13 +16,10 @@ namespace VrpTest
         {
             int max_vehicles = 150;
             
-           
             // Instantiate the data problem.
             DataInput dataInput = new DataInput();//Config interface
             DataOutput dataOutput = new DataOutput();//Output interface
             VrpProblem vrpProblem = new VrpProblem();
-            
-
 
             DataModel data = new DataModel(dataInput);
 
@@ -30,39 +27,26 @@ namespace VrpTest
 
             vrpProblem.SolveVrpProblem(data);
 
-            int i = 2;
-
-            while (dataOutput.PrintStatus(vrpProblem.routing) != 1 && i < max_vehicles)
+            int i = 1;
+            
+            while (data.locationDropped && i < max_vehicles)
             {
-                
                 data.SetVehicleNumber(i);
 
                 vrpProblem.SolveVrpProblem(data);
+                dataOutput.PrintSolution(vrpProblem.data, vrpProblem.routing, vrpProblem.manager, vrpProblem.solution);
 
                 i++;
             }
-            // Print solution on console.
-            if (dataOutput.PrintStatus(vrpProblem.routing) == 1)
-            {
-                dataOutput.PrintSolution(vrpProblem.data, vrpProblem.routing, vrpProblem.manager, vrpProblem.solution);
-            }
-       
             
+        
+
             dataOutput.PrintStatus(vrpProblem.routing);
             
             Console.ReadLine();
             return;
         }
-
-
-
-
-
-
-
-
-
-
+                                    
     }
 
 }

@@ -16,6 +16,7 @@ namespace VrpTest
         public int MaxVisitsActive;
         public long[] Demands;
         public long[] VehicleCapacities;
+        public bool locationDropped;
 
         IDataInput dataInput;
 
@@ -36,7 +37,8 @@ namespace VrpTest
             TimeWindowsActive = this.dataInput.GetTimeWindowActive();
             MaxVisitsActive = this.dataInput.GetMaxVisitsActive();
             Demands = this.dataInput.GetDemands();
-            VehicleCapacities = this.dataInput.GetVehicleCapacities(VehicleNumber);            
+            VehicleCapacities = this.dataInput.GetVehicleCapacities(VehicleNumber);
+            locationDropped = true;
         }
 
         public void SetVehicleNumber(int VehicleNumber)

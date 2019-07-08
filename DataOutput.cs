@@ -27,7 +27,7 @@ namespace VrpTest
                     Console.WriteLine("Problem not solved yet.");
                     return 0;            
                 case 1:
-                    Console.WriteLine("Problem solved successfully.");
+                    Console.WriteLine("Problem solved successfully.");                    
                     return 1;
                 case 2:
                     Console.WriteLine("No solution found to the problem.");
@@ -97,6 +97,24 @@ namespace VrpTest
             in RoutingIndexManager manager,
             in Assignment solution)
         {
+            data.locationDropped = false;
+
+
+            // Display dropped nodes.
+            string droppedNodes = "Dropped nodes:";
+            for (int index = 0; index < routing.Size(); ++index)
+            {
+                if (routing.IsStart(index) || routing.IsEnd(index))
+                {
+                    continue;
+                }
+                if (solution.Value(routing.NextVar(index)) == index)
+                {
+                    droppedNodes += " " + manager.IndexToNode(index);
+                    data.locationDropped = true;
+                }
+            }
+            Console.WriteLine("{0}", droppedNodes);
             // Inspect solution.
             long maxRouteDistance = 0;
             for (int i = 0; i < data.VehicleNumber; i++)
