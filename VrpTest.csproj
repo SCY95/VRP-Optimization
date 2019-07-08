@@ -35,7 +35,7 @@
     <Compile Include="VrpProblem.cs" />
     <Compile Include="VrpTest.cs" />
     <Compile Include="TimeWindowInit.cs" />
-    <PackageReference Include="Google.OrTools" Version="7.1.*" />
+    <PackageReference Include="Google.OrTools" Version="7.2.6977" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
   </ItemGroup>
 
