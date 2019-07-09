@@ -20,6 +20,7 @@ namespace VrpTest
         public long penalty;
         List<List<List<int>>> days;
         public Period period;
+        int routeCount;
 
         IDataInput dataInput;
 

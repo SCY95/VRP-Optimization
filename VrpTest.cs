@@ -32,8 +32,9 @@ namespace VrpTest
             while (data.locationDropped && i < max_vehicles)
             {
                 data.SetVehicleNumber(i);
+                
+                vrpProblem.SolveVrpProblem(data);           
 
-                vrpProblem.SolveVrpProblem(data);
                 dataOutput.PrintSolution(vrpProblem.data, vrpProblem.routing, vrpProblem.manager, vrpProblem.solution);
                 
                 i++;

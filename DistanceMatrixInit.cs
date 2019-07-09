@@ -140,70 +140,62 @@ namespace VrpTest
             }
         }
 
-        void ReduceMatrix(in DataModel data,
-            in RoutingModel routing,
-            in RoutingIndexManager manager,
-            in Assignment solution,
-            in Day day)
-        {
-            for (int i = 0; i < data.VehicleNumber; i++)
-            {
-                day.Vehicles.ElementAt(i).routeDistance = 0;
+        //void ReduceMatrix(in DataModel data,
+        //    in RoutingModel routing,
+        //    in RoutingIndexManager manager,
+        //    in Assignment solution,
+        //    in Day day)
+        //{
+        //    for (int i = 0; i < data.VehicleNumber; i++)
+        //    {
+        //        day.Vehicles.ElementAt(i).routeDistance = 0;
 
-                var index = routing.Start(i);
+        //        var index = routing.Start(i);
 
-                while (routing.IsEnd(index) == false)
-                {
-                    day.Vehicles.ElementAt(i).Route.Add(manager.IndexToNode((int)index));
+        //        while (routing.IsEnd(index) == false)
+        //        {
+        //            day.Vehicles.ElementAt(i).Route.Add(manager.IndexToNode((int)index));
 
-                    var previousIndex = index;
-                    index = solution.Value(routing.NextVar(index));
+        //            var previousIndex = index;
+        //            index = solution.Value(routing.NextVar(index));
 
-                    day.Vehicles.ElementAt(i).routeDistance += routing.GetArcCostForVehicle(previousIndex, index, 0);
-                }
-                day.Vehicles.ElementAt(i).Route.Add(manager.IndexToNode((int)index));
+        //            day.Vehicles.ElementAt(i).routeDistance += routing.GetArcCostForVehicle(previousIndex, index, 0);
+        //        }
+        //        day.Vehicles.ElementAt(i).Route.Add(manager.IndexToNode((int)index));
 
-            }
+        //    }
 
+        //    data.locationDropped = false;
 
+        //    List<int> droppedNodes = new List<int>();
 
+        //    for (int index = 0; index < routing.Size(); ++index)
+        //    {
+        //        if (routing.IsStart(index) || routing.IsEnd(index))
+        //        {
+        //            continue;
+        //        }
+        //        if (solution.Value(routing.NextVar(index)) == index)
+        //        {
+        //            droppedNodes.Add(manager.IndexToNode(index));
+        //            data.locationDropped = true;
+        //        }
+        //    }
 
+        //    List<string> addresses = new List<string>();
 
+        //    foreach (var item in droppedNodes)
+        //    {
+        //        addresses.Add(data.addresses.ElementAt(item));
+        //    }
 
+        //    long [,] TimeWindows = new long[addresses.Count, addresses.Count];
 
+        //    foreach (var item in droppedNodes)
+        //    {
+        //        TimeWindows[][]
+        //    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-            data.locationDropped = false;
-
-            // Display dropped nodes.
-            string droppedNodes = "Dropped nodes:";
-            for (int index = 0; index < routing.Size(); ++index)
-            {
-                if (routing.IsStart(index) || routing.IsEnd(index))
-                {
-                    continue;
-                }
-                if (solution.Value(routing.NextVar(index)) == index)
-                {
-                    droppedNodes += " " + manager.IndexToNode(index);
-                    data.locationDropped = true;
-                }
-            }
-            Console.WriteLine("{0}", droppedNodes);
-            // Inspect solution.
-            long maxRouteDistance = 0;
-            
-        }
+        //}
     }
 }
