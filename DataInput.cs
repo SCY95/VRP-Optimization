@@ -38,16 +38,11 @@ namespace VrpTest
             return addresses;
         }
 
-        public int GetVehicleNumber()
+        public int ReadVehicleNumber()
         {
             return 1;
         }
-
-        public int GetDayNumber()
-        {
-            return 2;
-        }
-
+        
         public int GetDepot()
         {
             return 0;
@@ -69,20 +64,20 @@ namespace VrpTest
         {
             long[,] _timeWindows = {
                 {0, 200},    // depot
-                {40, 56},   // 1
-                {30, 45},  // 2
-                {55, 70},   // 3
-                {65, 88},   // 4
+                {40, 56},    // 1
+                {30, 45},    // 2
+                {55, 70},    // 3
+                {65, 88},    // 4
                 {40, 65},    // 5
-                {25, 50},   // 6
-                {0, 35},   // 7
-                {25, 54},   // 8
+                {25, 50},    // 6
+                {0, 35},     // 7
+                {25, 54},    // 8
                 {30, 55},    // 9
                 {100, 120},  // 10
-                {50, 65},  // 11
+                {50, 65},    // 11
                 {65, 80},    // 12
-                {15, 35},   // 13
-                {45, 80 },     // 14
+                {15, 35},    // 13
+                {45, 80 },   // 14
                 {55, 100},   // 15
               
             };

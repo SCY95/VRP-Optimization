@@ -14,34 +14,15 @@ namespace VrpTest
     {       
         public static void Main(String[] args)
         {
-            int max_vehicles = 150;
+            
             
             // Instantiate the data problem.
             DataInput dataInput = new DataInput();//Config interface
             DataOutput dataOutput = new DataOutput();//Output interface
             VrpProblem vrpProblem = new VrpProblem();
- 
-            DataModel data = new DataModel(dataInput);
 
-            DistanceMatrixInit(data);
+            SolveForDay(dataInput, dataOutput, vrpProblem);
 
-            vrpProblem.SolveVrpProblem(data);
-
-            int i = 1;
-            
-            while (data.locationDropped && i < max_vehicles)
-            {
-                data.SetVehicleNumber(i);
-                
-                vrpProblem.SolveVrpProblem(data);           
-
-                dataOutput.PrintSolution(vrpProblem.data, vrpProblem.routing, vrpProblem.manager, vrpProblem.solution);
-                
-                i++;
-            }
-            
-            dataOutput.PrintStatus(vrpProblem.routing);
-            
             Console.ReadLine();
             return;
         }                                   

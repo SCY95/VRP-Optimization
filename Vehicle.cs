@@ -7,7 +7,9 @@ namespace VrpTest
     public class Vehicle
     {
         public List<int> Route { get; set; }
-        public long routeDistance { get; set; }
+        public long RouteDur { get; set; }
+        public long Capacity { get; set; }
+
 
         public Vehicle()
         {

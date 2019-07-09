@@ -19,8 +19,6 @@ namespace VrpTest
         public bool locationDropped;
         public long penalty;
         List<List<List<int>>> days;
-        public Period period;
-        int routeCount;
 
         IDataInput dataInput;
 
@@ -31,7 +29,7 @@ namespace VrpTest
         {
             this.dataInput = dataInput;
             addresses = this.dataInput.GetAddresses();
-            VehicleNumber = this.dataInput.GetVehicleNumber();
+            VehicleNumber = this.dataInput.ReadVehicleNumber();
             Depot = this.dataInput.GetDepot();
             API_key = this.dataInput.GetAPI_key();
             DistanceMatrix = new long[addresses.Count, addresses.Count];//TODO
@@ -43,7 +41,6 @@ namespace VrpTest
             Demands = this.dataInput.GetDemands();
             VehicleCapacities = this.dataInput.GetVehicleCapacities(VehicleNumber);
             locationDropped = true;
-            period = new Period(this.dataInput.GetDayNumber());
         }
 
         public void SetVehicleNumber(int VehicleNumber)
