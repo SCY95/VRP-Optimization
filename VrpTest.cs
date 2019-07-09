@@ -20,6 +20,7 @@ namespace VrpTest
             DataInput dataInput = new DataInput();//Config interface
             DataOutput dataOutput = new DataOutput();//Output interface
             VrpProblem vrpProblem = new VrpProblem();
+            Period period = new Period(1);  //Period(x) => period for x days
 
             SolveForDay(dataInput, dataOutput, vrpProblem);
 

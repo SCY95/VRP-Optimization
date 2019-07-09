@@ -6,7 +6,7 @@ namespace VrpTest
 {
     public interface IDataInput
     {
-        List<string> GetAddresses();
+        List<string> ReadAddresses();
         int ReadVehicleNumber();
         int GetDepot();
         string GetAPI_key();

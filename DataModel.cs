@@ -28,7 +28,7 @@ namespace VrpTest
         public DataModel(IDataInput dataInput)
         {
             this.dataInput = dataInput;
-            addresses = this.dataInput.GetAddresses();
+            addresses = this.dataInput.ReadAddresses();
             VehicleNumber = this.dataInput.ReadVehicleNumber();
             Depot = this.dataInput.GetDepot();
             API_key = this.dataInput.GetAPI_key();

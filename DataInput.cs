@@ -6,7 +6,7 @@ namespace VrpTest
 {
     public class DataInput : IDataInput
     {
-        List<string> addresses;
+        List<string> addresses;//temporary
 
         public DataInput()
         {
@@ -32,8 +32,7 @@ namespace VrpTest
                 };
         }      
 
-
-        public List<string> GetAddresses()
+        public List<string> ReadAddresses()
         {            
             return addresses;
         }

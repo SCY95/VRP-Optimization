@@ -10,10 +10,13 @@ namespace VrpTest
         public List<string> Addresses { get; set; }
         public long[,] TimeWindows { get; set; }
         public int Depot { get; set; }
+
         public long TotalDur { get; set; }                   //Dur: Duration
         public long MaxDur { get; set; }
         public long MinDur { get; set; }
         public long AvgDur { get; set; }
+
+
 
         public Day(List<string> addresses)
         {
