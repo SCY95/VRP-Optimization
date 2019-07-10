@@ -13,16 +13,21 @@ namespace VrpTest
     public partial class VrpTest
     {       
         public static void Main(String[] args)
-        {
-            
+        {           
             
             // Instantiate the data problem.
             DataInput dataInput = new DataInput();//Config interface
             DataOutput dataOutput = new DataOutput();//Output interface
             VrpProblem vrpProblem = new VrpProblem();
-            Period period = new Period(1);  //Period(x) => period for x days
+            Period period = new Period(1);  //Period(x) => period for x days          
+            ConfigParams cfg= new ConfigParams();
 
-            SolveForDay(dataInput, dataOutput, vrpProblem);
+            SolveForDay(dataInput, dataOutput, vrpProblem, period.Days.ElementAt(0));
+            
+
+
+
+
 
             Console.ReadLine();
             return;

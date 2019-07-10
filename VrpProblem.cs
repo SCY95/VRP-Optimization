@@ -14,20 +14,22 @@ namespace VrpTest
     public partial class VrpProblem
     {
         public DataModel data;
+        public Day day;
         public RoutingModel routing;
         public RoutingIndexManager manager;
         public Assignment solution;
 
-        public void SolveVrpProblem(DataModel data)
+        public void SolveVrpProblem(DataModel data, Day day)
         {
             this.data = data;
+            this.day = day;
 
             //Google Distance Matrix API (Duration matrix)
 
 
             // Create Routing Index Manager
             manager = new RoutingIndexManager(
-                data.DistanceMatrix.GetLength(0),
+                data.TimeMatrix.GetLength(0),
                 data.VehicleNumber,
                 data.Depot);
 
@@ -42,7 +44,7 @@ namespace VrpTest
                         // Convert from routing variable Index to distance matrix NodeIndex.
                         var fromNode = manager.IndexToNode(fromIndex);
                         var toNode = manager.IndexToNode(toIndex);
-                        return data.DistanceMatrix[fromNode, toNode];
+                        return data.TimeMatrix[fromNode, toNode];
                     }
                 );
 
@@ -88,7 +90,7 @@ namespace VrpTest
             }
 
             // Allow to drop nodes.
-            for (int i = 1; i < data.DistanceMatrix.GetLength(0); ++i)
+            for (int i = 1; i < data.TimeMatrix.GetLength(0); ++i)
             {
                 routing.AddDisjunction(
                     new long[] { manager.NodeToIndex(i) }, data.penalty+1000);

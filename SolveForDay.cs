@@ -12,13 +12,13 @@ namespace VrpTest
 {
     public partial class VrpTest
     {
-        public static void SolveForDay(DataInput dataInput, DataOutput dataOutput, VrpProblem vrpProblem)
+        public static void SolveForDay(DataInput dataInput, DataOutput dataOutput, VrpProblem vrpProblem, Day day)
         {
             DataModel data = new DataModel(dataInput);
 
-            DistanceMatrixInit(data);
+            TimeMatrixInit(data, day);
 
-            vrpProblem.SolveVrpProblem(data);
+            vrpProblem.SolveVrpProblem(data, day);
 
             int i = 1;
             int max_vehicles = 150;
@@ -26,7 +26,7 @@ namespace VrpTest
             {
                 data.SetVehicleNumber(i);
 
-                vrpProblem.SolveVrpProblem(data);
+                vrpProblem.SolveVrpProblem(data ,day);
 
                 dataOutput.PrintSolution(vrpProblem.data, vrpProblem.routing, vrpProblem.manager, vrpProblem.solution);
 

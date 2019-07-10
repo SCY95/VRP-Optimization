@@ -116,11 +116,11 @@ namespace VrpTest
             }
             Console.WriteLine("{0}", droppedNodes);
             // Inspect solution.
-            long maxRouteDistance = 0;
+            long maxRouteDuration = 0;
             for (int i = 0; i < data.VehicleNumber; i++)
             {
                 Console.WriteLine("Route for Vehicle {0}:", i);
-                long routeDistance = 0;
+                long routeDuration = 0;
 
                 var index = routing.Start(i);
 
@@ -132,13 +132,13 @@ namespace VrpTest
                     index = solution.Value(routing.NextVar(index));
 
 
-                    routeDistance += routing.GetArcCostForVehicle(previousIndex, index, 0);
+                    routeDuration += routing.GetArcCostForVehicle(previousIndex, index, 0);
                 }
                 Console.WriteLine("{0}", manager.IndexToNode((int)index));
-                Console.WriteLine("Duration of the route: {0}mins", routeDistance);
-                maxRouteDistance = Math.Max(routeDistance, maxRouteDistance);
+                Console.WriteLine("Duration of the route: {0}mins", routeDuration);
+                maxRouteDuration = Math.Max(routeDuration, maxRouteDuration);
             }
-            Console.WriteLine("Maximum distance of the routes: {0}mins", maxRouteDistance);
+            Console.WriteLine("Maximum duration of the routes: {0}mins", maxRouteDuration);
         }
 
       

@@ -59,7 +59,7 @@ namespace VrpTest
             return true;
         }
 
-        public long[,] GetTimeWindows(DataModel data)
+        public long[,] GetTimeWindows()
         {
             long[,] _timeWindows = {
                 {0, 200},    // depot

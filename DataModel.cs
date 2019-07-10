@@ -6,7 +6,7 @@ namespace VrpTest
 {
     public class DataModel
     {
-        public long[,] DistanceMatrix;//Duration 
+        public long[,] TimeMatrix;//Duration 
         public long[,] TimeWindows;
         public int VehicleNumber;
         public int Depot;
@@ -18,7 +18,6 @@ namespace VrpTest
         public long[] VehicleCapacities;
         public bool locationDropped;
         public long penalty;
-        List<List<List<int>>> days;
 
         IDataInput dataInput;
 
@@ -32,10 +31,10 @@ namespace VrpTest
             VehicleNumber = this.dataInput.ReadVehicleNumber();
             Depot = this.dataInput.GetDepot();
             API_key = this.dataInput.GetAPI_key();
-            DistanceMatrix = new long[addresses.Count, addresses.Count];//TODO
+            TimeMatrix = new long[addresses.Count, addresses.Count];//TODO
             SolutionDuration = this.dataInput.GetSolutionDuration();
             TimeWindows = new long[addresses.Count, addresses.Count];
-            TimeWindows = this.dataInput.GetTimeWindows(this);
+            TimeWindows = this.dataInput.GetTimeWindows();
             TimeWindowsActive = this.dataInput.GetTimeWindowActive();
             MaxVisitsActive = this.dataInput.GetMaxVisitsActive();
             Demands = this.dataInput.GetDemands();

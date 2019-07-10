@@ -25,14 +25,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="ConfigParams.cs" />
     <Compile Include="DataInput.cs" />
     <Compile Include="DataModel.cs" />
     <Compile Include="DataOutput.cs" />
     <Compile Include="Day.cs" />
     <Compile Include="DistanceMatrixInit.cs" />
+    <Compile Include="GetInput.cs" />
     <Compile Include="IDataInput.cs" />
     <Compile Include="IDataOutput.cs" />
     <Compile Include="JsonClasses.cs" />
+    <Compile Include="Location.cs" />
     <Compile Include="Period.cs" />
     <Compile Include="SolveForDay.cs" />
     <Compile Include="Vehicle.cs" />

@@ -11,7 +11,7 @@ namespace VrpTest
         int GetDepot();
         string GetAPI_key();
         int GetSolutionDuration();
-        long[,] GetTimeWindows(DataModel data);
+        long[,] GetTimeWindows();
         bool GetTimeWindowActive();
         int GetMaxVisitsActive();
         long[] GetDemands();
