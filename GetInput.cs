@@ -6,7 +6,7 @@ namespace VrpTest
 {
     public partial class VrpTest
     {
-        public void GetInput(IDataInput dataInput, ConfigParams cfg, Day day)
+        public static void GetInput(IDataInput dataInput, ConfigParams cfg, Day day)
         {
             cfg.API_key = dataInput.GetAPI_key();
             cfg.SolutionDuration = dataInput.GetSolutionDuration();
@@ -21,7 +21,7 @@ namespace VrpTest
             day.LocationDropped = true;
             day.TimeWindowsActive = dataInput.GetTimeWindowActive();
             day.MaxVisitsActive = dataInput.GetMaxVisitsActive();
-
+            day.SetVehicleNumber(1);
         }
 
 

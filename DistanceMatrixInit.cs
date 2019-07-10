@@ -11,12 +11,12 @@ namespace VrpTest
 {  
     public partial class VrpTest
     {
-        static void TimeMatrixInit(DataModel data, Day day)
+        static void TimeMatrixInit(Day day, ConfigParams cfg)
         {
-                create_time_matrix(data, day);         
+                create_time_matrix(day, cfg);  
         }
 
-        static void create_time_matrix(DataModel data, Day day)
+        static void create_time_matrix(Day day, ConfigParams cfg)
         {
             string API_key;
             int max_elements;
@@ -30,8 +30,8 @@ namespace VrpTest
             List<string> origin_addresses;
 
 
-            addresses = data.addresses;
-            API_key = data.API_key;
+            addresses = day.Addresses;
+            API_key = cfg.API_key;
 
 
             max_elements = 100;//api limit
@@ -48,14 +48,14 @@ namespace VrpTest
                 origin_addresses = addresses.Skip(i * max_rows).Take(max_rows).ToList();
                 response = send_request(origin_addresses, dest_addresses, API_key);
 
-                build_time_matrix(response, data, i * max_rows, max_rows);
+                build_time_matrix(response, day, i * max_rows, max_rows);
             }
 
             if (r > 0)
             {
                 origin_addresses = addresses.Skip(q * max_rows).Take(r).ToList();
                 response = send_request(origin_addresses, dest_addresses, API_key);
-                build_time_matrix(response, data, i * max_rows, r);
+                build_time_matrix(response, day, i * max_rows, r);
             }
 
         }
@@ -111,7 +111,7 @@ namespace VrpTest
         }
 
 
-        static void build_time_matrix(JsonClasses.Rootobject response, DataModel data, int size, int max_rows)
+        static void build_time_matrix(JsonClasses.Rootobject response, Day day, int size, int max_rows)
         {
             int rownum = 0;
            
@@ -122,16 +122,16 @@ namespace VrpTest
                 for (int j = 0; j < response.rows[rownum].elements.Length; j++)
                 {
                     //distance, duration
-                    if(data.TimeWindowsActive != true)
+                    if(day.TimeWindowsActive != true)
                     {
-                        data.TimeMatrix[i, j] = response.rows[rownum].elements[j].duration.value;
+                        day.TimeMatrix[i, j] = response.rows[rownum].elements[j].duration.value;
                     }
                     else
                     {
-                        data.TimeMatrix[i, j] = response.rows[rownum].elements[j].duration.value/60;
+                        day.TimeMatrix[i, j] = response.rows[rownum].elements[j].duration.value/60;
                     }
                     //Console.WriteLine(data.DistanceMatrix[i,j]);
-                    data.penalty += response.rows[rownum].elements[j].duration.value;
+                    day.Penalty += response.rows[rownum].elements[j].duration.value;
 
                 }
                 //distance_matrix.append(row_list);

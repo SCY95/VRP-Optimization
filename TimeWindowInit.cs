@@ -11,7 +11,7 @@ namespace VrpTest
 {
     public partial class VrpProblem
     {
-        static void TimeWindowInit(in DataModel data,
+        static void TimeWindowInit(in Day day,
             in RoutingModel routing,
             in RoutingIndexManager manager)
         {
@@ -19,24 +19,24 @@ namespace VrpTest
             timeDimension.SetGlobalSpanCostCoefficient(100);
 
             // Add time window constraints for each location except depot.
-            for (int i = 1; i < data.TimeWindows.GetLength(0); i++)
+            for (int i = 1; i < day.TimeWindows.GetLength(0); i++)
             {
                 long index = manager.NodeToIndex(i);
                 timeDimension.CumulVar(index).SetRange(
-                    data.TimeWindows[i, 0],
-                    data.TimeWindows[i, 1]);
+                    day.TimeWindows[i, 0],
+                    day.TimeWindows[i, 1]);
             }
 
             // Add time window constraints for each vehicle start node.
-            for (int i = 0; i < data.VehicleNumber; i++)
+            for (int i = 0; i < day.Vehicles.Count; i++)
             {
                 long index = routing.Start(i);
                 timeDimension.CumulVar(index).SetRange(
-                    data.TimeWindows[0, 0],
-                    data.TimeWindows[0, 1]);
+                    day.TimeWindows[0, 0],
+                    day.TimeWindows[0, 1]);
             }
 
-            for (int i = 0; i < data.VehicleNumber; i++)
+            for (int i = 0; i < day.Vehicles.Count; i++)
             {
                 routing.AddVariableMinimizedByFinalizer(
                     timeDimension.CumulVar(routing.Start(i)));

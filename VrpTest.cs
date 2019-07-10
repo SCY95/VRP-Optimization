@@ -21,12 +21,11 @@ namespace VrpTest
             VrpProblem vrpProblem = new VrpProblem();
             Period period = new Period(1);  //Period(x) => period for x days          
             ConfigParams cfg= new ConfigParams();
+            GetInput(dataInput, cfg, period.Days.ElementAt(0));
 
-            SolveForDay(dataInput, dataOutput, vrpProblem, period.Days.ElementAt(0));
+            SolveForDay(dataInput, dataOutput, vrpProblem, period.Days.ElementAt(0), cfg);
             
-
-
-
+                       
 
 
             Console.ReadLine();

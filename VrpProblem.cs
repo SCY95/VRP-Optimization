@@ -13,25 +13,24 @@ namespace VrpTest
 {
     public partial class VrpProblem
     {
-        public DataModel data;
         public Day day;
+        public ConfigParams cfg;
         public RoutingModel routing;
         public RoutingIndexManager manager;
         public Assignment solution;
 
-        public void SolveVrpProblem(DataModel data, Day day)
-        {
-            this.data = data;
+        public void SolveVrpProblem(Day day, ConfigParams cfg)
+        {   
             this.day = day;
-
+            this.cfg = cfg;
             //Google Distance Matrix API (Duration matrix)
 
 
             // Create Routing Index Manager
             manager = new RoutingIndexManager(
-                data.TimeMatrix.GetLength(0),
-                data.VehicleNumber,
-                data.Depot);
+                day.TimeMatrix.GetLength(0),
+                day.Vehicles.Count,
+                day.Depot);
 
 
             // Create Routing Model.
@@ -44,7 +43,7 @@ namespace VrpTest
                         // Convert from routing variable Index to distance matrix NodeIndex.
                         var fromNode = manager.IndexToNode(fromIndex);
                         var toNode = manager.IndexToNode(toIndex);
-                        return data.TimeMatrix[fromNode, toNode];
+                        return day.TimeMatrix[fromNode, toNode];
                     }
                 );
 
@@ -53,7 +52,7 @@ namespace VrpTest
 
             // Add Distance constraint.
 
-            if (data.TimeWindowsActive != true)
+            if (day.TimeWindowsActive != true)
             {
                 routing.AddDimension(transitCallbackIndex, 0, 700000,
                                 true,  // start cumul to zero
@@ -70,30 +69,31 @@ namespace VrpTest
                false,  // start cumul to zero
                "Time");
 
-                TimeWindowInit(data, routing, manager);//Set Time Window Constraints
+                TimeWindowInit(day, routing, manager);//Set Time Window Constraints
 
             }
-            if (data.MaxVisitsActive != 0)
-                        {
-                            int demandCallbackIndex = routing.RegisterUnaryTransitCallback(
-                   (long fromIndex) => {
-                                   // Convert from routing variable Index to demand NodeIndex.
-                                   var fromNode = manager.IndexToNode(fromIndex);
-                       return data.Demands[fromNode];
-                   }
-                 );
+            if (day.MaxVisitsActive != 0)
+            {
+                 int demandCallbackIndex = routing.RegisterUnaryTransitCallback(
+                    (long fromIndex) => {
+                                    // Convert from routing variable Index to demand NodeIndex.
+                                    var fromNode = manager.IndexToNode(fromIndex);
+                        return day.Demands[fromNode];
+                    }
+                    );
+
                 routing.AddDimensionWithVehicleCapacity(
-                  demandCallbackIndex, 0,  // null capacity slack
-                  data.VehicleCapacities,   // vehicle maximum capacities
-                  true,                      // start cumul to zero
-                  "Capacity");
+                    demandCallbackIndex, 0,  // null capacity slack
+                    day.VehicleCapacities,   // vehicle maximum capacities
+                    true,                      // start cumul to zero
+                    "Capacity");
             }
 
             // Allow to drop nodes.
-            for (int i = 1; i < data.TimeMatrix.GetLength(0); ++i)
+            for (int i = 1; i < day.TimeMatrix.GetLength(0); ++i)
             {
                 routing.AddDisjunction(
-                    new long[] { manager.NodeToIndex(i) }, data.penalty+1000);
+                    new long[] { manager.NodeToIndex(i) }, day.Penalty+1000);
             }
 
             // Setting first solution heuristic.
@@ -106,7 +106,7 @@ namespace VrpTest
 
             //metaheuristic
             searchParameters.LocalSearchMetaheuristic = LocalSearchMetaheuristic.Types.Value.GuidedLocalSearch;
-            searchParameters.TimeLimit = new Duration { Seconds = data.SolutionDuration };
+            searchParameters.TimeLimit = new Duration { Seconds = cfg.SolutionDuration };
             searchParameters.LogSearch = true;
 
             // Solve the problem.

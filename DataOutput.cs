@@ -8,13 +8,13 @@ namespace VrpTest
 {
     public class DataOutput : IDataOutput
     {
-        public void PrintSolution(in DataModel data,
+        public void PrintSolution(in Day day,
             in RoutingModel routing,
             in RoutingIndexManager manager,
             in Assignment solution)
         {
-            PrintToConsole(data, routing, manager, solution);
-            ShowOnMap(data, routing, manager, solution);
+            PrintToConsole(day, routing, manager, solution);
+            ShowOnMap(day, routing, manager, solution);
         }
 
         public int PrintStatus(RoutingModel routing)
@@ -44,22 +44,21 @@ namespace VrpTest
             
         }
 
-        void ShowOnMap(in DataModel data,
+        void ShowOnMap(in Day day,
             in RoutingModel routing,
             in RoutingIndexManager manager,
             in Assignment solution)
         {
             List<List<int>> routes = new List<List<int>>();
 
-            for (int i = 0; i < data.VehicleNumber; ++i)
+            for (int i = 0; i < day.Vehicles.Count; ++i)
             {
                 var index = routing.Start(i);
                 List<int> route = new List<int>();
 
                 while (routing.IsEnd(index) == false)
                 {
-                    route.Add(manager.IndexToNode((int)index));
-          
+                    route.Add(manager.IndexToNode((int)index));          
 
                     index = solution.Value(routing.NextVar(index));
                 }
@@ -76,7 +75,7 @@ namespace VrpTest
                 string url = "https://www.google.com.tr/maps/dir/";
                 foreach (var item in routes[i])
                 {
-                    url += data.addresses[item] + "/";
+                    url += day.Addresses[item] + "/";
                 }
                 //url += data.addresses[data.Depot];
                 Process process = new Process();
@@ -92,12 +91,12 @@ namespace VrpTest
         }
 
         public void PrintToConsole(
-            in DataModel data,
+            in Day day,
             in RoutingModel routing,
             in RoutingIndexManager manager,
             in Assignment solution)
         {
-            data.locationDropped = false;
+            day.LocationDropped = false;
 
 
             // Display dropped nodes.
@@ -111,13 +110,13 @@ namespace VrpTest
                 if (solution.Value(routing.NextVar(index)) == index)
                 {
                     droppedNodes += " " + manager.IndexToNode(index);
-                    data.locationDropped = true;
+                    day.LocationDropped = true;
                 }
             }
             Console.WriteLine("{0}", droppedNodes);
             // Inspect solution.
             long maxRouteDuration = 0;
-            for (int i = 0; i < data.VehicleNumber; i++)
+            for (int i = 0; i < day.Vehicles.Count; i++)
             {
                 Console.WriteLine("Route for Vehicle {0}:", i);
                 long routeDuration = 0;

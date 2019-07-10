@@ -8,7 +8,7 @@ namespace VrpTest
 {
     public interface IDataOutput
     {
-        void PrintSolution(in DataModel data,
+        void PrintSolution(in Day day,
             in RoutingModel routing,
             in RoutingIndexManager manager,
             in Assignment solution);

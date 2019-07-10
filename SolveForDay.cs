@@ -12,23 +12,23 @@ namespace VrpTest
 {
     public partial class VrpTest
     {
-        public static void SolveForDay(DataInput dataInput, DataOutput dataOutput, VrpProblem vrpProblem, Day day)
+        public static void SolveForDay(DataInput dataInput, DataOutput dataOutput, 
+            VrpProblem vrpProblem, Day day,ConfigParams cfg)
         {
-            DataModel data = new DataModel(dataInput);
+            
+            TimeMatrixInit(day, cfg);
 
-            TimeMatrixInit(data, day);
-
-            vrpProblem.SolveVrpProblem(data, day);
+            vrpProblem.SolveVrpProblem(day, cfg);
 
             int i = 1;
             int max_vehicles = 150;
-            while (data.locationDropped && i < max_vehicles)
+            while (day.LocationDropped && i < max_vehicles)
             {
-                data.SetVehicleNumber(i);
+                day.SetVehicleNumber(i);
 
-                vrpProblem.SolveVrpProblem(data ,day);
+                vrpProblem.SolveVrpProblem(day, cfg);
 
-                dataOutput.PrintSolution(vrpProblem.data, vrpProblem.routing, vrpProblem.manager, vrpProblem.solution);
+                dataOutput.PrintSolution(vrpProblem.day, vrpProblem.routing, vrpProblem.manager, vrpProblem.solution);
 
                 i++;
             }

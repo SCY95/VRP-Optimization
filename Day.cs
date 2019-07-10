@@ -37,11 +37,14 @@ namespace VrpTest
 
         public void SetVehicleNumber(int VehicleNumber)
         {
+            VehicleCapacities = new long[VehicleNumber];
+            Vehicles = new List<Vehicle>();
             for (int i = 0; i < VehicleNumber; i++)
             {
                 Vehicle vehicle = new Vehicle();
                 vehicle.Capacity = 10 * MaxVisitsActive;
                 Vehicles.Add(vehicle);
+                VehicleCapacities[i] = vehicle.Capacity;
             }
         }
 
