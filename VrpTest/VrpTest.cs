@@ -15,14 +15,10 @@ namespace VrpTest
     {       
         public static void Main(String[] args)
         {
-            LocationDB locationDB = new LocationDB();
-            List<Location> locations = new List<Location>();
-            Period period = new Period(1);
+            Period period = new Period(2);
 
-            for (int i = 0; i < locationDB.Locations.Count; i++)
-            {
-                locations.Add(locationDB.Locations.ElementAt(i));
-            }
+            SetLocationsForDays(period);
+            
 
 
             for (int i = 0; i < period.Days.Count; i++)
@@ -33,11 +29,11 @@ namespace VrpTest
                 VrpProblem vrpProblem = new VrpProblem();
 
                 //Period(x) => period for x days     
-                period.Days.ElementAt(i).SetDay(locations);
                 ConfigParams cfg = new ConfigParams();
                 GetInput(dataInput, cfg, period.Days.ElementAt(i));
                 SolveForDay(dataInput, dataOutput, vrpProblem, period.Days.ElementAt(i), cfg);
             }
+
 
 
             Console.ReadLine();

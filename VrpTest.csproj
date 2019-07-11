@@ -37,9 +37,11 @@
     <Compile Include="JsonClasses.cs" />
     <Compile Include="Struct\Location.cs" />
     <Compile Include="Struct\Period.cs" />
+    <Compile Include="VrpTest\SetLocationsForDays.cs" />
     <Compile Include="VrpTest\SolveForDay.cs" />
     <Compile Include="Struct\Vehicle.cs" />
     <Compile Include="VrpProblem\VrpProblem.cs" />
+    <Compile Include="VrpTest\SolveForPeriod.cs" />
     <Compile Include="VrpTest\VrpTest.cs" />
     <Compile Include="VrpProblem\TimeWindowInit.cs" />
     <Content Include="Docs\README.txt" />
