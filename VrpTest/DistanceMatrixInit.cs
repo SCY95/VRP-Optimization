@@ -121,8 +121,9 @@ namespace VrpTest
                 //row_list = [row['elements'][j]['distance']['value'] for j in range(len(row['elements']))];
                 for (int j = 0; j < response.rows[rownum].elements.Length; j++)
                 {
+
                     //distance, duration
-                    if(day.TimeWindowsActive != true)
+                    if (day.TimeWindowsActive != true)
                     {
                         day.TimeMatrix[i, j] = response.rows[rownum].elements[j].duration.value;
                     }

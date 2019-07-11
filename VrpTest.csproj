@@ -29,6 +29,7 @@
     <Compile Include="DataInput.cs" />
     <Compile Include="DataOutput.cs" />
     <Compile Include="Struct\Day.cs" />
+    <Compile Include="Struct\LocationDB.cs" />
     <Compile Include="VrpTest\DistanceMatrixInit.cs" />
     <Compile Include="VrpTest\GetInput.cs" />
     <Compile Include="Interface\IDataInput.cs" />

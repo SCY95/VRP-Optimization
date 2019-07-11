@@ -12,12 +12,12 @@ namespace VrpTest
             cfg.SolutionDuration = dataInput.GetSolutionDuration();
           
 
-            day.Addresses = dataInput.ReadAddresses();
-            day.Depot = dataInput.GetDepot();
-            day.TimeMatrix = new long[day.Addresses.Count, day.Addresses.Count];//TODO
-            day.TimeWindows = new long[day.Addresses.Count, day.Addresses.Count];
-            day.TimeWindows = dataInput.GetTimeWindows();
-            day.Demands = dataInput.GetDemands();
+            //day.Addresses = dataInput.ReadAddresses();
+            //day.Depot = dataInput.GetDepot();
+            //day.TimeMatrix = new long[day.Addresses.Count, day.Addresses.Count];//TODO
+            //day.TimeWindows = new long[day.Addresses.Count, 2];
+            //day.TimeWindows = dataInput.GetTimeWindows();
+            //day.Demands = dataInput.GetDemands();
             day.LocationDropped = true;
             day.TimeWindowsActive = dataInput.GetTimeWindowActive();
             day.MaxVisitsActive = dataInput.GetMaxVisitsActive();
