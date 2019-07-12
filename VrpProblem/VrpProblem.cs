@@ -39,14 +39,6 @@ namespace VrpTest
             routing = new RoutingModel(manager);
 
 
-
-            solver = routing.solver();
-            //Constraint variable
-            x = solver.MakeIntVar(day.Vehicles.Count, day.Vehicles.Count, "x");
-            //Number of vehicle restriction
-            solver.Add(x <= 120);
-
-
             // Create and register a transit callback.
             int transitCallbackIndex = routing.RegisterTransitCallback(
                 (long fromIndex, long toIndex) =>
@@ -119,6 +111,13 @@ namespace VrpTest
             searchParameters.LocalSearchMetaheuristic = LocalSearchMetaheuristic.Types.Value.GuidedLocalSearch;
             searchParameters.TimeLimit = new Duration { Seconds = cfg.SolutionDuration };
             searchParameters.LogSearch = true;
+
+            solver = routing.solver();
+            //Constraint variable
+            x = solver.MakeIntVar(day.Vehicles.Count, day.Vehicles.Count, "x");
+            //Number of vehicle restriction
+            solver.Add(x <= 3);
+
 
             // Solve the problem.
             solution = routing.SolveWithParameters(searchParameters);

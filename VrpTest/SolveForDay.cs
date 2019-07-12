@@ -21,16 +21,25 @@ namespace VrpTest
             vrpProblem.SolveVrpProblem(day, cfg);
 
             int i = 1;
-            while (day.LocationDropped)
+
+            try
             {
-                day.SetVehicleNumber(i);
+                while (day.LocationDropped)
+                {
+                    day.SetVehicleNumber(i);
 
-                vrpProblem.SolveVrpProblem(day, cfg);
+                    vrpProblem.SolveVrpProblem(day, cfg);
 
-                dataOutput.PrintSolution(vrpProblem.day, vrpProblem.routing, vrpProblem.manager, vrpProblem.solution);
+                    dataOutput.PrintSolution(vrpProblem.day, vrpProblem.routing, vrpProblem.manager, vrpProblem.solution);
 
-                i++;
+                    i++;
+                }
             }
+            catch
+            {
+
+            }
+
 
             dataOutput.PrintStatus(vrpProblem.routing);
 
