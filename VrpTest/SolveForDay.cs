@@ -21,8 +21,7 @@ namespace VrpTest
             vrpProblem.SolveVrpProblem(day, cfg);
 
             int i = 1;
-            int max_vehicles = 150;
-            while (day.LocationDropped && i < max_vehicles)
+            while (day.LocationDropped)
             {
                 day.SetVehicleNumber(i);
 
