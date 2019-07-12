@@ -62,6 +62,8 @@ namespace VrpTest.Struct
 
             //Istanbul
 
+            Location location16 = new Location("40.797142, 29.382287", 0, 200, true);
+            Locations.Add(location16);//40.797142, 29.382287
 
         }
     }
