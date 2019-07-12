@@ -116,7 +116,7 @@ namespace VrpTest
             //Constraint variable
             x = solver.MakeIntVar(day.Vehicles.Count, day.Vehicles.Count, "x");
             //Number of vehicle restriction
-            solver.Add(x <= 3);
+            solver.Add(x <= 120);
 
 
             // Solve the problem.
