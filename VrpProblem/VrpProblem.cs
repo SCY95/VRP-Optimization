@@ -18,6 +18,8 @@ namespace VrpTest
         public RoutingModel routing;
         public RoutingIndexManager manager;
         public Assignment solution;
+        public Solver solver;
+        IntVar x;
 
         public void SolveVrpProblem(Day day, ConfigParams cfg)
         {   
@@ -35,6 +37,7 @@ namespace VrpTest
 
             // Create Routing Model.
             routing = new RoutingModel(manager);
+
 
             // Create and register a transit callback.
             int transitCallbackIndex = routing.RegisterTransitCallback(
@@ -102,12 +105,19 @@ namespace VrpTest
 
 
             searchParameters.FirstSolutionStrategy =
-              FirstSolutionStrategy.Types.Value.PathCheapestArc;
+              FirstSolutionStrategy.Types.Value.Automatic;
 
             //metaheuristic
             searchParameters.LocalSearchMetaheuristic = LocalSearchMetaheuristic.Types.Value.GuidedLocalSearch;
             searchParameters.TimeLimit = new Duration { Seconds = cfg.SolutionDuration };
             searchParameters.LogSearch = true;
+
+            solver = routing.solver();
+            //Constraint variable
+            x = solver.MakeIntVar(day.Vehicles.Count, day.Vehicles.Count, "x");
+            //Number of vehicle restriction
+            solver.Add(x <= 3);
+
 
             // Solve the problem.
             solution = routing.SolveWithParameters(searchParameters);
