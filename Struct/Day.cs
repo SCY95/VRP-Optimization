@@ -91,5 +91,13 @@ namespace VrpTest
             }
         }
 
-    }
+        public void ResetResults()
+        {
+            this.TotalDur = 0;                 
+            this.MaxDur = 0;
+            this.MinDur = 0;
+            this.AvgDur = 0;
+        }
+
+}
 }

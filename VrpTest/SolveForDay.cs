@@ -27,6 +27,7 @@ namespace VrpTest
                 while (day.LocationDropped)
                 {
                     day.SetVehicleNumber(i);
+                    day.ResetResults();
 
                     vrpProblem.SolveVrpProblem(day, cfg);
 
