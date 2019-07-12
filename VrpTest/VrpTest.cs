@@ -17,8 +17,7 @@ namespace VrpTest
         {
             Period period = new Period(2);
 
-            SetLocationsForDays(period);
-            
+            SetLocationsForDays(period);            
 
 
             for (int i = 0; i < period.Days.Count; i++)
@@ -33,8 +32,7 @@ namespace VrpTest
                 GetInput(dataInput, cfg, period.Days.ElementAt(i));
                 SolveForDay(dataInput, dataOutput, vrpProblem, period.Days.ElementAt(i), cfg);
             }
-
-
+            
 
             Console.ReadLine();
             return;

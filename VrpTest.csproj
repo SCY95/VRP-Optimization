@@ -45,6 +45,7 @@
     <Compile Include="VrpTest\VrpTest.cs" />
     <Compile Include="VrpProblem\TimeWindowInit.cs" />
     <Content Include="Docs\README.txt" />
+    <Content Include="Docs\RouteData.txt" />
     <PackageReference Include="Google.OrTools" Version="7.2.6977" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
   </ItemGroup>
