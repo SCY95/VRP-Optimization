@@ -115,7 +115,7 @@ namespace VrpTest
             }
             Console.WriteLine("{0}", droppedNodes);
             // Inspect solution.
-            long maxRouteDuration = 0;
+            
             for (int i = 0; i < day.Vehicles.Count; i++)
             {
                 Console.WriteLine("Route for Vehicle {0}:", i);
@@ -135,9 +135,9 @@ namespace VrpTest
                 }
                 Console.WriteLine("{0}", manager.IndexToNode((int)index));
                 Console.WriteLine("Duration of the route: {0}mins", routeDuration);
-                maxRouteDuration = Math.Max(routeDuration, maxRouteDuration);
+                day.MaxDur = Math.Max(routeDuration, day.MaxDur);
             }
-            Console.WriteLine("Maximum duration of the routes: {0}mins", maxRouteDuration);
+            Console.WriteLine("Maximum duration of the routes: {0}mins", day.MaxDur);
         }
 
       

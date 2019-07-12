@@ -12,7 +12,7 @@ namespace VrpTest.Struct
         {
             Locations = new List<Location>();
 
-            Location location = new Location("3610+Hacks+Cross+Rd+Memphis+TN", 0, 200, true);//depot
+            Location location = new Location("35.051031+-89.793120", 0, 200, true);//depot -- 3610+Hacks+Cross+Rd+Memphis+TN
             Locations.Add(location);
         
             Location location1 = new Location("Piperton+Tennessee", 40, 56, false);
@@ -59,6 +59,10 @@ namespace VrpTest.Struct
 
             Location location15 = new Location("1005+Tillman+St+Memphis+TN", 55, 100, false);
             Locations.Add(location15);
+
+            //Istanbul
+
+
         }
     }
 }
