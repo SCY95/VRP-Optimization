@@ -121,6 +121,52 @@ namespace VrpTest
 
             // Solve the problem.
             solution = routing.SolveWithParameters(searchParameters);
+
+
+
+            day.LocationDropped = false;
+
+            // Display dropped nodes.
+            List<int> droppedNodes = new List<int>();
+
+            for (int index = 0; index < routing.Size(); ++index)
+            {
+                if (routing.IsStart(index) || routing.IsEnd(index))
+                {
+                    continue;
+                }
+                if (solution.Value(routing.NextVar(index)) == index)
+                {
+                    droppedNodes.Add(manager.IndexToNode((int)index)); 
+                    day.LocationDropped = true;
+                }
+            }
+            // Inspect solution.
+
+            for (int i = 0; i < day.Vehicles.Count; i++)
+            {
+                long routeDuration = 0;
+
+                var index = routing.Start(i);
+
+                while (routing.IsEnd(index) == false)
+                {
+                    var previousIndex = index;
+
+                    index = solution.Value(routing.NextVar(index));
+
+
+                    routeDuration += routing.GetArcCostForVehicle(previousIndex, index, 0);
+                }
+                day.MaxDur = Math.Max(routeDuration, day.MaxDur);
+            }
+
+
+
+
+
+
+
         }
     }
 }

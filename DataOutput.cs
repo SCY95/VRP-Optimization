@@ -96,8 +96,6 @@ namespace VrpTest
             in RoutingIndexManager manager,
             in Assignment solution)
         {
-            day.LocationDropped = false;
-
 
             // Display dropped nodes.
             string droppedNodes = "Dropped nodes:";
@@ -110,7 +108,6 @@ namespace VrpTest
                 if (solution.Value(routing.NextVar(index)) == index)
                 {
                     droppedNodes += " " + manager.IndexToNode(index);
-                    day.LocationDropped = true;
                 }
             }
             Console.WriteLine("{0}", droppedNodes);
@@ -135,7 +132,6 @@ namespace VrpTest
                 }
                 Console.WriteLine("{0}", manager.IndexToNode((int)index));
                 Console.WriteLine("Duration of the route: {0}mins", routeDuration);
-                day.MaxDur = Math.Max(routeDuration, day.MaxDur);
             }
             Console.WriteLine("Maximum duration of the routes: {0}mins", day.MaxDur);
         }

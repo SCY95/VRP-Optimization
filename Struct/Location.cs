@@ -10,7 +10,7 @@ namespace VrpTest
         public string Address { get; set; }
         public int ID { get; set; }
         public bool IsDepot { get; set; }
-        public static int IdCounter { get; set; } = 0;
+        public static int IdCounter { get; set; } = 0;//TODO Database yok + hic gerekli olmayabilir de
         public long TWLower { get; set; }
         public long TWUpper { get; set; }
         public long Demand { get; set; }//Demand used like TTL. May change to real vehicle capacity later

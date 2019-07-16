@@ -32,6 +32,7 @@ namespace VrpTest
                     vrpProblem.SolveVrpProblem(day, cfg);
 
                     dataOutput.PrintSolution(vrpProblem.day, vrpProblem.routing, vrpProblem.manager, vrpProblem.solution);
+                    dataOutput.PrintStatus(vrpProblem.routing);
 
                     i++;
                 }
@@ -42,7 +43,6 @@ namespace VrpTest
             }
 
 
-            dataOutput.PrintStatus(vrpProblem.routing);
 
 
             return;

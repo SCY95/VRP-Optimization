@@ -19,6 +19,7 @@ namespace VrpTest
         public int MaxVisitsActive { get; set; }
 
         public List<Vehicle> Vehicles { get; set; }
+        public List<Location> DroppedLocations { get; set; }
         public long TotalDur { get; set; }                   //Dur: Duration
         public long MaxDur { get; set; }
         public long MinDur { get; set; }
