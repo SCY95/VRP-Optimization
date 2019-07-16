@@ -127,7 +127,6 @@ namespace VrpTest
 
                     index = solution.Value(routing.NextVar(index));
 
-
                     routeDuration += routing.GetArcCostForVehicle(previousIndex, index, 0);
                 }
                 Console.WriteLine("{0}", manager.IndexToNode((int)index));

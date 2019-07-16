@@ -60,10 +60,10 @@ namespace VrpTest.Struct
             Location location15 = new Location("1005+Tillman+St+Memphis+TN", 55, 100, false);
             Locations.Add(location15);
 
-            //Istanbul
+            ////Istanbul
 
-            Location location16 = new Location("40.797142, 29.382287", 0, 200, true);
-            Locations.Add(location16);//40.797142, 29.382287
+            //Location location16 = new Location("40.797142, 29.382287", 0, 200, true);
+            //Locations.Add(location16);//40.797142, 29.382287
 
         }
     }
