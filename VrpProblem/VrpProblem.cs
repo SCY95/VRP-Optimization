@@ -113,6 +113,11 @@ namespace VrpTest
             searchParameters.LogSearch = true;
 
             solver = routing.solver();
+
+            //TODO
+            //Some location must be on same route.
+            //solver.Add(routing.VehicleVar(manager.NodeToIndex(0)) == routing.VehicleVar(manager.NodeToIndex(6)));
+
             //Constraint variable
             x = solver.MakeIntVar(day.Vehicles.Count, day.Vehicles.Count, "x");
             //Number of vehicle restriction
