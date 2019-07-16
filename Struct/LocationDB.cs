@@ -12,9 +12,11 @@ namespace VrpTest.Struct
         {
             Locations = new List<Location>();
 
+
+            //Default Locations
             Location location = new Location("35.051031+-89.793120", 0, 200, true);//depot -- 3610+Hacks+Cross+Rd+Memphis+TN
             Locations.Add(location);
-        
+
             Location location1 = new Location("Piperton+Tennessee", 40, 56, false);
             Locations.Add(location1);
 
@@ -60,11 +62,33 @@ namespace VrpTest.Struct
             Location location15 = new Location("1005+Tillman+St+Memphis+TN", 55, 100, false);
             Locations.Add(location15);
 
-            ////Istanbul
 
-            //Location location16 = new Location("40.797142, 29.382287", 0, 200, true);
-            //Locations.Add(location16);//40.797142, 29.382287
+            //Istanbul
+            //Not gunluk 600 dakika calisabilir
 
+            Location location16 = new Location("40.797142+29.382287", 0, 200, true);
+            Locations.Add(location16);//40.797142, 29.382287 Gebze Depo
+
+            Location location17 = new Location("40.879389+29.257468", 0, 80, false);
+            Locations.Add(location17);//Pendik Bakkal1
+
+            Location location18 = new Location("40.891902+29.189942", 0, 120, false);
+            Locations.Add(location18);//Kartal Bakkal1 
+
+            Location location19 = new Location("40.892085+29.193903", 30, 120, false);
+            Locations.Add(location19);//Kartal Bakkal2
+
+            Location location20 = new Location("40.930321+29.156061", 0, 180, false);
+            Locations.Add(location20);//Gulsuyu Bakkal1
+
+            Location location21 = new Location("40.925076+29.135498", 60, 210, false);
+            Locations.Add(location21);//Baglarbasi Bakkal1   41.039699, 29.104331
+
+            Location location22 = new Location("41.039699+29.104331", 360, 480, false);
+            Locations.Add(location22);//Umraniye Bakkal1 
+
+            Location location23 = new Location("41.030835+29.035284", 0, 180, false);
+            Locations.Add(location23);//Umraniye Bakkal2 
         }
     }
 }

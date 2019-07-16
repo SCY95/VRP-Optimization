@@ -69,7 +69,7 @@ namespace VrpTest
                             routing.AddDimension(
                transitCallbackIndex, // transit callback
                1000,// allow waiting time
-               1000, // vehicle maximum capacities
+               600, // vehicle maximum capacities
                false,  // start cumul to zero
                "Time");
 
@@ -173,7 +173,6 @@ namespace VrpTest
                     var previousIndex = index;
 
                     index = solution.Value(routing.NextVar(index));
-
 
                     routeDuration += routing.GetArcCostForVehicle(previousIndex, index, 0);
                 }

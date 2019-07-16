@@ -15,7 +15,7 @@ namespace VrpTest
     {       
         public static void Main(String[] args)
         {
-            Period period = new Period(2);
+            Period period = new Period(1);
 
             SetLocationsForDays(period);            
 

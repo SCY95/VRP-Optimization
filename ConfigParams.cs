@@ -8,7 +8,5 @@ namespace VrpTest
     {
         public string API_key { get; set; }
         public int SolutionDuration { get; set; }
-
-
     }
 }
