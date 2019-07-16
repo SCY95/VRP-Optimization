@@ -121,6 +121,44 @@ namespace VrpTest.Struct
 
             Location location33 = new Location("40.759876, 29.385730", 0, 240, false);
             Locations.Add(location32);//Darica Bim 
+
+
+            //Avrupa yakası
+            Location location34 = new Location("41.009756+28.967856", 240, 400, false);
+            Locations.Add(location34);//Şaafi Kebap Salonu Eminönü
+
+            Location location35 = new Location("41.016102+28.973159", 240, 600, false);
+            Locations.Add(location35);//Hafız Mustafa Eminönü
+
+            Location location36 = new Location("41.062989+28.990483", 0, 240, false);
+            Locations.Add(location36);//Günay Rest Şişli
+
+            Location location37 = new Location("41.109442+29.018298", 500, 600, false);
+            Locations.Add(location37);//Plaza Cubes Sarıyer
+
+            Location location38 = new Location("41.228735+29.111791", 0, 600, false);
+            Locations.Add(location38);//Cafe Fener Rumelifeneri
+
+            Location location39 = new Location("41.064852+28.841873", 0, 400, false);
+            Locations.Add(location39);//Batışehir Focaccia Bağcılar/Esenler
+
+            Location location40 = new Location("40.992084+28.834974", 0, 200, false);
+            Locations.Add(location40);//Nef Ataköy 22
+
+            Location location41 = new Location("40.971358+28.791196", 200, 360, false);
+            Locations.Add(location41);//Görkem Kilis Sofrası Bakırköy
+
+            Location location42 = new Location("41.022248+28.773106", 350, 500, false);
+            Locations.Add(location42);//Köfteci onur küçükçekmece atatürk parkı arkası
+
+            Location location43 = new Location("41.181198+28.745308", 0, 240, false);
+            Locations.Add(location43);//Dominos Pizza Arnavutköy
+
+            Location location44 = new Location("41.007845+28.716998", 240, 600, false);
+            Locations.Add(location44);//Safran Elite Mangalbaşı & Cafe Avcılar
+
+            Location location45 = new Location("41.103315+28.882457", 180, 480, false);
+            Locations.Add(location45);//Bülbülen Cagkebabi
         }
     }
 }
