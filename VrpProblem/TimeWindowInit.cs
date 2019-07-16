@@ -34,10 +34,7 @@ namespace VrpTest
                 timeDimension.CumulVar(index).SetRange(
                     day.TimeWindows[0, 0],
                     day.TimeWindows[0, 1]);
-            }
-
-            for (int i = 0; i < day.Vehicles.Count; i++)
-            {
+            
                 routing.AddVariableMinimizedByFinalizer(
                     timeDimension.CumulVar(routing.Start(i)));
                 routing.AddVariableMinimizedByFinalizer(
