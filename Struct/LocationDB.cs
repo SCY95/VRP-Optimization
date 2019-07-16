@@ -89,8 +89,9 @@ namespace VrpTest.Struct
 
             Location location23 = new Location("41.030835+29.035284", 0, 180, false);
             Locations.Add(location23);//Uskudar Bakkal1 
+            
+            //Gebze tarafi
 
-            //PARCA
             Location location24 = new Location("40.835618+29.301208", 0, 180, false);
             Locations.Add(location24);//Tuzla Bim
 
