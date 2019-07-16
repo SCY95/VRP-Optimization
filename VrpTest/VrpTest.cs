@@ -30,6 +30,7 @@ namespace VrpTest
                 //Period(x) => period for x days     
                 ConfigParams cfg = new ConfigParams();
                 GetInput(dataInput, cfg, period.Days.ElementAt(i));
+
                 SolveForDay(dataInput, dataOutput, vrpProblem, period.Days.ElementAt(i), cfg);
             }
             

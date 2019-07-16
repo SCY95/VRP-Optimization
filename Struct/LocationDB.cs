@@ -113,14 +113,14 @@ namespace VrpTest.Struct
             Location location30 = new Location("40.810741+29.403533", 0, 240, false);
             Locations.Add(location30);//Gebze Akmar
 
-            Location location31 = new Location("40.776801, 29.389061", 0, 240, false);
+            Location location31 = new Location("40.776801+29.389061", 0, 240, false);
             Locations.Add(location31);//Darica Akdeniz Market 
 
-            Location location32 = new Location("40.776448, 29.353651", 0, 240, false);
-            Locations.Add(location32);//Darica Ozen Market 40.759876, 29.385730
+            Location location32 = new Location("40.776448+29.353651", 0, 240, false);
+            Locations.Add(location32);//Darica Ozen Market 
 
-            Location location33 = new Location("40.759876, 29.385730", 0, 240, false);
-            Locations.Add(location32);//Darica Bim 
+            Location location33 = new Location("40.759876+29.385730", 0, 240, false);
+            Locations.Add(location33);//Darica Bim 
 
 
             //Avrupa yakası

@@ -33,12 +33,13 @@ namespace VrpTest
             //period.Days.ElementAt(1).SetDay(locations1);
 
             List<Location> locations2 = new List<Location>();
-
+            
             for (int i = 16; i < LocationDB.Locations.Count; i++)
             {
                 locations2.Add(LocationDB.Locations.ElementAt(i));
             }
             period.Days.ElementAt(0).SetDay(locations2);
+
         }
 
     }
