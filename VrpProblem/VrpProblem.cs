@@ -8,6 +8,7 @@ using System.Linq;
 using Newtonsoft.Json;
 using Google.Protobuf.WellKnownTypes;//Duration
 using System.Diagnostics;
+using VrpTest.Struct;
 
 namespace VrpTest
 {
@@ -141,6 +142,19 @@ namespace VrpTest
                     day.LocationDropped = true;
                 }
             }
+            if (droppedNodes != null)
+            {
+                foreach (var item in droppedNodes)
+                {
+                    Location location = LocationDB.Locations.Where(d => d.Address == day.Addresses[item]).ToList().ElementAt(0);
+                    if(location != null)
+                    {                       
+                        day.DroppedLocations.Add(location);
+                    }
+                }
+            }
+
+
             // Inspect solution.
 
             for (int i = 0; i < day.Vehicles.Count; i++)

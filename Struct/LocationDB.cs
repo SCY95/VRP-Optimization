@@ -4,11 +4,11 @@ using System.Text;
 
 namespace VrpTest.Struct
 {
-    public class LocationDB
+    public static class LocationDB
     {
-        public List<Location> Locations { get; set; }
+        public static List<Location> Locations { get; set; }
 
-        public LocationDB()
+        static LocationDB()
         {
             Locations = new List<Location>();
 

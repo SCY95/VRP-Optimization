@@ -31,28 +31,7 @@ namespace VrpTest
             Vehicles = new List<Vehicle>();
         }
 
-        public Day(List<Location> Locations)
-        {
-            Vehicles = new List<Vehicle>();
-            this.Locations = Locations;
-            this.TimeWindows = new long[Locations.Count, 2];
-
-            int i = 0;
-
-            foreach (var item in Locations)
-            {
-                if(item.IsDepot)
-                {
-                    this.Depot = i;
-                }
-
-                this.Addresses.Add(item.Address);
-                this.TimeWindows[i, 0] = item.TWLower;
-                this.TimeWindows[i, 1] = item.TWUpper;
-                this.Demands[i] = item.Demand;
-                i++;
-            }
-        }
+        
 
         public void SetDay(List<Location> Locations)
         {
@@ -61,6 +40,7 @@ namespace VrpTest
             this.TimeWindows = new long[Locations.Count, 2];
             this.Addresses = new List<string>();
             this.Demands = new long[Locations.Count];
+            this.DroppedLocations = new List<Location>();
 
             int i = 0;
 

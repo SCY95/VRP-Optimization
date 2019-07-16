@@ -15,21 +15,20 @@ namespace VrpTest
     {
         public static void SetLocationsForDays(Period period)
         {
-            LocationDB locationDB = new LocationDB();
             
             List<Location> locations = new List<Location>();
 
-            for (int i = 0; i < locationDB.Locations.Count; i++)
+            for (int i = 0; i < LocationDB.Locations.Count; i++)
             {
-                locations.Add(locationDB.Locations.ElementAt(i));
+                locations.Add(LocationDB.Locations.ElementAt(i));
             }
             period.Days.ElementAt(0).SetDay(locations);
 
             List<Location> locations1 = new List<Location>();
 
-            for (int i = 0; i < locationDB.Locations.Count / 2; i++)
+            for (int i = 0; i < LocationDB.Locations.Count / 2; i++)
             {
-                locations1.Add(locationDB.Locations.ElementAt(i));
+                locations1.Add(LocationDB.Locations.ElementAt(i));
             }
             period.Days.ElementAt(1).SetDay(locations1);
         }
