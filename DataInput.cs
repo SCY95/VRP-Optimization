@@ -13,7 +13,7 @@ namespace VrpTest
 
         public string GetAPI_key()
         {
-            return "AIzaSyBe5wHtu7fTIbEfls4Z-8FCkfCJcf41Udc";
+            return "AIzaSyA6NWQNzTeP3SZ6riaW5BLUwcRcHxZLDW0";
         }
 
         public int GetSolutionDuration()
