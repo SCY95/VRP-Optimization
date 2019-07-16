@@ -117,7 +117,9 @@ namespace VrpTest
 
             //TODO
             //Some location must be on same route.
-            //solver.Add(routing.VehicleVar(manager.NodeToIndex(0)) == routing.VehicleVar(manager.NodeToIndex(6)));
+            //solver.Add(routing.VehicleVar(manager.NodeToIndex(2)) == routing.VehicleVar(manager.NodeToIndex(5)));
+            //One node takes precedence over the another.
+            //routing.AddPickupAndDelivery(manager.NodeToIndex(2), manager.NodeToIndex(5));
 
             //Constraint variable
             x = solver.MakeIntVar(day.Vehicles.Count, day.Vehicles.Count, "x");
