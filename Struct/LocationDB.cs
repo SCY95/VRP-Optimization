@@ -88,7 +88,38 @@ namespace VrpTest.Struct
             Locations.Add(location22);//Umraniye Bakkal1 
 
             Location location23 = new Location("41.030835+29.035284", 0, 180, false);
-            Locations.Add(location23);//Umraniye Bakkal2 
+            Locations.Add(location23);//Uskudar Bakkal1 
+
+            //PARCA
+            Location location24 = new Location("40.835618+29.301208", 0, 180, false);
+            Locations.Add(location24);//Tuzla Bim
+
+            Location location25 = new Location("40.824819+29.310304", 0, 180, false);
+            Locations.Add(location25);//Tuzla Carrefour
+
+            Location location26 = new Location("40.825654+29.319878", 0, 180, false);
+            Locations.Add(location26);//Tuzla Mopas
+
+            Location location27 = new Location("40.824750+29.372604", 0, 240, false);
+            Locations.Add(location27);//Cayirova Mopas
+
+            Location location28 = new Location("40.817789+29.371047", 0, 240, false);
+            Locations.Add(location28);//Cayirova Migros Jet 
+
+            Location location29 = new Location("40.813845+29.402778", 0, 240, false);
+            Locations.Add(location29);//Gevze Bizim Market
+
+            Location location30 = new Location("40.810741+29.403533", 0, 240, false);
+            Locations.Add(location30);//Gebze Akmar
+
+            Location location31 = new Location("40.776801, 29.389061", 0, 240, false);
+            Locations.Add(location31);//Darica Akdeniz Market 
+
+            Location location32 = new Location("40.776448, 29.353651", 0, 240, false);
+            Locations.Add(location32);//Darica Ozen Market 40.759876, 29.385730
+
+            Location location33 = new Location("40.759876, 29.385730", 0, 240, false);
+            Locations.Add(location32);//Darica Bim 
         }
     }
 }
