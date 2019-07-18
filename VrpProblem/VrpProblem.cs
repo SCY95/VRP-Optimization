@@ -38,7 +38,7 @@ namespace VrpTest
 
             // Create Routing Model.
             routing = new RoutingModel(manager);
-
+            
 
             // Create and register a transit callback.
             int transitCallbackIndex = routing.RegisterTransitCallback(
@@ -153,7 +153,7 @@ namespace VrpTest
             {
                 foreach (var item in droppedNodes)
                 {
-                    Location location = LocationDB.Locations.Where(d => d.Address == day.Addresses[item]).ToList().ElementAt(0);
+                    Location location = LocationDB.Locations.Where(d => d.Position.strPos_ == day.Addresses[item]).ToList().ElementAt(0);
                     if(location != null)
                     {                       
                         day.DroppedLocations.Add(location);

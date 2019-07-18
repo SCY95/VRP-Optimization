@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace VrpTest
+namespace VrpTest.Struct
 {
     public class Vehicle
     {

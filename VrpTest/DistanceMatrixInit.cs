@@ -6,6 +6,7 @@ using Google.OrTools.ConstraintSolver;
 using System.Linq;
 using Newtonsoft.Json;
 using Google.Protobuf.WellKnownTypes;//Duration
+using VrpTest.Struct;
 
 namespace VrpTest
 {  

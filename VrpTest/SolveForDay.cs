@@ -7,6 +7,8 @@ using System.Linq;
 using Newtonsoft.Json;
 using Google.Protobuf.WellKnownTypes;//Duration
 using System.Diagnostics;
+using VrpTest.Struct;
+
 
 namespace VrpTest
 {

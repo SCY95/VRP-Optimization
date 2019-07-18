@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace VrpTest
+namespace VrpTest.Struct
 {
     public class Day
     {
@@ -51,7 +51,7 @@ namespace VrpTest
                     this.Depot = i;
                 }
 
-                this.Addresses.Add(item.Address);
+                this.Addresses.Add(item.Position.strPos_);
                 this.TimeWindows[i, 0] = item.TWLower;
                 this.TimeWindows[i, 1] = item.TWUpper;
                 this.Demands[i] = item.Demand;

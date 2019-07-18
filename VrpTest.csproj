@@ -30,6 +30,7 @@
     <Compile Include="DataOutput.cs" />
     <Compile Include="Struct\Day.cs" />
     <Compile Include="Struct\LocationDB.cs" />
+    <Compile Include="Struct\Position.cs" />
     <Compile Include="VrpTest\DistanceMatrixInit.cs" />
     <Compile Include="VrpTest\GetInput.cs" />
     <Compile Include="Interface\IDataInput.cs" />
@@ -48,6 +49,7 @@
     <Content Include="Docs\RouteData.txt" />
     <PackageReference Include="Google.OrTools" Version="7.2.6977" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.6.1" />
   </ItemGroup>
 
   <ItemGroup>

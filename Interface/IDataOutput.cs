@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Google.OrTools.ConstraintSolver;
 using System.Diagnostics;
+using VrpTest.Struct;
 
 namespace VrpTest
 {
