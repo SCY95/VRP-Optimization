@@ -43,7 +43,7 @@ namespace VrpTest.Struct
             this.DroppedLocations = new List<Location>();
 
             int i = 0;
-
+            this.Depot = 0;//default
             foreach (var item in Locations)
             {
                 if (item.IsDepot == true)

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace JsonClasses
 {
-    #region JsonParsingClasses
+    #region TimeMatrixApiRequesJsonParsingClasses
     public class Rootobject
     {
         public string[] destination_addresses { get; set; }
@@ -36,5 +36,42 @@ namespace JsonClasses
         public string text { get; set; }
         public int value { get; set; }
     }
+    #endregion
+
+
+
+    #region TimeMatrixLGJsonParsingClasses
+    public class LG_Rootobject
+    {
+        public int clientref { get; set; }
+        public LG_Row[] rows { get; set; }
+        public string status { get; set; }
+    }
+
+    public class LG_Row
+    {
+        public LG_Element[] elements { get; set; }
+    }
+
+    public class LG_Element
+    {
+        public int clientref { get; set; }
+        public LG_Distance distance { get; set; }
+        public LG_Duration duration { get; set; }
+        public string status { get; set; }
+    }
+
+    public class LG_Distance
+    {
+        public string text { get; set; }
+        public int value { get; set; }
+    }
+
+    public class LG_Duration
+    {
+        public string text { get; set; }
+        public int value { get; set; }
+    }
+
     #endregion
 }

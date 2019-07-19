@@ -8,21 +8,20 @@ namespace VrpTest.Struct
     {
         public string Name { get; set; }
         public Position Position { get; set; }
-        public int ID { get; set; }
+        public int ClientRef { get; set; }
         public bool IsDepot { get; set; }
-        public static int IdCounter { get; set; } = 0;//TODO Database yok + hic gerekli olmayabilir de
         public long TWLower { get; set; }
         public long TWUpper { get; set; }
         public long Demand { get; set; }//Demand used like TTL. May change to real vehicle capacity later
 
-        public Location(Position position, long TWLower, long TWUpper, bool IsDepot)
+        public Location(int clientRef, string name, Position position, long twLower, long twUpper, bool isDepot)
         {
-            this.IsDepot = IsDepot;
-            ID = IdCounter;
-            IdCounter++;
+            this.ClientRef = clientRef;
+            this.Name = name;
+            this.IsDepot = isDepot;
             this.Position = position;
-            this.TWLower = TWLower;
-            this.TWUpper = TWUpper;
+            this.TWLower = twLower;
+            this.TWUpper = twUpper;
             Demand = 10;
             if(IsDepot)
             {

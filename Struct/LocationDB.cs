@@ -69,7 +69,14 @@ namespace VrpTest.Struct
                             string coordinates = reader[2].ToString() + reader[3].ToString();
                             Console.WriteLine(coordinates);
                             Console.WriteLine(new Position(Convert.ToDouble(reader[2]), Convert.ToDouble(reader[3])).strPos_);
-                            Location location = new Location(new Position(Convert.ToDouble(reader[2]), Convert.ToDouble(reader[3])),0,600,false);
+
+                            Location location = new Location(
+                                Convert.ToInt32(reader[0]), reader[1].ToString(),
+                                new Position(Convert.ToDouble(reader[2]), 
+                                Convert.ToDouble(reader[3])),
+                                0,600,false
+                                );
+
                             locationList.Add(location);
                         }
                     }

@@ -20,8 +20,6 @@ namespace VrpTest
 
         public int PrintStatus(RoutingModel routing)
         {
-
-
             switch (routing.GetStatus())
             {
                 case 0:
