@@ -20,7 +20,7 @@ namespace VrpTest
             
             TimeMatrixInit(day, cfg);
 
-            dataInput.SaveTimeMatrix();
+            dataInput.SaveTimeMatrix(day);
 
             vrpProblem.SolveVrpProblem(day, cfg);
 

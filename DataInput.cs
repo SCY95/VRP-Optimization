@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using VrpTest.Struct;
 
 namespace VrpTest
 {
@@ -31,9 +32,9 @@ namespace VrpTest
             return 5;//5 yap
         }
 
-        public void SaveTimeMatrix()
+        public void SaveTimeMatrix(Day day)
         {
-
+            
         }
     }
 }
