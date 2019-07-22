@@ -45,10 +45,8 @@ namespace VrpTest
 
             for (i = 0; i < q; i++)
             {
-
                 origin_addresses = addresses.Skip(i * max_rows).Take(max_rows).ToList();
                 response = send_request(origin_addresses, dest_addresses, API_key);
-
                 build_time_matrix(response, day, i * max_rows, max_rows);
             }
 
@@ -84,6 +82,7 @@ namespace VrpTest
                 var result = streamReader.ReadToEnd();
 
                 Console.WriteLine(result);
+                System.IO.File.WriteAllText(@"..\..\..\Docs\TimeMatrixLG.json", result);
                 response_obj = JsonConvert.DeserializeObject<JsonClasses.Rootobject>(result);
 
             }
