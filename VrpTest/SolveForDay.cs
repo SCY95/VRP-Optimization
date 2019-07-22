@@ -18,10 +18,10 @@ namespace VrpTest
             VrpProblem vrpProblem, Day day,ConfigParams cfg)
         {
             
-            TimeMatrixInit(day, cfg);
+            //TimeMatrixInit(day, cfg);
 
-            SaveTimeMatrix(day);
-            
+            //SaveTimeMatrix(day);
+            LoadTimeMatrix(day);
 
 
             vrpProblem.SolveVrpProblem(day, cfg);
