@@ -13,6 +13,74 @@ namespace VrpTest
 {
     public partial class VrpTest
     {
+
+
+
+        static void CalculateTMWithHaversineFormula(Day day)
+        {
+            int x = -1, y = 0;
+            day.Penalty = 9999999999999;
+
+            foreach (var item in day.Locations)
+            {
+                y = 0;
+                x++;
+                foreach (var item2 in day.Locations)
+                {
+                    day.TimeMatrix[x, y] = Convert.ToInt32(HaversineDistance(new LatLng(item.Position.x_, item.Position.y_),
+                        new LatLng(item2.Position.x_, item2.Position.y_), DistanceUnit.Kilometers) / 60 * 60);
+                    y++;
+                }
+            }
+        }
+
+
+
+
+
+        public static double HaversineDistance(LatLng pos1, LatLng pos2, DistanceUnit unit)
+        {
+            double R = (unit == DistanceUnit.Miles) ? 3960 : ((unit == DistanceUnit.Kilometers) ? 6371 : 6371000);
+            var lat = ConvertDegreesToRadians(pos2.Latitude - pos1.Latitude);
+            var lng = ConvertDegreesToRadians(pos2.Longitude - pos1.Longitude);
+            var h1 = Math.Sin(lat / 2) * Math.Sin(lat / 2) +
+                          Math.Cos(ConvertDegreesToRadians(pos1.Latitude)) * Math.Cos(ConvertDegreesToRadians(pos2.Latitude)) *
+                          Math.Sin(lng / 2) * Math.Sin(lng / 2);
+            var h2 = 2 * Math.Asin(Math.Min(1, Math.Sqrt(h1)));
+            return R * h2;
+        }
+
+        public static double ConvertDegreesToRadians(double degrees)
+        {
+            double radians = (Math.PI / 180) * degrees;
+            return radians;
+        }
+
+        public enum DistanceUnit { Miles, Kilometers, Meters };
+
+
+        public class LatLng
+        {
+            public double Latitude { get; set; }
+            public double Longitude { get; set; }
+
+            public LatLng()
+            {
+            }
+
+            public LatLng(double lat, double lng)
+            {
+                this.Latitude = lat;
+                this.Longitude = lng;
+            }
+        }
+
+
+
+
+
+
+        //TODO
         static void SaveTimeMatrix(Day day)
         {
 

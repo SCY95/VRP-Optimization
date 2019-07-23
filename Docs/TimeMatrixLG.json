@@ -1,821 +1,703 @@
 {
    "destination_addresses" : [
-      "Cengiz Topel, Kenar Sk. No:10, 45800 Saruhanlı/Manisa, Turkey",
-      "İnönü, İsmail Bahri Bey Cd. No:3, 45200 Akhisar/Manisa, Turkey",
-      "Saruhan, Havuzlu Çarşı Sk. No:15, 45800 Saruhanlı/Manisa, Turkey",
-      "Namık Kemal, Atatürk Blv. No:25, 45930 Köprübaşı/Manisa, Turkey",
-      "Cumhuriyet Mh., Menderes Cd No:73, 45900 Demirci/Manisa, Turkey",
-      "Fatih Mh, Yunus Emre Cd No:41, 45900 Demirci/Manisa, Turkey",
-      "Efendi, 57. Sk. No:1, 45200 Akhisar/Manisa, Turkey",
-      "Paşa, 3. Sk. No:15, 45200 Akhisar/Manisa, Turkey"
+      "Kenan Evren, 9. Sk. No:18, 45170 Kula/Manisa, Turkey",
+      "Şehitler, Sehıtler Caddesı, 45020 Şehzadeler/Manisa, Turkey",
+      "Kızılkaya, Fatih Sultan Mehmet Cd. No:116, 45170 Kula/Manisa, Turkey",
+      "Hürriyet Mh., 463. Sk No:12, 45240 Akhisar/Manisa, Turkey",
+      "Yarhasanlar, İbrahim Gökçen Blv. No:41, 45020 Manisa Merkez/Manisa, Turkey",
+      "Lalapaşa, 3712. Sk. No:8, 45110 Yunusemre/Manisa, Turkey",
+      "Nişancıpaşa, Kamilsu Cd. No:72, 45010 Manisa Merkez/Manisa, Turkey",
+      "Tevfikiye, 3801. Sk. No:13, 45120 Manisa Merkez/Manisa, Turkey",
+      "Yarhasanlar, 2304. Sk. No:2, 45020 Manisa Merkez/Manisa, Turkey",
+      "Tuna Mh., 5500. Sk 4A, 35090 Bornova/İzmir, Turkey",
+      "35130 Karabağlar/İzmir, Turkey",
+      "Ümit, 7408. Sk. 6 A, 35060 Bornova/İzmir, Turkey",
+      "Güneşli, Eski İzmir Cd. No:20, 35270 Konak/İzmir, Turkey",
+      "Yenişehir, 1249. Sk. No:7, 35170 Buca Osb/Konak/İzmir, Turkey",
+      "Tırazlı Mh., 1008. Sk No:10, 35130 Karabağlar/İzmir, Turkey",
+      "Halkapınar, 1203. Sk. 1 A, 35170 Buca Organize Sanayi Bölgesi/Konak/İzmir, Turkey",
+      "Halkapınar, 1203. Sk. 3 B, 35170 Buca Osb/Konak/İzmir, Turkey",
+      "Gaziler, Gazi Osman Paşa Cd. 177 A, 35400 Buca/İzmir, Turkey",
+      "Fuat Edip Baksi, 1658. Sk. No:1, 35540 Bayraklı/İzmir, Turkey",
+      "Mansuroğlu, 273/1. Sk. 26 A, 35535 Bayraklı/İzmir, Turkey",
+      "Bostanlı, 1794. Sk. 4 A, 35590 Karşıyaka/İzmir, Turkey",
+      "Tuna, 5545. Sk. No:21, 35090 Gökdere Köyü/Bornova/İzmir, Turkey",
+      "Yaylacık, 172. Sk. No:40, 35400 Buca/İzmir, Turkey",
+      "Kuruçeşme, 205/8. Sk. 1-1, 35390 Buca/İzmir, Turkey",
+      "Ergene, 555. Sk. 2 AA, 35040 Bornova/İzmir, Turkey",
+      "Yıldırım Beyazıt, 5116. Sk. No:1, 35090 Bornova/İzmir, Turkey",
+      "Menderes, Sağlık Meslek Lisesi Otobüs Durağı, Menderes Cd., 35370 Buca/İzmir, Turkey",
+      "Mimar Sinan, Manyası Cd. No:18, 35750 Ödemiş/İzmir, Turkey",
+      "Rafet Paşa, 5037. Sk. 18 A, 35090 Bornova/İzmir, Turkey",
+      "Buca Koop., 1407. Sk. 1 B, 35390 Buca/İzmir, Turkey",
+      "Kızılay, 502/1. Sk. No:18, 35030 Bornova/İzmir, Turkey",
+      "Rafet Paşa, Yıldırım Beyazıt Cd. 207 A, 35090 Bornova/İzmir, Turkey",
+      "Erzene, Hasan Ali Yücel Cd. 6-1, 35040 Bornova/İzmir, Turkey",
+      "Rafet Paşa, Burak Reis Cd. No:216, 35090 Bornova/İzmir, Turkey",
+      "Çamlıkule, 254/40. Sk. No:21, 35390 Buca Osb/Buca/İzmir, Turkey",
+      "Rafet Paşa, Burak Reis Cd. 161 B, 35090 Bornova/İzmir, Turkey",
+      "Kızılay, 479/1. Sk. No:15, 35030 Bornova/İzmir, Turkey",
+      "Barbaros, 5454. Sk. 23-1, 35090 Bornova/İzmir, Turkey",
+      "Güneşli, Eski İzmir Cd. No:14, 35270 Konak/İzmir, Turkey",
+      "4 Eylül, Tabduk Emre Cd. No:52, 45170 Kula/Manisa, Turkey",
+      "Rafet Paşa, 5258. Sk. No:11, 35090 Bornova/İzmir, Turkey",
+      "Yenişehir, 1145/4. Sk. No:22, 35170 Buca Osb/Konak/İzmir, Turkey",
+      "Üç Eylül, Irmak Sk. No:1, 35750 Ödemiş/İzmir, Turkey",
+      "İnönü, Şht. Mustafa Cd. No:83, 35030 Bornova/İzmir, Turkey",
+      "Emmioğlu, Endüstri Cd. No:1, 35750 Ödemiş/İzmir, Turkey",
+      "Tevfikiye, 8 Eylül Cd. No:160, 45120 Manisa Merkez/Manisa, Turkey",
+      "Rafet Paşa, 5043. Sk. No:16, 35090 Bornova/İzmir, Turkey",
+      "Adnan Menderes, 109. Sk. No:2, 45040 Şehzadeler/Manisa, Turkey",
+      "Adatepe, 63. Sk. 29 A, 35400 Buca/İzmir, Turkey",
+      "Kurtuluş, Akyol Cd. No:36, 35900 Tire/İzmir, Turkey",
+      "Yenişehir, 1145/2. Sk. No:28, 35170 Buca Osb/Konak/İzmir, Turkey",
+      "Halkapınar, 1203. Sk. 1L, 35170 Konak/İzmir, Turkey",
+      "Yeşilova, 6213. Sk. No:11, 35080 Bornova/İzmir, Turkey",
+      "İnönü, 820. Sk. No:18, 35030 Bornova/İzmir, Turkey"
    ],
-   "origin_addresses" : [
-      "Cengiz Topel, Kenar Sk. No:10, 45800 Saruhanlı/Manisa, Turkey",
-      "İnönü, İsmail Bahri Bey Cd. No:3, 45200 Akhisar/Manisa, Turkey",
-      "Saruhan, Havuzlu Çarşı Sk. No:15, 45800 Saruhanlı/Manisa, Turkey",
-      "Namık Kemal, Atatürk Blv. No:25, 45930 Köprübaşı/Manisa, Turkey",
-      "Cumhuriyet Mh., Menderes Cd No:73, 45900 Demirci/Manisa, Turkey",
-      "Fatih Mh, Yunus Emre Cd No:41, 45900 Demirci/Manisa, Turkey",
-      "Efendi, 57. Sk. No:1, 45200 Akhisar/Manisa, Turkey",
-      "Paşa, 3. Sk. No:15, 45200 Akhisar/Manisa, Turkey"
-   ],
+   "origin_addresses" : [ "İnönü, 820. Sk. No:18, 35030 Bornova/İzmir, Turkey" ],
    "rows" : [
       {
-         "client_ref" : 723,
+         "client_ref" : 471,
          "elements" : [
             {
-               "client_ref" : 723,
+               "client_ref" : 471,
                "distance" : {
-                  "text" : "1 ft",
-                  "value" : 0
-               },
-               "duration" : {
-                  "text" : "1 min",
-                  "value" : 0
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 737,
-               "distance" : {
-                  "text" : "21.5 mi",
-                  "value" : 34533
-               },
-               "duration" : {
-                  "text" : "35 mins",
-                  "value" : 2106
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 839,
-               "distance" : {
-                  "text" : "0.9 mi",
-                  "value" : 1507
-               },
-               "duration" : {
-                  "text" : "4 mins",
-                  "value" : 258
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 1169,
-               "distance" : {
-                  "text" : "68.6 mi",
-                  "value" : 110419
-               },
-               "duration" : {
-                  "text" : "1 hour 39 mins",
-                  "value" : 5931
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 1222,
-               "distance" : {
-                  "text" : "95.2 mi",
-                  "value" : 153285
-               },
-               "duration" : {
-                  "text" : "2 hours 19 mins",
-                  "value" : 8322
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 1442,
-               "distance" : {
-                  "text" : "96.8 mi",
-                  "value" : 155720
-               },
-               "duration" : {
-                  "text" : "2 hours 26 mins",
-                  "value" : 8745
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 1541,
-               "distance" : {
-                  "text" : "21.9 mi",
-                  "value" : 35168
-               },
-               "duration" : {
-                  "text" : "36 mins",
-                  "value" : 2159
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 1596,
-               "distance" : {
-                  "text" : "21.5 mi",
-                  "value" : 34616
-               },
-               "duration" : {
-                  "text" : "36 mins",
-                  "value" : 2150
-               },
-               "status" : "OK"
-            }
-         ]
-      },
-      {
-         "client_ref" : 737,
-         "elements" : [
-            {
-               "client_ref" : 723,
-               "distance" : {
-                  "text" : "21.5 mi",
-                  "value" : 34584
-               },
-               "duration" : {
-                  "text" : "35 mins",
-                  "value" : 2106
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 737,
-               "distance" : {
-                  "text" : "1 ft",
-                  "value" : 0
-               },
-               "duration" : {
-                  "text" : "1 min",
-                  "value" : 0
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 839,
-               "distance" : {
-                  "text" : "20.6 mi",
-                  "value" : 33106
-               },
-               "duration" : {
-                  "text" : "31 mins",
-                  "value" : 1856
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 1169,
-               "distance" : {
-                  "text" : "66.8 mi",
-                  "value" : 107580
-               },
-               "duration" : {
-                  "text" : "1 hour 25 mins",
-                  "value" : 5102
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 1222,
-               "distance" : {
-                  "text" : "69.1 mi",
-                  "value" : 111131
-               },
-               "duration" : {
-                  "text" : "1 hour 51 mins",
-                  "value" : 6643
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 1442,
-               "distance" : {
-                  "text" : "70.6 mi",
-                  "value" : 113566
-               },
-               "duration" : {
-                  "text" : "1 hour 58 mins",
-                  "value" : 7066
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 1541,
-               "distance" : {
-                  "text" : "0.4 mi",
-                  "value" : 694
-               },
-               "duration" : {
-                  "text" : "3 mins",
-                  "value" : 173
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 1596,
-               "distance" : {
-                  "text" : "276 ft",
-                  "value" : 84
-               },
-               "duration" : {
-                  "text" : "1 min",
-                  "value" : 29
-               },
-               "status" : "OK"
-            }
-         ]
-      },
-      {
-         "client_ref" : 839,
-         "elements" : [
-            {
-               "client_ref" : 723,
-               "distance" : {
-                  "text" : "0.9 mi",
-                  "value" : 1478
-               },
-               "duration" : {
-                  "text" : "4 mins",
-                  "value" : 250
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 737,
-               "distance" : {
-                  "text" : "20.8 mi",
-                  "value" : 33479
-               },
-               "duration" : {
-                  "text" : "33 mins",
-                  "value" : 2001
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 839,
-               "distance" : {
-                  "text" : "1 ft",
-                  "value" : 0
-               },
-               "duration" : {
-                  "text" : "1 min",
-                  "value" : 0
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 1169,
-               "distance" : {
-                  "text" : "68.0 mi",
-                  "value" : 109365
-               },
-               "duration" : {
-                  "text" : "1 hour 37 mins",
-                  "value" : 5826
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 1222,
-               "distance" : {
-                  "text" : "94.6 mi",
-                  "value" : 152231
-               },
-               "duration" : {
-                  "text" : "2 hours 17 mins",
-                  "value" : 8217
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 1442,
-               "distance" : {
-                  "text" : "96.1 mi",
-                  "value" : 154666
-               },
-               "duration" : {
-                  "text" : "2 hours 24 mins",
-                  "value" : 8640
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 1541,
-               "distance" : {
-                  "text" : "21.2 mi",
-                  "value" : 34114
-               },
-               "duration" : {
-                  "text" : "34 mins",
-                  "value" : 2054
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 1596,
-               "distance" : {
-                  "text" : "20.9 mi",
-                  "value" : 33562
-               },
-               "duration" : {
-                  "text" : "34 mins",
-                  "value" : 2045
-               },
-               "status" : "OK"
-            }
-         ]
-      },
-      {
-         "client_ref" : 1169,
-         "elements" : [
-            {
-               "client_ref" : 723,
-               "distance" : {
-                  "text" : "85.2 mi",
-                  "value" : 137086
-               },
-               "duration" : {
-                  "text" : "1 hour 49 mins",
-                  "value" : 6534
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 737,
-               "distance" : {
-                  "text" : "66.7 mi",
-                  "value" : 107385
-               },
-               "duration" : {
-                  "text" : "1 hour 25 mins",
-                  "value" : 5125
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 839,
-               "distance" : {
-                  "text" : "84.3 mi",
-                  "value" : 135608
-               },
-               "duration" : {
-                  "text" : "1 hour 45 mins",
-                  "value" : 6284
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 1169,
-               "distance" : {
-                  "text" : "1 ft",
-                  "value" : 0
-               },
-               "duration" : {
-                  "text" : "1 min",
-                  "value" : 0
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 1222,
-               "distance" : {
-                  "text" : "32.5 mi",
-                  "value" : 52243
-               },
-               "duration" : {
-                  "text" : "45 mins",
-                  "value" : 2677
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 1442,
-               "distance" : {
-                  "text" : "34.0 mi",
-                  "value" : 54678
-               },
-               "duration" : {
-                  "text" : "52 mins",
-                  "value" : 3101
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 1541,
-               "distance" : {
-                  "text" : "67.0 mi",
-                  "value" : 107855
-               },
-               "duration" : {
-                  "text" : "1 hour 27 mins",
-                  "value" : 5247
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 1596,
-               "distance" : {
-                  "text" : "66.8 mi",
-                  "value" : 107471
-               },
-               "duration" : {
-                  "text" : "1 hour 26 mins",
-                  "value" : 5163
-               },
-               "status" : "OK"
-            }
-         ]
-      },
-      {
-         "client_ref" : 1222,
-         "elements" : [
-            {
-               "client_ref" : 723,
-               "distance" : {
-                  "text" : "95.5 mi",
-                  "value" : 153673
-               },
-               "duration" : {
-                  "text" : "2 hours 18 mins",
-                  "value" : 8299
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 737,
-               "distance" : {
-                  "text" : "69.4 mi",
-                  "value" : 111667
-               },
-               "duration" : {
-                  "text" : "1 hour 50 mins",
-                  "value" : 6627
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 839,
-               "distance" : {
-                  "text" : "94.6 mi",
-                  "value" : 152194
-               },
-               "duration" : {
-                  "text" : "2 hours 14 mins",
-                  "value" : 8049
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 1169,
-               "distance" : {
-                  "text" : "32.7 mi",
-                  "value" : 52682
-               },
-               "duration" : {
-                  "text" : "44 mins",
-                  "value" : 2662
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 1222,
-               "distance" : {
-                  "text" : "1 ft",
-                  "value" : 0
-               },
-               "duration" : {
-                  "text" : "1 min",
-                  "value" : 0
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 1442,
-               "distance" : {
-                  "text" : "1.5 mi",
-                  "value" : 2435
-               },
-               "duration" : {
-                  "text" : "7 mins",
-                  "value" : 424
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 1541,
-               "distance" : {
-                  "text" : "68.5 mi",
-                  "value" : 110189
-               },
-               "duration" : {
-                  "text" : "1 hour 48 mins",
-                  "value" : 6502
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 1596,
-               "distance" : {
-                  "text" : "69.3 mi",
-                  "value" : 111473
-               },
-               "duration" : {
-                  "text" : "1 hour 51 mins",
-                  "value" : 6656
-               },
-               "status" : "OK"
-            }
-         ]
-      },
-      {
-         "client_ref" : 1442,
-         "elements" : [
-            {
-               "client_ref" : 723,
-               "distance" : {
-                  "text" : "96.6 mi",
-                  "value" : 155518
-               },
-               "duration" : {
-                  "text" : "2 hours 22 mins",
-                  "value" : 8512
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 737,
-               "distance" : {
-                  "text" : "70.5 mi",
-                  "value" : 113512
-               },
-               "duration" : {
-                  "text" : "1 hour 54 mins",
-                  "value" : 6840
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 839,
-               "distance" : {
-                  "text" : "95.7 mi",
-                  "value" : 154039
-               },
-               "duration" : {
-                  "text" : "2 hours 18 mins",
-                  "value" : 8262
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 1169,
-               "distance" : {
-                  "text" : "33.9 mi",
-                  "value" : 54527
-               },
-               "duration" : {
-                  "text" : "48 mins",
-                  "value" : 2875
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 1222,
-               "distance" : {
-                  "text" : "1.5 mi",
-                  "value" : 2443
-               },
-               "duration" : {
-                  "text" : "6 mins",
-                  "value" : 384
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 1442,
-               "distance" : {
-                  "text" : "1 ft",
-                  "value" : 0
-               },
-               "duration" : {
-                  "text" : "1 min",
-                  "value" : 0
-               },
-               "status" : "OK"
-            },
-            {
-               "client_ref" : 1541,
-               "distance" : {
-                  "text" : "69.6 mi",
-                  "value" : 112034
+                  "text" : "89.0 mi",
+                  "value" : 143223
                },
                "duration" : {
                   "text" : "1 hour 52 mins",
-                  "value" : 6716
+                  "value" : 6731
                },
                "status" : "OK"
             },
             {
-               "client_ref" : 1596,
+               "client_ref" : 521,
                "distance" : {
-                  "text" : "70.4 mi",
-                  "value" : 113317
-               },
-               "duration" : {
-                  "text" : "1 hour 55 mins",
-                  "value" : 6870
-               },
-               "status" : "OK"
-            }
-         ]
-      },
-      {
-         "client_ref" : 1541,
-         "elements" : [
-            {
-               "client_ref" : 723,
-               "distance" : {
-                  "text" : "21.9 mi",
-                  "value" : 35224
+                  "text" : "20.3 mi",
+                  "value" : 32653
                },
                "duration" : {
                   "text" : "36 mins",
-                  "value" : 2167
+                  "value" : 2151
                },
                "status" : "OK"
             },
             {
-               "client_ref" : 737,
+               "client_ref" : 773,
                "distance" : {
-                  "text" : "0.4 mi",
-                  "value" : 694
+                  "text" : "89.7 mi",
+                  "value" : 144335
                },
                "duration" : {
-                  "text" : "3 mins",
-                  "value" : 161
+                  "text" : "1 hour 52 mins",
+                  "value" : 6727
                },
                "status" : "OK"
             },
             {
-               "client_ref" : 839,
+               "client_ref" : 957,
                "distance" : {
-                  "text" : "21.0 mi",
-                  "value" : 33746
+                  "text" : "62.1 mi",
+                  "value" : 99860
                },
                "duration" : {
-                  "text" : "32 mins",
-                  "value" : 1917
+                  "text" : "1 hour 9 mins",
+                  "value" : 4143
                },
                "status" : "OK"
             },
             {
-               "client_ref" : 1169,
+               "client_ref" : 1351,
                "distance" : {
-                  "text" : "67.1 mi",
-                  "value" : 108022
+                  "text" : "19.7 mi",
+                  "value" : 31777
                },
                "duration" : {
-                  "text" : "1 hour 27 mins",
-                  "value" : 5217
+                  "text" : "34 mins",
+                  "value" : 2041
                },
                "status" : "OK"
             },
             {
-               "client_ref" : 1222,
+               "client_ref" : 1546,
                "distance" : {
-                  "text" : "68.6 mi",
-                  "value" : 110438
+                  "text" : "19.1 mi",
+                  "value" : 30773
                },
                "duration" : {
-                  "text" : "1 hour 49 mins",
-                  "value" : 6540
+                  "text" : "35 mins",
+                  "value" : 2103
                },
                "status" : "OK"
             },
             {
-               "client_ref" : 1442,
+               "client_ref" : 1574,
                "distance" : {
-                  "text" : "70.1 mi",
-                  "value" : 112872
+                  "text" : "20.4 mi",
+                  "value" : 32760
                },
                "duration" : {
-                  "text" : "1 hour 56 mins",
-                  "value" : 6964
+                  "text" : "37 mins",
+                  "value" : 2207
                },
                "status" : "OK"
             },
             {
-               "client_ref" : 1541,
+               "client_ref" : 1789,
                "distance" : {
-                  "text" : "1 ft",
-                  "value" : 0
+                  "text" : "18.9 mi",
+                  "value" : 30467
                },
                "duration" : {
-                  "text" : "1 min",
-                  "value" : 0
+                  "text" : "34 mins",
+                  "value" : 2042
                },
                "status" : "OK"
             },
             {
-               "client_ref" : 1596,
+               "client_ref" : 1798,
                "distance" : {
-                  "text" : "0.4 mi",
-                  "value" : 593
+                  "text" : "19.8 mi",
+                  "value" : 31872
                },
                "duration" : {
-                  "text" : "3 mins",
-                  "value" : 158
-               },
-               "status" : "OK"
-            }
-         ]
-      },
-      {
-         "client_ref" : 1596,
-         "elements" : [
-            {
-               "client_ref" : 723,
-               "distance" : {
-                  "text" : "21.5 mi",
-                  "value" : 34668
-               },
-               "duration" : {
-                  "text" : "36 mins",
-                  "value" : 2156
+                  "text" : "34 mins",
+                  "value" : 2063
                },
                "status" : "OK"
             },
             {
-               "client_ref" : 737,
+               "client_ref" : 2050,
                "distance" : {
-                  "text" : "276 ft",
-                  "value" : 84
+                  "text" : "5.8 mi",
+                  "value" : 9326
                },
                "duration" : {
-                  "text" : "1 min",
-                  "value" : 30
+                  "text" : "19 mins",
+                  "value" : 1127
                },
                "status" : "OK"
             },
             {
-               "client_ref" : 839,
+               "client_ref" : 2053,
                "distance" : {
-                  "text" : "20.6 mi",
-                  "value" : 33189
+                  "text" : "26.8 mi",
+                  "value" : 43118
                },
                "duration" : {
-                  "text" : "32 mins",
-                  "value" : 1906
+                  "text" : "49 mins",
+                  "value" : 2928
                },
                "status" : "OK"
             },
             {
-               "client_ref" : 1169,
+               "client_ref" : 2058,
                "distance" : {
-                  "text" : "66.9 mi",
-                  "value" : 107652
+                  "text" : "6.4 mi",
+                  "value" : 10336
                },
                "duration" : {
-                  "text" : "1 hour 26 mins",
-                  "value" : 5151
+                  "text" : "19 mins",
+                  "value" : 1143
                },
                "status" : "OK"
             },
             {
-               "client_ref" : 1222,
+               "client_ref" : 2059,
+               "distance" : {
+                  "text" : "10.2 mi",
+                  "value" : 16425
+               },
+               "duration" : {
+                  "text" : "21 mins",
+                  "value" : 1280
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 2060,
+               "distance" : {
+                  "text" : "7.2 mi",
+                  "value" : 11579
+               },
+               "duration" : {
+                  "text" : "18 mins",
+                  "value" : 1091
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 2061,
+               "distance" : {
+                  "text" : "27.1 mi",
+                  "value" : 43689
+               },
+               "duration" : {
+                  "text" : "47 mins",
+                  "value" : 2798
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 2064,
+               "distance" : {
+                  "text" : "7.1 mi",
+                  "value" : 11410
+               },
+               "duration" : {
+                  "text" : "18 mins",
+                  "value" : 1098
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 2074,
+               "distance" : {
+                  "text" : "7.1 mi",
+                  "value" : 11352
+               },
+               "duration" : {
+                  "text" : "18 mins",
+                  "value" : 1083
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 2377,
+               "distance" : {
+                  "text" : "14.0 mi",
+                  "value" : 22586
+               },
+               "duration" : {
+                  "text" : "26 mins",
+                  "value" : 1553
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 2768,
+               "distance" : {
+                  "text" : "4.3 mi",
+                  "value" : 6908
+               },
+               "duration" : {
+                  "text" : "15 mins",
+                  "value" : 923
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 3125,
+               "distance" : {
+                  "text" : "3.1 mi",
+                  "value" : 4956
+               },
+               "duration" : {
+                  "text" : "12 mins",
+                  "value" : 731
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 3166,
+               "distance" : {
+                  "text" : "10.2 mi",
+                  "value" : 16465
+               },
+               "duration" : {
+                  "text" : "23 mins",
+                  "value" : 1363
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 3537,
+               "distance" : {
+                  "text" : "6.7 mi",
+                  "value" : 10801
+               },
+               "duration" : {
+                  "text" : "19 mins",
+                  "value" : 1140
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 5271,
+               "distance" : {
+                  "text" : "14.1 mi",
+                  "value" : 22643
+               },
+               "duration" : {
+                  "text" : "27 mins",
+                  "value" : 1623
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 5421,
+               "distance" : {
+                  "text" : "12.4 mi",
+                  "value" : 19915
+               },
+               "duration" : {
+                  "text" : "20 mins",
+                  "value" : 1208
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 5425,
+               "distance" : {
+                  "text" : "1.9 mi",
+                  "value" : 3120
+               },
+               "duration" : {
+                  "text" : "7 mins",
+                  "value" : 411
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 5505,
+               "distance" : {
+                  "text" : "5.4 mi",
+                  "value" : 8722
+               },
+               "duration" : {
+                  "text" : "18 mins",
+                  "value" : 1069
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 5733,
+               "distance" : {
+                  "text" : "14.0 mi",
+                  "value" : 22609
+               },
+               "duration" : {
+                  "text" : "26 mins",
+                  "value" : 1580
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 6525,
                "distance" : {
                   "text" : "69.0 mi",
-                  "value" : 111066
+                  "value" : 111109
                },
                "duration" : {
-                  "text" : "1 hour 51 mins",
-                  "value" : 6633
+                  "text" : "1 hour 32 mins",
+                  "value" : 5503
                },
                "status" : "OK"
             },
             {
-               "client_ref" : 1442,
+               "client_ref" : 7143,
                "distance" : {
-                  "text" : "70.5 mi",
-                  "value" : 113500
+                  "text" : "4.9 mi",
+                  "value" : 7965
                },
                "duration" : {
-                  "text" : "1 hour 58 mins",
-                  "value" : 7057
+                  "text" : "16 mins",
+                  "value" : 957
                },
                "status" : "OK"
             },
             {
-               "client_ref" : 1541,
+               "client_ref" : 7224,
                "distance" : {
-                  "text" : "0.4 mi",
-                  "value" : 593
+                  "text" : "13.4 mi",
+                  "value" : 21531
                },
                "duration" : {
-                  "text" : "3 mins",
-                  "value" : 163
+                  "text" : "22 mins",
+                  "value" : 1344
                },
                "status" : "OK"
             },
             {
-               "client_ref" : 1596,
+               "client_ref" : 7281,
+               "distance" : {
+                  "text" : "1.6 mi",
+                  "value" : 2590
+               },
+               "duration" : {
+                  "text" : "6 mins",
+                  "value" : 358
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 7314,
+               "distance" : {
+                  "text" : "4.7 mi",
+                  "value" : 7607
+               },
+               "duration" : {
+                  "text" : "15 mins",
+                  "value" : 875
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 7420,
+               "distance" : {
+                  "text" : "2.8 mi",
+                  "value" : 4504
+               },
+               "duration" : {
+                  "text" : "10 mins",
+                  "value" : 617
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 7467,
+               "distance" : {
+                  "text" : "4.7 mi",
+                  "value" : 7620
+               },
+               "duration" : {
+                  "text" : "15 mins",
+                  "value" : 895
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 7469,
+               "distance" : {
+                  "text" : "13.8 mi",
+                  "value" : 22223
+               },
+               "duration" : {
+                  "text" : "23 mins",
+                  "value" : 1395
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 7489,
+               "distance" : {
+                  "text" : "4.8 mi",
+                  "value" : 7667
+               },
+               "duration" : {
+                  "text" : "15 mins",
+                  "value" : 908
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 7740,
+               "distance" : {
+                  "text" : "1.9 mi",
+                  "value" : 2979
+               },
+               "duration" : {
+                  "text" : "6 mins",
+                  "value" : 361
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 7962,
+               "distance" : {
+                  "text" : "6.1 mi",
+                  "value" : 9774
+               },
+               "duration" : {
+                  "text" : "16 mins",
+                  "value" : 974
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 7963,
+               "distance" : {
+                  "text" : "10.2 mi",
+                  "value" : 16373
+               },
+               "duration" : {
+                  "text" : "21 mins",
+                  "value" : 1272
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 8015,
+               "distance" : {
+                  "text" : "88.4 mi",
+                  "value" : 142289
+               },
+               "duration" : {
+                  "text" : "1 hour 48 mins",
+                  "value" : 6503
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 8034,
+               "distance" : {
+                  "text" : "4.6 mi",
+                  "value" : 7346
+               },
+               "duration" : {
+                  "text" : "14 mins",
+                  "value" : 818
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 8155,
+               "distance" : {
+                  "text" : "7.2 mi",
+                  "value" : 11539
+               },
+               "duration" : {
+                  "text" : "18 mins",
+                  "value" : 1074
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 8191,
+               "distance" : {
+                  "text" : "68.6 mi",
+                  "value" : 110458
+               },
+               "duration" : {
+                  "text" : "1 hour 30 mins",
+                  "value" : 5388
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 8199,
+               "distance" : {
+                  "text" : "0.9 mi",
+                  "value" : 1435
+               },
+               "duration" : {
+                  "text" : "4 mins",
+                  "value" : 213
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 8226,
+               "distance" : {
+                  "text" : "69.5 mi",
+                  "value" : 111809
+               },
+               "duration" : {
+                  "text" : "1 hour 34 mins",
+                  "value" : 5629
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 8249,
+               "distance" : {
+                  "text" : "19.1 mi",
+                  "value" : 30732
+               },
+               "duration" : {
+                  "text" : "34 mins",
+                  "value" : 2025
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 8312,
+               "distance" : {
+                  "text" : "4.7 mi",
+                  "value" : 7595
+               },
+               "duration" : {
+                  "text" : "15 mins",
+                  "value" : 886
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 8327,
+               "distance" : {
+                  "text" : "21.6 mi",
+                  "value" : 34740
+               },
+               "duration" : {
+                  "text" : "40 mins",
+                  "value" : 2384
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 8441,
+               "distance" : {
+                  "text" : "13.2 mi",
+                  "value" : 21277
+               },
+               "duration" : {
+                  "text" : "22 mins",
+                  "value" : 1327
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 8469,
+               "distance" : {
+                  "text" : "59.5 mi",
+                  "value" : 95696
+               },
+               "duration" : {
+                  "text" : "1 hour 16 mins",
+                  "value" : 4547
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 8503,
+               "distance" : {
+                  "text" : "7.2 mi",
+                  "value" : 11518
+               },
+               "duration" : {
+                  "text" : "18 mins",
+                  "value" : 1068
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 8573,
+               "distance" : {
+                  "text" : "7.1 mi",
+                  "value" : 11395
+               },
+               "duration" : {
+                  "text" : "18 mins",
+                  "value" : 1097
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 8577,
+               "distance" : {
+                  "text" : "4.1 mi",
+                  "value" : 6613
+               },
+               "duration" : {
+                  "text" : "11 mins",
+                  "value" : 663
+               },
+               "status" : "OK"
+            },
+            {
+               "client_ref" : 8608,
                "distance" : {
                   "text" : "1 ft",
                   "value" : 0

@@ -42,7 +42,6 @@ namespace VrpTest
             r = num_addresses % max_rows;//Kalan
             dest_addresses = addresses;
 
-
             for (i = 0; i < q; i++)
             {
                 origin_addresses = addresses.Skip(i * max_rows).Take(max_rows).ToList();
@@ -82,7 +81,7 @@ namespace VrpTest
                 var result = streamReader.ReadToEnd();
 
                 Console.WriteLine(result);
-                System.IO.File.WriteAllText(@"..\..\..\Docs\TimeMatrixLG.json", result);
+                //System.IO.File.WriteAllText(@"..\..\..\Docs\TimeMatrixLG.json", result);
                 response_obj = JsonConvert.DeserializeObject<JsonClasses.Rootobject>(result);
 
             }

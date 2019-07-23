@@ -21,12 +21,12 @@ namespace VrpTest
             //TimeMatrixInit(day, cfg);
 
             //SaveTimeMatrix(day);
-            LoadTimeMatrix(day);
+            //LoadTimeMatrix(day);
+            CalculateTMWithHaversineFormula(day);
 
+            //vrpProblem.SolveVrpProblem(day, cfg);
 
-            vrpProblem.SolveVrpProblem(day, cfg);
-
-            int i = 1;
+            int i = 54;
 
             try
             {

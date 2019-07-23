@@ -44,13 +44,15 @@ namespace VrpTest.Struct
                                 "\nINNER JOIN LG_814_CLCARD AS CL ON CL.LOGICALREF = SLSCL.CLIENTREF" +
                                 "\nINNER JOIN LG_814_SHIPINFO AS SHP ON SHP.CLIENTREF = CL.LOGICALREF" +
                                 "\nINNER JOIN LG_XT001_814 AS SA ON SA.PARLOGREF = SHP.LOGICALREF" +
-                             "\nWHERE SLSCL.VISITDAY = 1" +
-                                "\nAND SLSCL.VISITPERIOD = 7" +
-                                "\nAND SLS.ACTIVE = 0" +
+                                "\nWHERE  SLS.ACTIVE = 0" +
                                 "\nAND SLS.FIRMNR = 814" +
+                                "\nAND SA.Y >= 26" +
+                                "\nAND SA.Y <= 30" +
+                                "\nAND SA.X >= 37" +
+                                "\nAND SA.X <= 41" +
                                 "\nAND ISNULL(SA.X, '') != ''" +
                                 "\nAND ISNULL(SA.Y, '') != ''" +
-                             "\nGROUP BY SLSCL.CLIENTREF";
+                                "\nGROUP BY SLSCL.CLIENTREF";
 
                 SqlCommand command = new SqlCommand(sql, conn);
                 //command.Parameters.Add(new SqlParameter("RUT_ICI", 1));

@@ -74,7 +74,7 @@ namespace VrpTest
                 string url = "https://www.google.com.tr/maps/dir/";
                 foreach (var item in routes[i])
                 {
-                    url += day.Addresses[item] + "/";
+                    url += day.Addresses[item].Replace('+',',') + "/";
                 }
                 //url += data.addresses[data.Depot];
                 Process process = new Process();
