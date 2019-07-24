@@ -29,7 +29,7 @@ namespace VrpTest
             List<Location> locations1 = new List<Location>();
 
 
-            for (int i = 0; i < 1168; i++)
+            for (int i = 0; i < 16; i++)
             {
                 locations1.Add(LocationDB.Locations.ElementAt(i));
             }

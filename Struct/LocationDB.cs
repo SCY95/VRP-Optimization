@@ -21,7 +21,8 @@ namespace VrpTest.Struct
         {
             Locations = new List<Location>();
 
-            Locations = GetLocations();
+            //Locations = GetLocations();
+            GetCustomLocations();
             
         }
 

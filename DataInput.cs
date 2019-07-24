@@ -29,7 +29,7 @@ namespace VrpTest
 
         public int GetMaxVisitsActive()
         {
-            return 23;//5 yap
+            return 5;//5 yap
         }
 
        
