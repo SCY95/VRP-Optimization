@@ -29,6 +29,7 @@ namespace VrpTest.Struct
         public Day()
         {
             Vehicles = new List<Vehicle>();
+            Locations = new List<Location>();
         }
 
         

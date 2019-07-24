@@ -13,8 +13,12 @@ namespace VrpTest.Struct
         public long TWLower { get; set; }
         public long TWUpper { get; set; }
         public long Demand { get; set; }//Demand used like TTL. May change to real vehicle capacity later
+        public int VisitDay { get; set; } 
+        public int VisitPeriod { get; set; }
 
-        public Location(int clientRef, string name, Position position, long twLower, long twUpper, bool isDepot)
+        public Location(int clientRef, string name, Position position,
+            int visitDay, int visitPeriod,
+            long twLower, long twUpper, bool isDepot)
         {
             this.ClientRef = clientRef;
             this.Name = name;
@@ -22,6 +26,9 @@ namespace VrpTest.Struct
             this.Position = position;
             this.TWLower = twLower;
             this.TWUpper = twUpper;
+            this.VisitDay = visitDay;
+            this.VisitPeriod = visitPeriod;
+
             Demand = 10;
             if(IsDepot)
             {

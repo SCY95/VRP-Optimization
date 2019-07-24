@@ -17,11 +17,12 @@ namespace VrpTest
         public static void SolveForDay(DataInput dataInput, DataOutput dataOutput, 
             VrpProblem vrpProblem, Day day,ConfigParams cfg)
         {
-            
+
             //TimeMatrixInit(day, cfg);
 
             //SaveTimeMatrix(day);
             //LoadTimeMatrix(day);
+
             CalculateTMWithHaversineFormula(day);
 
             //vrpProblem.SolveVrpProblem(day, cfg);

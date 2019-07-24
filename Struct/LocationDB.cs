@@ -21,8 +21,8 @@ namespace VrpTest.Struct
         {
             Locations = new List<Location>();
 
-            //Locations = GetLocations();
-            GetCustomLocations();
+            Locations = GetLocations();
+            //GetCustomLocations();
             
         }
 
@@ -40,7 +40,9 @@ namespace VrpTest.Struct
                 //string sql = "SELECT X, Y FROM LG_XT058005_814" +
                 //             "\nWHERE RUT_ICI = @RUT_ICI AND SESSIONID = @SESSIONID";
 
-                string sql = "SELECT SLSCL.CLIENTREF, MIN(CL.DEFINITION_), MIN(SA.X), MIN(SA.Y) FROM LG_814_SLSCLREL AS SLSCL" +
+                string sql = "SELECT SLSCL.CLIENTREF, MIN(CL.DEFINITION_), MIN(SA.X), MIN(SA.Y)," +
+                    " MIN(SLSCL.VISITDAY), MIN(SLSCL.VISITPERIOD)" +
+                    " FROM LG_814_SLSCLREL AS SLSCL" +
                                 "\nINNER JOIN LG_SLSMAN AS SLS ON SLS.LOGICALREF = SLSCL.SALESMANREF" +
                                 "\nINNER JOIN LG_814_CLCARD AS CL ON CL.LOGICALREF = SLSCL.CLIENTREF" +
                                 "\nINNER JOIN LG_814_SHIPINFO AS SHP ON SHP.CLIENTREF = CL.LOGICALREF" +
@@ -77,6 +79,8 @@ namespace VrpTest.Struct
                                 Convert.ToInt32(reader[0]), reader[1].ToString(),
                                 new Position(Convert.ToDouble(reader[2]), 
                                 Convert.ToDouble(reader[3])),
+                                Convert.ToInt32(reader[4]),
+                                Convert.ToInt32(reader[5]),
                                 0,600,false
                                 );
 
@@ -101,54 +105,54 @@ namespace VrpTest.Struct
 
         public static void GetCustomLocations()
         {
-            //Default Locations
-            Location location = new Location(0,"", new Position(35.051031, -89.793120), 0, 200, true);//depot -- 3610+Hacks+Cross+Rd+Memphis+TN
-            Locations.Add(location);
+            ////Default Locations
+            //Location location = new Location(0,"", new Position(35.051031, -89.793120), 0, 200, true);//depot -- 3610+Hacks+Cross+Rd+Memphis+TN
+            //Locations.Add(location);
 
-            Location location1 = new Location(0,"", new Position(35.045108, -89.621660), 40, 56, false);
-            Locations.Add(location1);
+            //Location location1 = new Location(0,"", new Position(35.045108, -89.621660), 40, 56, false);
+            //Locations.Add(location1);
 
-            Location location2 = new Location(0,"", new Position(35.049904, -89.614416), 30, 45, false);
-            Locations.Add(location2);
+            //Location location2 = new Location(0,"", new Position(35.049904, -89.614416), 30, 45, false);
+            //Locations.Add(location2);
 
-            Location location3 = new Location(0,"", new Position(35.045100, -89.610934), 55, 70, false);
-            Locations.Add(location3);
+            //Location location3 = new Location(0,"", new Position(35.045100, -89.610934), 55, 70, false);
+            //Locations.Add(location3);
 
-            Location location4 = new Location(0,"", new Position(35.138350, -90.010171), 65, 88, false);
-            Locations.Add(location4);
+            //Location location4 = new Location(0,"", new Position(35.138350, -90.010171), 65, 88, false);
+            //Locations.Add(location4);
 
-            Location location5 = new Location(0,"",new Position(34.912475, -89.892589), 40, 65, false);
-            Locations.Add(location5);
+            //Location location5 = new Location(0,"",new Position(34.912475, -89.892589), 40, 65, false);
+            //Locations.Add(location5);
 
-            Location location6 = new Location(0,"",new Position(35.122387, -89.941454), 25, 50, false);
-            Locations.Add(location6);
+            //Location location6 = new Location(0,"",new Position(35.122387, -89.941454), 25, 50, false);
+            //Locations.Add(location6);
 
-            Location location7 = new Location(0,"",new Position(34.861102, -89.831365), 0, 35, false);
-            Locations.Add(location7);
+            //Location location7 = new Location(0,"",new Position(34.861102, -89.831365), 0, 35, false);
+            //Locations.Add(location7);
 
-            Location location8 = new Location(0,"",new Position(35.106714, -89.916721), 25, 54, false);
-            Locations.Add(location8);
+            //Location location8 = new Location(0,"",new Position(35.106714, -89.916721), 25, 54, false);
+            //Locations.Add(location8);
 
-            Location location9 = new Location(0,"",new Position(35.116022, -89.962513), 30, 55, false);
-            Locations.Add(location9);
+            //Location location9 = new Location(0,"",new Position(35.116022, -89.962513), 30, 55, false);
+            //Locations.Add(location9);
 
-            Location location10 = new Location(0,"",new Position(35.153155, -89.992550), 100, 120, false);
-            Locations.Add(location10);
+            //Location location10 = new Location(0,"",new Position(35.153155, -89.992550), 100, 120, false);
+            //Locations.Add(location10);
 
-            Location location11 = new Location(0,"",new Position(35.153526, -90.043629), 50, 65, false);
-            Locations.Add(location11);
+            //Location location11 = new Location(0,"",new Position(35.153526, -90.043629), 50, 65, false);
+            //Locations.Add(location11);
 
-            Location location12 = new Location(0,"",new Position(35.148928, -90.053377), 65, 80, false);
-            Locations.Add(location12);
+            //Location location12 = new Location(0,"",new Position(35.148928, -90.053377), 65, 80, false);
+            //Locations.Add(location12);
 
-            Location location13 = new Location(0,"",new Position(35.098665, -89.865847), 15, 35, false);
-            Locations.Add(location13);
+            //Location location13 = new Location(0,"",new Position(35.098665, -89.865847), 15, 35, false);
+            //Locations.Add(location13);
 
-            Location location14 = new Location(0,"",new Position(35.155035, -89.966837), 45, 80, false);
-            Locations.Add(location14);
+            //Location location14 = new Location(0,"",new Position(35.155035, -89.966837), 45, 80, false);
+            //Locations.Add(location14);
 
-            Location location15 = new Location(0,"",new Position(35.159642, -89.959872), 55, 100, false);
-            Locations.Add(location15);
+            //Location location15 = new Location(0,"",new Position(35.159642, -89.959872), 55, 100, false);
+            //Locations.Add(location15);
 
 
             //    //Istanbul

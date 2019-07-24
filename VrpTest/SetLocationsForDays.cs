@@ -26,15 +26,15 @@ namespace VrpTest
 
 
 
-            List<Location> locations1 = new List<Location>();
+            //List<Location> locations1 = new List<Location>();
 
 
-            for (int i = 0; i < 16; i++)
-            {
-                locations1.Add(LocationDB.Locations.ElementAt(i));
-            }
+            //for (int i = 0; i < 16; i++)
+            //{
+            //    locations1.Add(LocationDB.Locations.ElementAt(i));
+            //}
 
-            period.Days.ElementAt(0).SetDay(locations1);
+            //period.Days.ElementAt(0).SetDay(locations1);
 
 
 
@@ -45,6 +45,53 @@ namespace VrpTest
             //    locations2.Add(LocationDB.Locations.ElementAt(i));
             //}
             //period.Days.ElementAt(0).SetDay(locations2);
+
+
+
+
+
+
+            for(int i = 1; i < 7; i++)
+            {
+                List<Location> locations = new List<Location>();
+                //period.Days.ElementAt(i - 1).Locations
+                List<Location> locations1 = new List<Location>();
+                //period.Days.ElementAt((i - 1) + 7).Locations
+                List<Location> locations2 = new List<Location>();
+
+
+                locations = LocationDB.Locations.Where(d => d.VisitDay == i).ToList();
+
+                int count = locations.Where(d => d.VisitPeriod == 14).Count();
+                int j = 0;
+
+                foreach (var location in locations)
+                {
+                    if(location.VisitPeriod == 7)
+                    {
+                        locations1.Add(location);
+                        locations2.Add(location);
+                    }
+                    else if( j < count/2)
+                    {
+                        locations1.Add(location);
+                        j++;
+                    }
+                    else
+                    {
+                        locations2.Add(location);
+                    }
+                }
+
+                period.Days.ElementAt(i - 1).SetDay(locations1);
+                period.Days.ElementAt((i - 1) + 7).SetDay(locations2);
+
+
+
+
+            }
+
+
 
         }
 
