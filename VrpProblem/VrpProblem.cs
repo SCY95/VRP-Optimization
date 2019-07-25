@@ -163,7 +163,7 @@ namespace VrpTest
 
 
             // Inspect solution.
-
+            day.TotalDur = 0;
             for (int i = 0; i < day.Vehicles.Count; i++)
             {
                 long routeDuration = 0;
@@ -178,14 +178,11 @@ namespace VrpTest
 
                     routeDuration += routing.GetArcCostForVehicle(previousIndex, index, 0);
                 }
+                day.TotalDur += routeDuration;
                 day.MaxDur = Math.Max(routeDuration, day.MaxDur);
+                day.MinDur = Math.Max(routeDuration, day.MinDur);                
             }
-
-
-
-
-
-
+            day.AvgDur = day.TotalDur / day.Vehicles.Count;
 
         }
     }

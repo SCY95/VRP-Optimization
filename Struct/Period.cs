@@ -7,6 +7,7 @@ namespace VrpTest.Struct
     public class Period
     {
         public List<Day> Days { get; set; }
+        public int RequiredVehicleCount { get; set; }
 
         public Period(int count)
         {
@@ -18,5 +19,24 @@ namespace VrpTest.Struct
                 Days.Add(day);
             }
         }
+        
+        public void PrintSummary()
+        {
+            for (int i = 0; i < Days.Count; i++)
+            {
+                Console.WriteLine(
+                    "\nDay " + (i + 1) + " :" +
+                    "\nAvarage Duration : " + Days[i].AvgDur +
+                    "\nMaximum Duration : " + Days[i].MaxDur +
+                    "\nMinimum Duration : " + Days[i].MinDur +
+                    "\nVehicle Count : " + Days[i].Vehicles.Count +
+                    "\n======================================================" +
+                    "\n");
+                RequiredVehicleCount = Math.Max(RequiredVehicleCount, Days[i].Vehicles.Count);
+            }
+
+            Console.WriteLine("\nMinimimum required vehicle : " + RequiredVehicleCount);
+        }
+
     }
 }

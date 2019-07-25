@@ -15,7 +15,7 @@ namespace VrpTest
             in Assignment solution)
         {
             PrintToConsole(day, routing, manager, solution);
-            ShowOnMap(day, routing, manager, solution);
+            //ShowOnMap(day, routing, manager, solution);
         }
 
         public int PrintStatus(RoutingModel routing)

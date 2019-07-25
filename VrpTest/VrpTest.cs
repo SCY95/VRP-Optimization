@@ -33,8 +33,9 @@ namespace VrpTest
 
                 SolveForDay(dataInput, dataOutput, vrpProblem, period.Days.ElementAt(i), cfg);
             }
-            
 
+            period.PrintSummary();
+             
             Console.ReadLine();
             return;
         }                                   
