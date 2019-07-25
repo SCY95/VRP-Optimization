@@ -7,6 +7,7 @@ namespace VrpTest.Struct
     public class Day
     {
         public int DayNum { get; set; }
+        public bool InfeasibleNodes { get; set; }
         public List<Location> Locations { get; set; }
         public List<string> Addresses { get; set; }
         public long[,] TimeMatrix { get; set; }              //Duration 
@@ -31,6 +32,7 @@ namespace VrpTest.Struct
         {
             Vehicles = new List<Vehicle>();
             Locations = new List<Location>();
+            this.InfeasibleNodes = false;
         }
 
         

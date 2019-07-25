@@ -24,12 +24,20 @@ namespace VrpTest.Struct
         {
             for (int i = 0; i < Days.Count; i++)
             {
+                string DroppedNodes = "";
+                // TODO
+                //foreach (var item in Days[i].DroppedLocations)                   
+                //{
+                //    DroppedNodes += item.Name;
+                //}
+
                 Console.WriteLine(
                     "\nDay " + (i + 1) + " :" +
                     "\nAvarage Duration : " + Days[i].AvgDur +
                     "\nMaximum Duration : " + Days[i].MaxDur +
                     "\nMinimum Duration : " + Days[i].MinDur +
                     "\nVehicle Count : " + Days[i].Vehicles.Count +
+                    "\nDropped Nodes : " +  DroppedNodes+
                     "\n======================================================" +
                     "\n");
                 RequiredVehicleCount = Math.Max(RequiredVehicleCount, Days[i].Vehicles.Count);

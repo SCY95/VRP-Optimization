@@ -10,6 +10,7 @@ using Google.Protobuf.WellKnownTypes;//Duration
 using System.Diagnostics;
 using VrpTest.Struct;
 
+
 namespace VrpTest
 {
     public partial class VrpProblem
@@ -22,7 +23,7 @@ namespace VrpTest
         public Solver solver;
         IntVar x;
 
-        public void SolveVrpProblem(Day day, ConfigParams cfg)
+        public void SolveVrpProblem(Day day, ConfigParams cfg, VrpProblem vrpProblem, DataOutput dataOutput)
         {   
             this.day = day;
             this.cfg = cfg;
@@ -149,7 +150,7 @@ namespace VrpTest
                     day.LocationDropped = true;
                 }
             }
-            if (droppedNodes != null)
+            if (droppedNodes != null && !day.InfeasibleNodes)
             {
                 foreach (var item in droppedNodes)
                 {
@@ -161,6 +162,31 @@ namespace VrpTest
                 }
             }
 
+
+
+            //Inspect Infeasable Nodes
+            for (int i = 0; i < day.Vehicles.Count; i++)
+            {        
+                var index = routing.Start(i);
+                int j = 0;
+                while (routing.IsEnd(index) == false )
+                {
+                    j++;
+
+                    index = solution.Value(routing.NextVar(index));
+
+                }
+                if(j == 1)
+                {
+                    day.InfeasibleNodes = true;
+
+                    day.SetVehicleNumber(day.Vehicles.Count - 1);
+                    day.ResetResults();
+
+                    vrpProblem.SolveVrpProblem(day, cfg, vrpProblem, dataOutput);
+                    
+                }
+            }
 
             // Inspect solution.
             day.TotalDur = 0;

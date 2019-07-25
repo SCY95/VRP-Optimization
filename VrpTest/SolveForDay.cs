@@ -31,12 +31,12 @@ namespace VrpTest
 
             try
             {
-                while (day.LocationDropped)
+                while (day.LocationDropped && !day.InfeasibleNodes)
                 {
                     day.SetVehicleNumber(i);
                     day.ResetResults();
 
-                    vrpProblem.SolveVrpProblem(day, cfg);
+                    vrpProblem.SolveVrpProblem(day, cfg, vrpProblem, dataOutput);
 
                     dataOutput.PrintSolution(vrpProblem.day, vrpProblem.routing, vrpProblem.manager, vrpProblem.solution);
                     dataOutput.PrintStatus(vrpProblem.routing);
