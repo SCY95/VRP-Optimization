@@ -6,9 +6,10 @@ namespace VrpTest.Struct
 {
     public class Day
     {
+        public int DayNum { get; set; }
         public List<Location> Locations { get; set; }
         public List<string> Addresses { get; set; }
-        public long[,] TimeMatrix;                           //Duration 
+        public long[,] TimeMatrix { get; set; }              //Duration 
         public long[,] TimeWindows { get; set; }
         public int Depot { get; set; }
         public long Penalty { get; set; }

@@ -19,7 +19,7 @@ namespace VrpTest
 
         public int GetSolutionDuration()
         {
-            return 3;
+            return 5;
         }
 
         public bool GetTimeWindowActive()
@@ -29,7 +29,7 @@ namespace VrpTest
 
         public int GetMaxVisitsActive()
         {
-            return 23;//5 yap
+            return 200;//5 yap
         }
 
        

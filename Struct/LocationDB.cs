@@ -83,7 +83,7 @@ namespace VrpTest.Struct
                                 Convert.ToInt32(reader[5]),
                                 0,600,false
                                 );
-
+                            
                             locationList.Add(location);
                         }
                     }

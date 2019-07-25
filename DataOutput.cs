@@ -96,6 +96,8 @@ namespace VrpTest
             in Assignment solution)
         {
 
+            Console.WriteLine("Day " + day.DayNum);
+
             // Display dropped nodes.
             string droppedNodes = "Dropped nodes:";
             for (int index = 0; index < routing.Size(); ++index)

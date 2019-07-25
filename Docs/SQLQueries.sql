@@ -4,7 +4,7 @@
                                 INNER JOIN LG_814_CLCARD AS CL ON CL.LOGICALREF = SLSCL.CLIENTREF 
                                 INNER JOIN LG_814_SHIPINFO AS SHP ON SHP.CLIENTREF = CL.LOGICALREF
                                 INNER JOIN LG_XT001_814 AS SA ON SA.PARLOGREF = SHP.LOGICALREF
-                             WHERE SLSCL.VISITDAY = 1
+                             WHERE SLSCL.VISITDAY = 6
                                 AND SLSCL.VISITPERIOD = 7
                                AND SLS.ACTIVE = 0
                                 AND SLS.FIRMNR = 814

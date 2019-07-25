@@ -84,10 +84,10 @@ namespace VrpTest
                 }
 
                 period.Days.ElementAt(i - 1).SetDay(locations1);
+                period.Days.ElementAt(i - 1).DayNum = i;
                 period.Days.ElementAt((i - 1) + 7).SetDay(locations2);
-
-
-
+                period.Days.ElementAt((i - 1) + 7).DayNum = i + 7;
+                
 
             }
 

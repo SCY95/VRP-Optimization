@@ -28,7 +28,8 @@ namespace VrpTest
                 foreach (var item2 in day.Locations)
                 {
                     day.TimeMatrix[x, y] = Convert.ToInt32(HaversineDistance(new LatLng(item.Position.x_, item.Position.y_),
-                        new LatLng(item2.Position.x_, item2.Position.y_), DistanceUnit.Kilometers) / 60 * 60);
+                        new LatLng(item2.Position.x_, item2.Position.y_),
+                        DistanceUnit.Kilometers) / 50 * 60 *1.55) + 10; // /Avg Car speed * 60 Minutes) + Service Time
                     y++;
                 }
             }
