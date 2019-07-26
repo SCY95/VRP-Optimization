@@ -9,7 +9,7 @@ namespace VrpTest
     {
         public DataInput()
         {
-          
+        
         }      
 
         public string GetAPI_key()
@@ -19,11 +19,11 @@ namespace VrpTest
 
         public int GetSolutionDuration()
         {
-            return 2;
+            return 4;
         }
 
         public bool GetTimeWindowActive()
-        {
+        {                              
             return true;
         }        
 
