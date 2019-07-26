@@ -22,6 +22,8 @@ namespace VrpTest.Struct
         
         public void PrintSummary()
         {
+            long AvgDurPerDay = 0;
+
             for (int i = 0; i < Days.Count; i++)
             {
                 string DroppedNodes = "";
@@ -32,23 +34,28 @@ namespace VrpTest.Struct
                         DroppedNodes += item.Name + ", ";
                     }
                 }
-                
+                AvgDurPerDay += Days[i].AvgDur;
 
                 Console.WriteLine(
                     "\nDay " + (i + 1) + " :" +
-                    "\nAvarage Duration : " + Days[i].AvgDur +
-                    "\nMaximum Duration : " + Days[i].MaxDur +
-                    "\nMinimum Duration : " + Days[i].MinDur +
-                    "\nVehicle Count : " + Days[i].Vehicles.Count +
+                    "\nAvarage Duration : " + Days[i].AvgDur + "mins" +
+                    "\nMaximum Duration : " + Days[i].MaxDur + "mins" +
+                    "\nMinimum Duration : " + Days[i].MinDur + "mins" +
+                    "\nVehicle Count : " + Days[i].Vehicles.Count + 
                     "\nDropped Nodes : " +  DroppedNodes +
                     "\n======================================================" +
                     "\n");
                 RequiredVehicleCount = Math.Max(RequiredVehicleCount, Days[i].Vehicles.Count);
                 
             }
+            AvgDurPerDay = AvgDurPerDay / (this.Days.Count - 2);
 
-            Console.WriteLine("\nMinimimum required vehicle : " + RequiredVehicleCount);
+
+            Console.WriteLine("\nMinimimum required personel : " + RequiredVehicleCount);
+            Console.WriteLine("\nAvarage Duration Per Day : " + AvgDurPerDay + "mins");
         }
 
     }
 }
+
+
