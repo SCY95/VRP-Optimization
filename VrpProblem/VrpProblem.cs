@@ -150,18 +150,20 @@ namespace VrpTest
                     day.LocationDropped = true;
                 }
             }
-            if (droppedNodes != null && !day.InfeasibleNodes)
+            day.DroppedLocations.Clear();
+            if (droppedNodes != null)
             {
                 foreach (var item in droppedNodes)
                 {
                     Location location = LocationDB.Locations.Where(d => d.Position.strPos_ == day.Addresses[item]).ToList().ElementAt(0);
+                    
                     if(location != null)
-                    {                       
+                    {                        
+                        Console.WriteLine(location.Name);
                         day.DroppedLocations.Add(location);
                     }
                 }
             }
-
 
 
             //Inspect Infeasable Nodes
