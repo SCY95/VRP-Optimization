@@ -51,7 +51,7 @@ namespace VrpTest.Struct
             AvgDurPerDay = AvgDurPerDay / (this.Days.Count - 2);
 
 
-            Console.WriteLine("\nMinimimum required personel : " + RequiredVehicleCount);
+            Console.WriteLine("\nMinimimum Required Personnel : " + RequiredVehicleCount);
             Console.WriteLine("\nAvarage Duration Per Day : " + AvgDurPerDay + "mins");
         }
 
