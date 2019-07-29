@@ -107,7 +107,7 @@ namespace VrpTest
 
 
             searchParameters.FirstSolutionStrategy =
-              FirstSolutionStrategy.Types.Value.Automatic;
+              FirstSolutionStrategy.Types.Value.PathMostConstrainedArc;
 
             //metaheuristic
             searchParameters.LocalSearchMetaheuristic = LocalSearchMetaheuristic.Types.Value.GuidedLocalSearch;
