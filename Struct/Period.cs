@@ -59,8 +59,8 @@ namespace VrpTest.Struct
 
             Console.WriteLine("\nMinimimum Required Personnel : " + RequiredVehicleCount);
             Console.WriteLine("\nAvarage Duration Per Day : " + AvgDurPerDay + "mins");
-            Console.WriteLine("\nAverage Min Durations : " + AvgMinDur);
-            Console.WriteLine("\nAverage Max Durations : " + AvgMaxDur);
+            Console.WriteLine("\nAverage Min Durations : " + AvgMinDur + "mins");
+            Console.WriteLine("\nAverage Max Durations : " + AvgMaxDur + "mins");
 
         }
 

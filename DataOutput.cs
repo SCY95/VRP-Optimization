@@ -133,6 +133,7 @@ namespace VrpTest
                 Console.WriteLine("{0}", manager.IndexToNode((int)index));
                 Console.WriteLine("Duration of the route: {0}mins", routeDuration);
             }
+            Console.WriteLine("Minimum duration of the routes: {0}mins", day.MinDur);
             Console.WriteLine("Maximum duration of the routes: {0}mins", day.MaxDur);
         }
 
