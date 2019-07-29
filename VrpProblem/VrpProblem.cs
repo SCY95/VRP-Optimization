@@ -208,7 +208,7 @@ namespace VrpTest
                 }
                 day.TotalDur += routeDuration;
                 day.MaxDur = Math.Max(routeDuration, day.MaxDur);
-                day.MinDur = Math.Max(routeDuration, day.MinDur);                
+                day.MinDur = Math.Min(routeDuration, day.MinDur);                
             }
             day.AvgDur = day.TotalDur / day.Vehicles.Count;
 

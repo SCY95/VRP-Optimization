@@ -23,6 +23,8 @@ namespace VrpTest.Struct
         public void PrintSummary()
         {
             long AvgDurPerDay = 0;
+            long AvgMinDur = 0;
+            long AvgMaxDur = 0;
 
             for (int i = 0; i < Days.Count; i++)
             {
@@ -35,6 +37,9 @@ namespace VrpTest.Struct
                     }
                 }
                 AvgDurPerDay += Days[i].AvgDur;
+                AvgMaxDur += Days[i].MaxDur;
+                AvgMinDur += Days[i].MinDur;
+
 
                 Console.WriteLine(
                     "\nDay " + (i + 1) + " :" +
@@ -49,10 +54,14 @@ namespace VrpTest.Struct
                 
             }
             AvgDurPerDay = AvgDurPerDay / (this.Days.Count - 2);
-
+            AvgMaxDur = AvgMaxDur / (this.Days.Count - 2);
+            AvgMinDur = AvgMinDur / (this.Days.Count - 2);
 
             Console.WriteLine("\nMinimimum Required Personnel : " + RequiredVehicleCount);
             Console.WriteLine("\nAvarage Duration Per Day : " + AvgDurPerDay + "mins");
+            Console.WriteLine("\nAverage Min Durations" + AvgMinDur);
+            Console.WriteLine("\nAverage Max Durations" + AvgMaxDur);
+
         }
 
     }
