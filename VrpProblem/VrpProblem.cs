@@ -40,7 +40,6 @@ namespace VrpTest
             // Create Routing Model.
             routing = new RoutingModel(manager);
             
-
             // Create and register a transit callback.
             int transitCallbackIndex = routing.RegisterTransitCallback(
                 (long fromIndex, long toIndex) =>
@@ -98,13 +97,13 @@ namespace VrpTest
             for (int i = 1; i < day.TimeMatrix.GetLength(0); ++i)
             {
                 routing.AddDisjunction(
-                    new long[] { manager.NodeToIndex(i) }, day.Penalty+1000);
+                    new long[] { manager.NodeToIndex(i) }, day.Penalty);
             }
 
             // Setting first solution heuristic.
             RoutingSearchParameters searchParameters =
               operations_research_constraint_solver.DefaultRoutingSearchParameters();
-
+            
 
             searchParameters.FirstSolutionStrategy =
               FirstSolutionStrategy.Types.Value.PathMostConstrainedArc;
@@ -130,7 +129,6 @@ namespace VrpTest
 
             // Solve the problem.
             solution = routing.SolveWithParameters(searchParameters);
-
 
 
             day.LocationDropped = false;

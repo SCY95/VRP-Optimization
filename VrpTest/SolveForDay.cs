@@ -27,7 +27,7 @@ namespace VrpTest
 
             //vrpProblem.SolveVrpProblem(day, cfg);
 
-            int i = 3;
+            int i = 1;
 
             try
             {
