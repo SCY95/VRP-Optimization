@@ -22,6 +22,7 @@ namespace VrpTest
         public Assignment solution;
         public Solver solver;
         IntVar x;
+        IntVar y;
 
         public void SolveVrpProblem(Day day, ConfigParams cfg, VrpProblem vrpProblem, DataOutput dataOutput)
         {   
@@ -123,12 +124,18 @@ namespace VrpTest
 
             //Constraint variable
             x = solver.MakeIntVar(day.Vehicles.Count, day.Vehicles.Count, "x");
-            //Number of vehicle restriction
-            solver.Add(x <= 120);
 
+            //Number of vehicle restriction - old version
+            //solver.Add(x < 7);
+
+            //Number of vehicle restriction - new version
+            //y = solver.MakeIntVar(routing.Vehicles(), routing.Vehicles(), "y");
+            //solver.Add(y < 7);
 
             // Solve the problem.
             solution = routing.SolveWithParameters(searchParameters);
+
+
 
 
             day.LocationDropped = false;
