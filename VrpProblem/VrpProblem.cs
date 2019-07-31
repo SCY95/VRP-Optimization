@@ -123,14 +123,14 @@ namespace VrpTest
             //routing.AddPickupAndDelivery(manager.NodeToIndex(2), manager.NodeToIndex(5));
 
             //Constraint variable
-            x = solver.MakeIntVar(day.Vehicles.Count, day.Vehicles.Count, "x");
+            //x = solver.MakeIntVar(day.Vehicles.Count, day.Vehicles.Count, "x");
 
             //Number of vehicle restriction - old version
             //solver.Add(x < 7);
 
-            //Number of vehicle restriction - new version
-            //y = solver.MakeIntVar(routing.Vehicles(), routing.Vehicles(), "y");
-            //solver.Add(y < 7);
+            //Number of vehicle restriction -new version
+            y = solver.MakeIntVar(routing.Vehicles(), routing.Vehicles(), "y");
+            solver.Add(y <= 120);
 
             // Solve the problem.
             solution = routing.SolveWithParameters(searchParameters);
