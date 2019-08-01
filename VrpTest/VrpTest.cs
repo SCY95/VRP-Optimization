@@ -15,15 +15,19 @@ namespace VrpTest
     {       
         public static void Main(String[] args)
         {
-            //Period(x) => period for x days     
-            Period period = new Period(14);
-            bool AssignToDays = false;
-
             // Instantiate the data problem.
             DataInput dataInput = new DataInput();//Config interface
             DataOutput dataOutput = new DataOutput();//Output interface
             VrpProblem vrpProblem = new VrpProblem();
             ConfigParams cfg = new ConfigParams();
+
+            //Period(x) => period for x days     
+            Period period = new Period(14);
+            bool AssignToDays = false;
+            int[] VCMinMax = new int[2];//Vehicle Count            
+            dataInput.GetVCMinMax(VCMinMax);
+
+            
 
             if (AssignToDays == true)
             {

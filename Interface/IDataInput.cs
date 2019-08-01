@@ -10,5 +10,6 @@ namespace VrpTest
         int GetSolutionDuration();
         bool GetTimeWindowActive();
         int GetMaxVisitsActive();
+        void GetVCMinMax(int[] VCMinMax);
     }
 }

@@ -32,7 +32,25 @@ namespace VrpTest
             return 200;//5 yap
         }
 
-       
+        public void GetVCMinMax(int[] VCMinMax)
+        {
+            Console.WriteLine("Vehicle Count Min, Max : ");
+            var MinMax = Console.ReadLine().Split(',');
+            int i = 0;
+
+            foreach (var item in MinMax)
+            {
+                if(i < 2)
+                {
+                    VCMinMax[i] = Convert.ToInt32(item);
+                    Console.WriteLine(Convert.ToInt32(item));
+                    i++;
+                }
+                
+            }            
+        }
+
+
     }
 }
 
