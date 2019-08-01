@@ -16,6 +16,7 @@ namespace VrpTest
         public static void Main(String[] args)
         {
             Period period = new Period(14);
+            bool AssignToDays;
 
             SetLocationsForDays(period);            
 
@@ -31,7 +32,7 @@ namespace VrpTest
                 ConfigParams cfg = new ConfigParams();
                 GetInput(dataInput, cfg, period.Days.ElementAt(i));
 
-                SolveForDay(dataInput, dataOutput, vrpProblem, period.Days.ElementAt(i), cfg);
+                SolveForAssignedDays(dataInput, dataOutput, vrpProblem, period.Days.ElementAt(i), cfg);
             }
 
             period.PrintSummary();

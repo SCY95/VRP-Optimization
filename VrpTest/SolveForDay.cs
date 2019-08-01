@@ -14,7 +14,7 @@ namespace VrpTest
 {
     public partial class VrpTest
     {
-        public static void SolveForDay(DataInput dataInput, DataOutput dataOutput, 
+        public static void SolveForAssignedDays(DataInput dataInput, DataOutput dataOutput, 
             VrpProblem vrpProblem, Day day,ConfigParams cfg)
         {
 
