@@ -46,7 +46,7 @@ namespace VrpTest
             }
             catch
             {
-
+                //7.Güne geçerken Null Reference hatası vererek patlıyor.
             }
 
 
