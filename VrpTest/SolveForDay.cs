@@ -14,7 +14,7 @@ namespace VrpTest
 {
     public partial class VrpTest
     {
-        public static void SolveForAssignedDay(DataInput dataInput, DataOutput dataOutput, 
+        public static void SolveForAssignedDay(IDataInput dataInput, IDataOutput dataOutput, 
             VrpProblem vrpProblem, Day day,ConfigParams cfg)
         {
 
@@ -55,7 +55,7 @@ namespace VrpTest
             return;
         }
 
-        public static void AssignAndSolveForDay(DataInput dataInput, DataOutput dataOutput,
+        public static void AssignAndSolveForDay(IDataInput dataInput, IDataOutput dataOutput,
             VrpProblem vrpProblem, Day day, ConfigParams cfg)
         {
             CalculateTMWithHaversineFormula(day);

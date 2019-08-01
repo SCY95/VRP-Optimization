@@ -17,21 +17,20 @@ namespace VrpTest
         {
             //Period(x) => period for x days     
             Period period = new Period(14);
-            bool AssignToDays = true;
+            bool AssignToDays = false;
 
+            // Instantiate the data problem.
+            DataInput dataInput = new DataInput();//Config interface
+            DataOutput dataOutput = new DataOutput();//Output interface
+            VrpProblem vrpProblem = new VrpProblem();
+            ConfigParams cfg = new ConfigParams();
 
             if (AssignToDays == true)
             {
                 LocationDB.ResetVisitDays(LocationDB.Locations);
 
                 for (int i = 0; i < period.Days.Count; i++)
-                {
-                    // Instantiate the data problem.
-                    DataInput dataInput = new DataInput();//Config interface
-                    DataOutput dataOutput = new DataOutput();//Output interface
-                    VrpProblem vrpProblem = new VrpProblem();
-                    ConfigParams cfg = new ConfigParams();
-
+                {              
                     GetInput(dataInput, cfg, period.Days.ElementAt(i));
                     period.Days.ElementAt(i).Locations = LocationDB.Locations.Where(x => x.VisitDay == 0).ToList();
 
@@ -45,12 +44,6 @@ namespace VrpTest
 
                 for (int i = 0; i < period.Days.Count; i++)
                 {
-                    // Instantiate the data problem.
-                    DataInput dataInput = new DataInput();//Config interface
-                    DataOutput dataOutput = new DataOutput();//Output interface
-                    VrpProblem vrpProblem = new VrpProblem();
-                    ConfigParams cfg = new ConfigParams();
-
                     GetInput(dataInput, cfg, period.Days.ElementAt(i));
 
                     SolveForAssignedDay(dataInput, dataOutput, vrpProblem, period.Days.ElementAt(i), cfg);

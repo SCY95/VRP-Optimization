@@ -24,7 +24,7 @@ namespace VrpTest
         IntVar x;
         IntVar y;
 
-        public void SolveVrpProblem(Day day, ConfigParams cfg, VrpProblem vrpProblem, DataOutput dataOutput)
+        public void SolveVrpProblem(Day day, ConfigParams cfg, VrpProblem vrpProblem, IDataOutput dataOutput)
         {   
             this.day = day;
             this.cfg = cfg;
