@@ -15,27 +15,52 @@ namespace VrpTest
     {       
         public static void Main(String[] args)
         {
+            //Period(x) => period for x days     
             Period period = new Period(14);
-            bool AssignToDays;
-
-            SetLocationsForDays(period);            
+            bool AssignToDays = true;
 
 
-            for (int i = 0; i < period.Days.Count; i++)
+            if (AssignToDays == true)
             {
-                // Instantiate the data problem.
-                DataInput dataInput = new DataInput();//Config interface
-                DataOutput dataOutput = new DataOutput();//Output interface
-                VrpProblem vrpProblem = new VrpProblem();
+                LocationDB.ResetVisitDays(LocationDB.Locations);
 
-                //Period(x) => period for x days     
-                ConfigParams cfg = new ConfigParams();
-                GetInput(dataInput, cfg, period.Days.ElementAt(i));
+                for (int i = 0; i < period.Days.Count; i++)
+                {
+                    // Instantiate the data problem.
+                    DataInput dataInput = new DataInput();//Config interface
+                    DataOutput dataOutput = new DataOutput();//Output interface
+                    VrpProblem vrpProblem = new VrpProblem();
+                    ConfigParams cfg = new ConfigParams();
 
-                SolveForAssignedDays(dataInput, dataOutput, vrpProblem, period.Days.ElementAt(i), cfg);
+                    GetInput(dataInput, cfg, period.Days.ElementAt(i));
+                    period.Days.ElementAt(i).Locations = LocationDB.Locations.Where(x => x.VisitDay == 0).ToList();
+
+                    AssignAndSolveForDay(dataInput, dataOutput, vrpProblem, period.Days.ElementAt(i), cfg);
+                }
             }
+            else
+            {
+                SetLocationsForDays(period);
 
-            period.PrintSummary();
+
+                for (int i = 0; i < period.Days.Count; i++)
+                {
+                    // Instantiate the data problem.
+                    DataInput dataInput = new DataInput();//Config interface
+                    DataOutput dataOutput = new DataOutput();//Output interface
+                    VrpProblem vrpProblem = new VrpProblem();
+                    ConfigParams cfg = new ConfigParams();
+
+                    GetInput(dataInput, cfg, period.Days.ElementAt(i));
+
+                    SolveForAssignedDay(dataInput, dataOutput, vrpProblem, period.Days.ElementAt(i), cfg);
+                }
+
+                period.PrintSummary();
+            }
+            
+
+           
              
             Console.ReadLine();
             return;

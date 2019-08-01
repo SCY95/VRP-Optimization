@@ -14,7 +14,7 @@ namespace VrpTest
 {
     public partial class VrpTest
     {
-        public static void SolveForAssignedDays(DataInput dataInput, DataOutput dataOutput, 
+        public static void SolveForAssignedDay(DataInput dataInput, DataOutput dataOutput, 
             VrpProblem vrpProblem, Day day,ConfigParams cfg)
         {
 
@@ -22,7 +22,7 @@ namespace VrpTest
 
             //SaveTimeMatrix(day);
             //LoadTimeMatrix(day);
-
+            LocationDB.GetLocationDataFromDB();
             CalculateTMWithHaversineFormula(day);
 
             //vrpProblem.SolveVrpProblem(day, cfg);
@@ -53,6 +53,14 @@ namespace VrpTest
 
 
             return;
+        }
+
+        public static void AssignAndSolveForDay(DataInput dataInput, DataOutput dataOutput,
+            VrpProblem vrpProblem, Day day, ConfigParams cfg)
+        {
+            CalculateTMWithHaversineFormula(day);
+                       
+                                  
         }
     }
 }

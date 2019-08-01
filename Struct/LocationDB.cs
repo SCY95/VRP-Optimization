@@ -21,13 +21,13 @@ namespace VrpTest.Struct
         {
             Locations = new List<Location>();
 
-            Locations = GetLocations();
+            Locations = GetLocationDataFromDB();
             //GetCustomLocations();
             
         }
 
    
-        public static List<Location> GetLocations()
+        public static List<Location> GetLocationDataFromDB()
         {
             //string result = "";
             List<Location> locationList = new List<Location>();
@@ -103,6 +103,15 @@ namespace VrpTest.Struct
                 "ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         }
 
+        public static void ResetVisitDays(List<Location> locations)
+        {
+            foreach (var item in locations)
+            {
+                item.VisitDay = 0; 
+            }
+
+        }
+        
         public static void GetCustomLocations()
         {
             ////Default Locations
