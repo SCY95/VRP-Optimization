@@ -34,7 +34,7 @@ namespace VrpTest
 
         public void GetVCMinMax(int[] VCMinMax)
         {
-            Console.WriteLine("Vehicle Count Min, Max : ");
+            Console.WriteLine("Enter the number of vehicles in this format -> Min, Max :");
             var MinMax = Console.ReadLine().Split(',');
             int i = 0;
 

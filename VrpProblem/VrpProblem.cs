@@ -24,7 +24,7 @@ namespace VrpTest
         IntVar x;
         IntVar y;
 
-        public void SolveVrpProblem(Day day, ConfigParams cfg, VrpProblem vrpProblem, IDataOutput dataOutput)
+        public void SolveVrpProblem(Day day, ConfigParams cfg, VrpProblem vrpProblem, IDataOutput dataOutput, int[] VCMinMax)
         {   
             this.day = day;
             this.cfg = cfg;
@@ -130,7 +130,7 @@ namespace VrpTest
 
             //Number of vehicle restriction -new version
             y = solver.MakeIntVar(routing.Vehicles(), routing.Vehicles(), "y");
-            solver.Add(y <= 120);
+            solver.Add(y <= VCMinMax[1]);
 
             // Solve the problem.
             solution = routing.SolveWithParameters(searchParameters);
@@ -190,8 +190,8 @@ namespace VrpTest
                     day.SetVehicleNumber(day.Vehicles.Count - 1);
                     day.ResetResults();
 
-                    vrpProblem.SolveVrpProblem(day, cfg, vrpProblem, dataOutput);
-                    
+                    vrpProblem.SolveVrpProblem(day, cfg, vrpProblem, dataOutput, VCMinMax);
+                    return;
                 }
             }
 

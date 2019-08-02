@@ -38,7 +38,7 @@ namespace VrpTest
                     GetInput(dataInput, cfg, period.Days.ElementAt(i));
                     period.Days.ElementAt(i).Locations = LocationDB.Locations.Where(x => x.VisitDay == 0).ToList();
 
-                    AssignAndSolveForDay(dataInput, dataOutput, vrpProblem, period.Days.ElementAt(i), cfg);
+                    AssignAndSolveForDay(dataInput, dataOutput, vrpProblem, period.Days.ElementAt(i), cfg, VCMinMax);
                 }
             }
             else
@@ -50,7 +50,7 @@ namespace VrpTest
                 {
                     GetInput(dataInput, cfg, period.Days.ElementAt(i));
 
-                    SolveForAssignedDay(dataInput, dataOutput, vrpProblem, period.Days.ElementAt(i), cfg);
+                    SolveForAssignedDay(dataInput, dataOutput, vrpProblem, period.Days.ElementAt(i), cfg, VCMinMax);
                 }
 
                 period.PrintSummary();

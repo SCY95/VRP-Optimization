@@ -15,7 +15,7 @@ namespace VrpTest
     public partial class VrpTest
     {
         public static void SolveForAssignedDay(IDataInput dataInput, IDataOutput dataOutput, 
-            VrpProblem vrpProblem, Day day,ConfigParams cfg)
+            VrpProblem vrpProblem, Day day,ConfigParams cfg, int[] VCMinMax)
         {
 
             //TimeMatrixInit(day, cfg);
@@ -27,7 +27,7 @@ namespace VrpTest
 
             //vrpProblem.SolveVrpProblem(day, cfg);
 
-            int i = 1;
+            int i = VCMinMax[0];
 
             try
             {
@@ -36,7 +36,7 @@ namespace VrpTest
                     day.SetVehicleNumber(i);
                     day.ResetResults();
 
-                    vrpProblem.SolveVrpProblem(day, cfg, vrpProblem, dataOutput);
+                    vrpProblem.SolveVrpProblem(day, cfg, vrpProblem, dataOutput, VCMinMax);
 
                     dataOutput.PrintSolution(vrpProblem.day, vrpProblem.routing, vrpProblem.manager, vrpProblem.solution);
                     dataOutput.PrintStatus(vrpProblem.routing);
@@ -56,7 +56,7 @@ namespace VrpTest
         }
 
         public static void AssignAndSolveForDay(IDataInput dataInput, IDataOutput dataOutput,
-            VrpProblem vrpProblem, Day day, ConfigParams cfg)
+            VrpProblem vrpProblem, Day day, ConfigParams cfg, int[] VCMinMax)
         {
             CalculateTMWithHaversineFormula(day);
                        
