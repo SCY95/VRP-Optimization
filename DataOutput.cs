@@ -98,43 +98,54 @@ namespace VrpTest
 
             Console.WriteLine("Day " + day.DayNum);
 
-            // Display dropped nodes.
-            string droppedNodes = "Dropped nodes:";
-            for (int index = 0; index < routing.Size(); ++index)
+            if (day.Locations != null)
             {
-                if (routing.IsStart(index) || routing.IsEnd(index))
+                // Display dropped nodes.
+                string droppedNodes = "Dropped nodes:";
+                for (int index = 0; index < routing.Size(); ++index)
                 {
-                    continue;
+                    if (routing.IsStart(index) || routing.IsEnd(index))
+                    {
+                        continue;
+                    }
+                    if (solution.Value(routing.NextVar(index)) == index)
+                    {
+                        droppedNodes += " " + manager.IndexToNode(index);
+                    }
                 }
-                if (solution.Value(routing.NextVar(index)) == index)
+                Console.WriteLine("{0}", droppedNodes);
+                // Inspect solution.
+
+                for (int i = 0; i < day.Vehicles.Count; i++)
                 {
-                    droppedNodes += " " + manager.IndexToNode(index);
+                    Console.WriteLine("Route for Vehicle {0}:", i);
+                    long routeDuration = 0;
+
+                    var index = routing.Start(i);
+
+                    while (routing.IsEnd(index) == false)
+                    {
+                        Console.Write("{0} -> ", manager.IndexToNode((int)index));
+                        var previousIndex = index;
+
+                        index = solution.Value(routing.NextVar(index));
+
+                        routeDuration += routing.GetArcCostForVehicle(previousIndex, index, 0);
+                    }
+                    Console.WriteLine("{0}", manager.IndexToNode((int)index));
+                    Console.WriteLine("Duration of the route: {0}mins", routeDuration);
                 }
+
+                Console.WriteLine("Minimum duration of the routes: {0}mins", day.MinDur);
+                Console.WriteLine("Maximum duration of the routes: {0}mins", day.MaxDur);
             }
-            Console.WriteLine("{0}", droppedNodes);
-            // Inspect solution.
+            else
+            {
+                Console.WriteLine("This day is holiday.");
+            }
+
             
-            for (int i = 0; i < day.Vehicles.Count; i++)
-            {
-                Console.WriteLine("Route for Vehicle {0}:", i);
-                long routeDuration = 0;
-
-                var index = routing.Start(i);
-
-                while (routing.IsEnd(index) == false)
-                {
-                    Console.Write("{0} -> ", manager.IndexToNode((int)index));
-                    var previousIndex = index;
-
-                    index = solution.Value(routing.NextVar(index));
-
-                    routeDuration += routing.GetArcCostForVehicle(previousIndex, index, 0);
-                }
-                Console.WriteLine("{0}", manager.IndexToNode((int)index));
-                Console.WriteLine("Duration of the route: {0}mins", routeDuration);
-            }
-            Console.WriteLine("Minimum duration of the routes: {0}mins", day.MinDur);
-            Console.WriteLine("Maximum duration of the routes: {0}mins", day.MaxDur);
+            
         }
 
       

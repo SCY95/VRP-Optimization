@@ -28,8 +28,8 @@ namespace VrpTest
 
             int i = VCMinMax[0];
 
-            try
-            {
+            //try
+            //{
                 while (day.LocationDropped && !day.InfeasibleNodes)
                 {
                     day.SetVehicleNumber(i);
@@ -42,11 +42,11 @@ namespace VrpTest
 
                     i++;
                 }
-            }
-            catch
-            {
-                //7.Güne geçerken Null Reference hatası vererek patlıyor.
-            }
+            //}
+            //catch
+            //{
+            //    //7.Güne geçerken Null Reference hatası vererek patlıyor.
+            //}
 
 
 

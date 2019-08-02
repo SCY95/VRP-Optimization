@@ -27,34 +27,43 @@ namespace VrpTest.Struct
             long AvgMaxDur = 0;
             int AvgPersonel = 0;
             int Holidays = 2;
+            int day = 0;
 
-            for (int i = 0; i < Days.Count; i++)
+            for (day = 0; day < Days.Count && day % 7 != 6; day++)
             {
-                string DroppedNodes = "";
-                if(Days[i].DroppedLocations != null)
+                if (day % 7 != 6)
                 {
-                    foreach (var item in Days[i].DroppedLocations)
+                    string DroppedNodes = "";
+                    if (Days[day].DroppedLocations != null)
                     {
-                        DroppedNodes += item.Name + ", ";
+                        foreach (var item in Days[day].DroppedLocations)
+                        {
+                            DroppedNodes += item.Name + ", ";
+                        }
                     }
-                }
-                AvgDurPerDay += Days[i].AvgDur;
-                AvgMaxDur += Days[i].MaxDur;
-                AvgMinDur += Days[i].MinDur;
-                AvgPersonel += Days[i].Vehicles.Count;
+                    AvgDurPerDay += Days[day].AvgDur;
+                    AvgMaxDur += Days[day].MaxDur;
+                    AvgMinDur += Days[day].MinDur;
+                    AvgPersonel += Days[day].Vehicles.Count;
 
-                Console.WriteLine(
-                    "\nDay " + (i + 1) + " :" +
-                    "\nAvarage Duration : " + Days[i].AvgDur + "mins" +
-                    "\nMaximum Duration : " + Days[i].MaxDur + "mins" +
-                    "\nMinimum Duration : " + Days[i].MinDur + "mins" +
-                    "\nVehicle Count : " + Days[i].Vehicles.Count + 
-                    "\nDropped Nodes : " +  DroppedNodes +
-                    "\n======================================================" +
-                    "\n");
-                RequiredVehicleCount = Math.Max(RequiredVehicleCount, Days[i].Vehicles.Count);
-                
+                    Console.WriteLine(
+                        "\nDay " + (day + 1) + " :" +
+                        "\nAvarage Duration : " + Days[day].AvgDur + "mins" +
+                        "\nMaximum Duration : " + Days[day].MaxDur + "mins" +
+                        "\nMinimum Duration : " + Days[day].MinDur + "mins" +
+                        "\nVehicle Count : " + Days[day].Vehicles.Count +
+                        "\nDropped Nodes : " + DroppedNodes +
+                        "\n======================================================" +
+                        "\n");
+                    RequiredVehicleCount = Math.Max(RequiredVehicleCount, Days[day].Vehicles.Count);
+                }
+                if (day % 7 == 6)
+                {
+                    Console.WriteLine("\nDay " + (day + 1) + " :");
+                    Console.WriteLine("\nThis day is holiday");
+                }
             }
+
             AvgDurPerDay = AvgDurPerDay / (this.Days.Count - Holidays);
             AvgMaxDur = AvgMaxDur / (this.Days.Count - Holidays);
             AvgMinDur = AvgMinDur / (this.Days.Count - Holidays);
@@ -65,7 +74,6 @@ namespace VrpTest.Struct
             Console.WriteLine("\nAvarage Duration Per Day : " + AvgDurPerDay + "mins");
             Console.WriteLine("\nAverage Min Durations : " + AvgMinDur + "mins");
             Console.WriteLine("\nAverage Max Durations : " + AvgMaxDur + "mins");
-
 
         }
 
