@@ -37,11 +37,17 @@ namespace VrpTest
 
                     vrpProblem.SolveVrpProblem(day, cfg, vrpProblem, dataOutput, VCMinMax);
 
+                    
                     dataOutput.PrintSolution(vrpProblem.day, vrpProblem.routing, vrpProblem.manager, vrpProblem.solution);
                     dataOutput.PrintStatus(vrpProblem.routing);
 
                     i++;
                 }
+                foreach (var item in day.DroppedLocations)
+                {
+                    day.Locations.Remove(item);
+                }
+                
             //}
             //catch
             //{
@@ -58,8 +64,9 @@ namespace VrpTest
             VrpProblem vrpProblem, Day day, ConfigParams cfg, int[] VCMinMax)
         {
             CalculateTMWithHaversineFormula(day);
-                       
-                                  
+
+            vrpProblem.SolveVrpProblem(day, cfg, vrpProblem, dataOutput, VCMinMax);
+
         }
     }
 }

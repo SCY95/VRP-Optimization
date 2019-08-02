@@ -6,14 +6,15 @@ namespace VrpTest.Struct
 {
     public class Vehicle
     {
-        public List<int> Route { get; set; }
+        public List<Location> Route { get; set; }
         public long RouteDur { get; set; }
         public long Capacity { get; set; }
 
 
         public Vehicle()
         {
-            Route = new List<int>();
+            Route = new List<Location>();
+
         }
     }
 }

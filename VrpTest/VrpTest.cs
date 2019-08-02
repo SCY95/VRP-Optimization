@@ -33,6 +33,7 @@ namespace VrpTest
             {
                 LocationDB.ResetVisitDays(LocationDB.Locations);
 
+
                 for (int i = 0; i < period.Days.Count; i++)
                 {              
                     GetInput(dataInput, cfg, period.Days.ElementAt(i));
@@ -46,7 +47,7 @@ namespace VrpTest
                 SetLocationsForDays(period);
 
                 LocationDB.GetLocationDataFromDB();
-
+                
                 for (int i = 0; i < period.Days.Count; i++)
                 {
                     GetInput(dataInput, cfg, period.Days.ElementAt(i));
