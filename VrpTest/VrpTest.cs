@@ -45,6 +45,7 @@ namespace VrpTest
             {
                 SetLocationsForDays(period);
 
+                LocationDB.GetLocationDataFromDB();
 
                 for (int i = 0; i < period.Days.Count; i++)
                 {

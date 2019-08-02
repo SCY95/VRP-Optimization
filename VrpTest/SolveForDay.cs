@@ -22,7 +22,6 @@ namespace VrpTest
 
             //SaveTimeMatrix(day);
             //LoadTimeMatrix(day);
-            LocationDB.GetLocationDataFromDB();
             CalculateTMWithHaversineFormula(day);
 
             //vrpProblem.SolveVrpProblem(day, cfg);
