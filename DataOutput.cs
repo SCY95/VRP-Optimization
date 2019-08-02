@@ -98,7 +98,7 @@ namespace VrpTest
 
             Console.WriteLine("Day " + day.DayNum);
 
-            if (day.Locations != null)
+            if (day.Locations.Count != 0)
             {
                 // Display dropped nodes.
                 string droppedNodes = "Dropped nodes:";
@@ -140,7 +140,7 @@ namespace VrpTest
                 Console.WriteLine("Maximum duration of the routes: {0}mins", day.MaxDur);
             }
             else
-            {
+            {                
                 Console.WriteLine("This day is holiday.");
             }
 

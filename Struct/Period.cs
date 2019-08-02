@@ -29,9 +29,9 @@ namespace VrpTest.Struct
             int Holidays = 2;
             int day = 0;
 
-            for (day = 0; day < Days.Count && day % 7 != 6; day++)
+            for (day = 0; day < Days.Count; day++)
             {
-                if (day % 7 != 6)
+                if (Days[day].Locations.Count != 0)
                 {
                     string DroppedNodes = "";
                     if (Days[day].DroppedLocations != null)
@@ -57,8 +57,8 @@ namespace VrpTest.Struct
                         "\n");
                     RequiredVehicleCount = Math.Max(RequiredVehicleCount, Days[day].Vehicles.Count);
                 }
-                if (day % 7 == 6)
-                {
+                else
+                { 
                     Console.WriteLine("\nDay " + (day + 1) + " :");
                     Console.WriteLine("\nThis day is holiday");
                 }

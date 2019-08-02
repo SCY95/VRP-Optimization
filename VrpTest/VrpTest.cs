@@ -50,9 +50,13 @@ namespace VrpTest
                 
                 for (int i = 0; i < period.Days.Count; i++)
                 {
-                    GetInput(dataInput, cfg, period.Days.ElementAt(i));
+                    if (period.Days.ElementAt(i).Locations.Count != 0)
+                    {
+                        GetInput(dataInput, cfg, period.Days.ElementAt(i));
 
-                    SolveForAssignedDay(dataInput, dataOutput, vrpProblem, period.Days.ElementAt(i), cfg, VCMinMax);
+                        SolveForAssignedDay(dataInput, dataOutput, vrpProblem, period.Days.ElementAt(i), cfg, VCMinMax);
+                    }
+
                 }
 
                 period.PrintSummary();
