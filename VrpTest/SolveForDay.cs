@@ -26,27 +26,30 @@ namespace VrpTest
 
             //vrpProblem.SolveVrpProblem(day, cfg);
 
-            int i = VCMinMax[0];
+            int min = VCMinMax[0];
+            int max = VCMinMax[1];
 
             //try
             //{
-                while (day.LocationDropped && !day.InfeasibleNodes)
-                {
-                    day.SetVehicleNumber(i);
-                    day.ResetResults();
+            while ((day.LocationDropped && !day.InfeasibleNodes) && max >= min)
+            {
+                day.SetVehicleNumber(min);
+                day.ResetResults();
 
-                    vrpProblem.SolveVrpProblem(day, cfg, vrpProblem, dataOutput, VCMinMax);
+                Console.WriteLine("While ara");
+                Console.WriteLine(min + " " + max);
+                vrpProblem.SolveVrpProblem(day, cfg, vrpProblem, dataOutput, VCMinMax);
 
                     
-                    dataOutput.PrintSolution(vrpProblem.day, vrpProblem.routing, vrpProblem.manager, vrpProblem.solution);
-                    dataOutput.PrintStatus(vrpProblem.routing);
+                dataOutput.PrintSolution(vrpProblem.day, vrpProblem.routing, vrpProblem.manager, vrpProblem.solution);
+                dataOutput.PrintStatus(vrpProblem.routing);
 
-                    i++;
-                }
-                foreach (var item in day.DroppedLocations)
-                {
-                    day.Locations.Remove(item);
-                }
+                min++;
+            }
+            foreach (var item in day.DroppedLocations)
+            {
+                day.Locations.Remove(item);
+            }
                 
             //}
             //catch
