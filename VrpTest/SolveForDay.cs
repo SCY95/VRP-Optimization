@@ -54,7 +54,7 @@ namespace VrpTest
             int min = VCMinMax[0];
             int max = VCMinMax[1];
 
-            while (day.LocationDropped && !day.InfeasibleNodes && max >= min)
+            while (!day.InfeasibleNodes && max >= min)
             {
                 day.SetVehicleNumber(min);
                 day.ResetResults();

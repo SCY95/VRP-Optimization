@@ -156,6 +156,7 @@ namespace VrpTest
                 }
             }
             day.DroppedLocations.Clear();
+            Console.WriteLine(day.Locations.ElementAt(0).Name);
             if (droppedNodes != null)
             {
                 foreach (var item in droppedNodes)
@@ -169,6 +170,8 @@ namespace VrpTest
                     }
                 }
             }
+            List<int> AssignedNodes = new List<int>();
+            Console.WriteLine(manager.GetNumberOfNodes());
 
 
             //Inspect Infeasable Nodes
@@ -183,7 +186,7 @@ namespace VrpTest
                     index = solution.Value(routing.NextVar(index));
 
                 }
-                if(j == 1)
+                if (j == 1)
                 {
                     day.InfeasibleNodes = true;
 

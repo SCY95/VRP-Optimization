@@ -16,10 +16,12 @@ namespace VrpTest.Struct
     public static class LocationDB
     {
         public static List<Location> Locations { get; set; }
+        public static Location Depot { get; set; }
 
         static LocationDB()
         {
             Locations = new List<Location>();
+            Depot = new Location(0, "Depo", (new Position(38.745669, 27.612513)), 0, 0, 0, 600, true);
 
             Locations = GetLocationDataFromDB();
             //GetCustomLocations();

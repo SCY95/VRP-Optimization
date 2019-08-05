@@ -39,21 +39,21 @@ namespace VrpTest.Struct
 
         public void SetDay(List<Location> Locations)
         {
-            this.TimeMatrix = new long[Locations.Count,Locations.Count];
             this.Locations = Locations;
+            this.Locations.Insert(0, LocationDB.Depot);
+            this.TimeMatrix = new long[Locations.Count,Locations.Count];            
             this.TimeWindows = new long[Locations.Count, 2];
             this.Addresses = new List<string>();
             this.Demands = new long[Locations.Count];
             this.DroppedLocations = new List<Location>();
-
             int i = 0;
             this.Depot = 0;//default
             foreach (var item in Locations)
             {
-                if (item.IsDepot == true)
-                {
-                    this.Depot = i;
-                }
+                //if (item.IsDepot == true)
+                //{
+                //    this.Depot = i;
+                //}
 
                 this.Addresses.Add(item.Position.strPos_);
                 this.TimeWindows[i, 0] = item.TWLower;
