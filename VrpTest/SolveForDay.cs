@@ -33,22 +33,22 @@ namespace VrpTest
             //{
             while ((day.LocationDropped && !day.InfeasibleNodes) && max >= min)
             {
-                    day.SetVehicleNumber(min);
-                    day.ResetResults();
+                day.SetVehicleNumber(min);
+                day.ResetResults();
 
-                    Console.WriteLine("While ara");
-                    Console.WriteLine(min + " " + max);
-                    vrpProblem.SolveVrpProblem(day, cfg, vrpProblem, dataOutput, VCMinMax);
+                Console.WriteLine("While ara");
+                Console.WriteLine(min + " " + max);
+                vrpProblem.SolveVrpProblem(day, cfg, vrpProblem, dataOutput, VCMinMax);
 
                     
-                    dataOutput.PrintSolution(vrpProblem.day, vrpProblem.routing, vrpProblem.manager, vrpProblem.solution);
-                    dataOutput.PrintStatus(vrpProblem.routing);
-                    min++;
-                }
-                foreach (var item in day.DroppedLocations)
-                {
-                    day.Locations.Remove(item);
-                }
+                dataOutput.PrintSolution(vrpProblem.day, vrpProblem.routing, vrpProblem.manager, vrpProblem.solution);
+                dataOutput.PrintStatus(vrpProblem.routing);
+                min++;
+            }
+            foreach (var item in day.DroppedLocations)
+            {
+                day.Locations.Remove(item);
+            }
                 
             //}
             //catch
@@ -74,8 +74,6 @@ namespace VrpTest
                 day.ResetResults();
 
                 vrpProblem.SolveVrpProblem(day, cfg, vrpProblem, dataOutput, VCMinMax);
-
-
             }
             foreach (var item in day.DroppedLocations)
             {
