@@ -31,13 +31,12 @@ namespace VrpTest
 
             //try
             //{
-            while ((day.LocationDropped && !day.InfeasibleNodes) && max >= min)
+            while (day.LocationDropped && !day.InfeasibleNodes && max >= min)
             {
                 day.SetVehicleNumber(min);
                 day.ResetResults();
 
-                Console.WriteLine("While ara");
-                Console.WriteLine(min + " " + max);
+                
                 vrpProblem.SolveVrpProblem(day, cfg, vrpProblem, dataOutput, VCMinMax);
 
                     
@@ -66,14 +65,17 @@ namespace VrpTest
             VrpProblem vrpProblem, Day day, ConfigParams cfg, int[] VCMinMax)
         {
             CalculateTMWithHaversineFormula(day);
-            int i = VCMinMax[0];
+            int min = VCMinMax[0];
+            int max = VCMinMax[1];
 
-            while(day.LocationDropped && !day.InfeasibleNodes)//TODO
+            while (day.LocationDropped && !day.InfeasibleNodes && max >= min)//TODO
             {
-                day.SetVehicleNumber(i);
+                day.SetVehicleNumber(min);
                 day.ResetResults();
 
                 vrpProblem.SolveVrpProblem(day, cfg, vrpProblem, dataOutput, VCMinMax);
+
+                min++;
             }
             foreach (var item in day.DroppedLocations)
             {
