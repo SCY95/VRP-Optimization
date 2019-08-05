@@ -61,6 +61,7 @@ namespace VrpTest.Struct
                 { 
                     Console.WriteLine("\nDay " + (day + 1) + " :");
                     Console.WriteLine("\nThis day is holiday");
+                    Console.WriteLine("\n======================================================");
                 }
             }
 
