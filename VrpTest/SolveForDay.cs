@@ -14,7 +14,7 @@ namespace VrpTest
 {
     public partial class VrpTest
     {
-        public static void SolveForAssignedDay(IDataInput dataInput, IDataOutput dataOutput, 
+        public static void S(IDataInput dataInput, IDataOutput dataOutput, 
             VrpProblem vrpProblem, Day day,ConfigParams cfg, int[] VCMinMax)
         {
 
@@ -33,17 +33,17 @@ namespace VrpTest
             //{
             while ((day.LocationDropped && !day.InfeasibleNodes) && max >= min)
             {
-                day.SetVehicleNumber(min);
-                day.ResetResults();
+                    day.SetVehicleNumber(min);
+                    day.ResetResults();
 
-                Console.WriteLine("While ara");
-                Console.WriteLine(min + " " + max);
-                vrpProblem.SolveVrpProblem(day, cfg, vrpProblem, dataOutput, VCMinMax);
+                    Console.WriteLine("While ara");
+                    Console.WriteLine(min + " " + max);
+                    vrpProblem.SolveVrpProblem(day, cfg, vrpProblem, dataOutput, VCMinMax);
 
                     
                     dataOutput.PrintSolution(vrpProblem.day, vrpProblem.routing, vrpProblem.manager, vrpProblem.solution);
                     dataOutput.PrintStatus(vrpProblem.routing);
-                    i++;
+                    min++;
                 }
                 foreach (var item in day.DroppedLocations)
                 {
