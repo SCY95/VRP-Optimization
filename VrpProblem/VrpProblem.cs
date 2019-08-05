@@ -21,8 +21,8 @@ namespace VrpTest
         public RoutingIndexManager manager;
         public Assignment solution;
         public Solver solver;
-        IntVar x;
-        IntVar y;
+        //IntVar x;
+        //IntVar y;//Reduntant 
 
         public void SolveVrpProblem(Day day, ConfigParams cfg, VrpProblem vrpProblem, IDataOutput dataOutput, int[] VCMinMax)
         {   
@@ -129,8 +129,8 @@ namespace VrpTest
             //solver.Add(x < 7);
 
             //Number of vehicle restriction -new version
-            y = solver.MakeIntVar(routing.Vehicles(), routing.Vehicles(), "y");
-            solver.Add(y <= VCMinMax[1]);
+            //y = solver.MakeIntVar(routing.Vehicles(), routing.Vehicles(), "y");
+            //solver.Add(y <= VCMinMax[1]);//Reduntant
 
             // Solve the problem.
             solution = routing.SolveWithParameters(searchParameters);
