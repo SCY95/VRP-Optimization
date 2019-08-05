@@ -23,7 +23,7 @@ namespace VrpTest
 
             //Period(x) => period for x days     
             Period period = new Period(14);
-            bool AssignToDays = false;
+            bool AssignToDays = true;
             int[] VCMinMax = new int[2];//Vehicle Count            
             dataInput.GetVCMinMax(VCMinMax);
 
@@ -35,12 +35,15 @@ namespace VrpTest
 
 
                 for (int i = 0; i < period.Days.Count; i++)
-                {              
+                {
                     GetInput(dataInput, cfg, period.Days.ElementAt(i));
-                    period.Days.ElementAt(i).Locations = LocationDB.Locations.Where(x => x.VisitDay == 0).ToList();
 
+                    period.Days.ElementAt(i).SetDay(LocationDB.Locations.Where(x => x.VisitDay == 0 && x.Infeasible == false).ToList());
+                    period.Days.ElementAt(i).DayNum = i + 1;
                     AssignAndSolveForDay(dataInput, dataOutput, vrpProblem, period.Days.ElementAt(i), cfg, VCMinMax);
                 }
+                period.PrintSummary();
+
             }
             else
             {
@@ -53,7 +56,6 @@ namespace VrpTest
                     if (period.Days.ElementAt(i).Locations.Count != 0)
                     {
                         GetInput(dataInput, cfg, period.Days.ElementAt(i));
-
                         SolveForAssignedDay(dataInput, dataOutput, vrpProblem, period.Days.ElementAt(i), cfg, VCMinMax);
                     }
 

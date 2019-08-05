@@ -39,7 +39,7 @@ namespace VrpTest
                 dataOutput.PrintStatus(vrpProblem.routing);
                 min++;
             }
-            foreach (var item in day.DroppedLocations)
+            foreach (var item in day.DroppedLocations)//Remove unassigned locations from list
             {
                 day.Locations.Remove(item);
             }               
@@ -51,6 +51,7 @@ namespace VrpTest
             VrpProblem vrpProblem, Day day, ConfigParams cfg, int[] VCMinMax)
         {
             CalculateTMWithHaversineFormula(day);
+
             int min = VCMinMax[0];
             int max = VCMinMax[1];
 
@@ -58,14 +59,24 @@ namespace VrpTest
             {
                 day.SetVehicleNumber(min);
                 day.ResetResults();
-
                 vrpProblem.SolveVrpProblem(day, cfg, vrpProblem, dataOutput, VCMinMax);
 
+                if(day.Locations.Count > 1)
+                {
+                    dataOutput.PrintSolution(vrpProblem.day, vrpProblem.routing, vrpProblem.manager, vrpProblem.solution);
+                    dataOutput.PrintStatus(vrpProblem.routing);
+                }
+                
                 min++;
             }
-            foreach (var item in day.DroppedLocations)
+            foreach (var item in day.DroppedLocations)//Remove unassigned locations from list
             {
                 day.Locations.Remove(item);
+
+            }
+            foreach (var item in day.Locations)
+            {
+                item.VisitDay = day.DayNum;
             }
         }
     }

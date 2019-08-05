@@ -161,7 +161,7 @@ namespace VrpTest
             {
                 foreach (var item in droppedNodes)
                 {
-                    Location location = LocationDB.Locations.Where(d => d.Position.strPos_ == day.Addresses[item]).ToList().ElementAt(0);
+                    Location location = LocationDB.Locations.Where(x => x.Position.strPos_ == day.Addresses[item]).ToList().ElementAt(0);
                     
                     if(location != null)
                     {                        
@@ -189,11 +189,17 @@ namespace VrpTest
                 if (j == 1)
                 {
                     day.InfeasibleNodes = true;
+                    foreach (var item in day.DroppedLocations)
+                    {
+                        LocationDB.Locations.Where(x => x.ClientRef == item.ClientRef).ToList().ElementAt(0).Infeasible = true;
+                    }
+                    if(day.Vehicles.Count - 1 >= VCMinMax[0])
+                    {
+                        day.SetVehicleNumber(day.Vehicles.Count - 1);
+                        day.ResetResults();
 
-                    day.SetVehicleNumber(day.Vehicles.Count - 1);
-                    day.ResetResults();
-
-                    vrpProblem.SolveVrpProblem(day, cfg, vrpProblem, dataOutput, VCMinMax);
+                        vrpProblem.SolveVrpProblem(day, cfg, vrpProblem, dataOutput, VCMinMax);                        
+                    }
                     return;
                 }
             }

@@ -16,6 +16,7 @@ namespace VrpTest.Struct
         public int VisitDay { get; set; } 
         public int VisitPeriod { get; set; }
         public bool Selected { get; set; }//
+        public bool Infeasible { get; set; }
 
         public Location(int clientRef, string name, Position position,
             int visitDay, int visitPeriod,
@@ -29,11 +30,12 @@ namespace VrpTest.Struct
             this.TWUpper = twUpper;
             this.VisitDay = visitDay;
             this.VisitPeriod = visitPeriod;
+            this.Infeasible = false;
 
-            Demand = 10;
+            this.Demand = 10;
             if(IsDepot)
             {
-                Demand = 0;
+                this.Demand = 0;
             }
         }
     }
