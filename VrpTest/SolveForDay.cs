@@ -14,7 +14,7 @@ namespace VrpTest
 {
     public partial class VrpTest
     {
-        public static void S(IDataInput dataInput, IDataOutput dataOutput, 
+        public static void SolveForAssignedDay(IDataInput dataInput, IDataOutput dataOutput, 
             VrpProblem vrpProblem, Day day,ConfigParams cfg, int[] VCMinMax)
         {
 
