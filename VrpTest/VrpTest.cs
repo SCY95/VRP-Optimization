@@ -36,6 +36,10 @@ namespace VrpTest
 
                 for (int i = 0; i < period.Days.Count; i++)
                 {
+                    if(i == 6 && i == 13)
+                    {
+                        continue;
+                    }
                     GetInput(dataInput, cfg, period.Days.ElementAt(i));
 
                     period.Days.ElementAt(i).SetDay(LocationDB.Locations.Where(x => x.VisitDay == 0 && x.Infeasible == false).ToList());
@@ -52,7 +56,7 @@ namespace VrpTest
                 LocationDB.GetLocationDataFromDB();
                 
                 for (int i = 0; i < period.Days.Count; i++)
-                {
+                {                    
                     if (period.Days.ElementAt(i).Locations.Count != 0)
                     {
                         GetInput(dataInput, cfg, period.Days.ElementAt(i));
