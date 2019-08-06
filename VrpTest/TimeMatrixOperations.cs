@@ -19,7 +19,6 @@ namespace VrpTest
         static void CalculateTMWithHaversineFormula(Day day)
         {
             int x = -1, y = 0;
-            day.Penalty = 1000000;
 
             foreach (var item in day.Locations)
             {
@@ -124,8 +123,6 @@ namespace VrpTest
             string duration = "";
             int x = -1, y = 0;
 
-            //TODO TEMP
-            day.Penalty = 9999999999999;
 
             for (int i = 0; i < Data.Length; i++)
             {

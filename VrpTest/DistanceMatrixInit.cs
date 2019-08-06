@@ -131,7 +131,7 @@ namespace VrpTest
                         day.TimeMatrix[i, j] = response.rows[rownum].elements[j].duration.value/60;
                     }
                     //Console.WriteLine(data.DistanceMatrix[i,j]);
-                    day.Penalty += response.rows[rownum].elements[j].duration.value;
+                    //day.Penalty += response.rows[rownum].elements[j].duration.value;
 
                 }
                 //distance_matrix.append(row_list);

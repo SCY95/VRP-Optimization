@@ -98,7 +98,7 @@ namespace VrpTest
             for (int i = 1; i < day.TimeMatrix.GetLength(0); ++i)
             {
                 routing.AddDisjunction(
-                    new long[] { manager.NodeToIndex(i) }, day.Penalty);
+                    new long[] { manager.NodeToIndex(i) }, day.Locations.ElementAt(i).Penalty);
             }
 
             // Setting first solution heuristic.

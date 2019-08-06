@@ -13,9 +13,10 @@ namespace VrpTest.Struct
         public long TWLower { get; set; }
         public long TWUpper { get; set; }
         public long Demand { get; set; }//Demand used like TTL. May change to real vehicle capacity later
+        public long Penalty { get; set; }//
         public int VisitDay { get; set; } 
         public int VisitPeriod { get; set; }
-        public bool Selected { get; set; }//
+        public bool Selected { get; set; }//        
         public bool Infeasible { get; set; }
 
         public Location(int clientRef, string name, Position position,

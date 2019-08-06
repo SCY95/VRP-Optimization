@@ -32,7 +32,7 @@ namespace VrpTest
             if (AssignToDays == true)
             {
                 LocationDB.ResetVisitDays(LocationDB.Locations);
-
+                
 
                 for (int i = 0; i < period.Days.Count; i++)
                 {
