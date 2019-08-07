@@ -31,20 +31,38 @@ namespace VrpTest
 
             if (AssignToDays == true)
             {
-                LocationDB.ResetVisitDays(LocationDB.Locations);
-                
+                LocationDB.ResetVisitDays(LocationDB.Locations);                
 
                 for (int i = 0; i < period.Days.Count; i++)
                 {
-                    if(i == 6 && i == 13)
+                    if(i == 6 || i == 13)
                     {
                         continue;
                     }
                     GetInput(dataInput, cfg, period.Days.ElementAt(i));
+                    if(i < 6)
+                    {
+                        period.Days.ElementAt(i).SetDay(LocationDB.Locations.Where(x => x.VisitDay == 0 && x.Infeasible == false).ToList());
+                        period.Days.ElementAt(i).DayNum = i + 1;
+                        AssignAndSolveForDay(dataInput, dataOutput, vrpProblem, period.Days.ElementAt(i), cfg, VCMinMax);                        
+                    }
+                    if(i > 6)
+                    {
+                        List<Location> locations = new List<Location>();
+                        foreach (var item in period.Days.ElementAt(i - 7).Locations.Where(x => x.VisitPeriod == 7).ToList())
+                        {
+                            locations.Add(item);
+                        }
+                        locations.AddRange(LocationDB.Locations.Where(x => x.VisitDay == 0 && x.VisitPeriod == 14 && x.Infeasible == false).ToList());
 
-                    period.Days.ElementAt(i).SetDay(LocationDB.Locations.Where(x => x.VisitDay == 0 && x.Infeasible == false).ToList());
-                    period.Days.ElementAt(i).DayNum = i + 1;
-                    AssignAndSolveForDay(dataInput, dataOutput, vrpProblem, period.Days.ElementAt(i), cfg, VCMinMax);
+                        period.Days.ElementAt(i).SetDay(locations);
+                                                
+                        period.Days.ElementAt(i).DayNum = i + 1;                    
+
+                        AssignAndSolveForDay(dataInput, dataOutput, vrpProblem, period.Days.ElementAt(i), cfg, VCMinMax);                   
+
+                    }
+
                 }
                 period.PrintSummary();
 

@@ -193,7 +193,7 @@ namespace VrpTest
                     {
                         LocationDB.Locations.Where(x => x.ClientRef == item.ClientRef).ToList().ElementAt(0).Infeasible = true;
                     }
-                    if(day.Vehicles.Count - 1 >= VCMinMax[0])
+                    if(day.Vehicles.Count - 1 >= 1)
                     {
                         day.SetVehicleNumber(day.Vehicles.Count - 1);
                         day.ResetResults();

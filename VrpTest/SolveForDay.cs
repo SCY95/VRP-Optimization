@@ -76,7 +76,10 @@ namespace VrpTest
             }
             foreach (var item in day.Locations)
             {
-                item.VisitDay = day.DayNum;
+                if(!item.Infeasible)
+                {
+                    item.VisitDay = day.DayNum;
+                }                
             }
         }
     }
