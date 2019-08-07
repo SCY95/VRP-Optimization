@@ -19,7 +19,7 @@ namespace VrpTest
 
         public int GetSolutionDuration()
         {
-            return 5;
+            return 20;
         }
 
         public bool GetTimeWindowActive()

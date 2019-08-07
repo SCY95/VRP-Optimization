@@ -41,6 +41,22 @@ namespace VrpTest.Struct
                             DroppedNodes += item.Name + ", ";
                         }
                     }
+                    int _7Day = 0;
+                    int _14Day = 0;
+                    if (Days[day].Locations != null)
+                    {
+                        foreach (var item in Days[day].Locations)
+                        {
+                            if(item.VisitPeriod == 7)
+                            {
+                                _7Day++;
+                            }
+                            else
+                            {
+                                _14Day++;
+                            }
+                        }
+                    }
                     AvgDurPerDay += Days[day].AvgDur;
                     AvgMaxDur += Days[day].MaxDur;
                     AvgMinDur += Days[day].MinDur;
@@ -55,6 +71,8 @@ namespace VrpTest.Struct
                         "\nDropped Nodes : " + DroppedNodes +
                         "\n======================================================" +
                         "\n");
+                    Console.WriteLine("ATANMIS 7GUN "+_7Day);
+                    Console.WriteLine("ATANMIS 14GUN " + _14Day);
                     RequiredVehicleCount = Math.Max(RequiredVehicleCount, Days[day].Vehicles.Count);
                 }
                 else

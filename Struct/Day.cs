@@ -53,7 +53,7 @@ namespace VrpTest.Struct
                 //{
                 //    this.Depot = i;
                 //}
-                item.Penalty = 1000000;
+                item.Penalty = 10000;
                 this.Addresses.Add(item.Position.strPos_);
                 this.TimeWindows[i, 0] = item.TWLower;
                 this.TimeWindows[i, 1] = item.TWUpper;

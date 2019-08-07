@@ -51,6 +51,7 @@ namespace VrpTest
                         List<Location> locations = new List<Location>();
                         foreach (var item in period.Days.ElementAt(i - 7).Locations.Where(x => x.VisitPeriod == 7).ToList())
                         {
+                            item.Penalty = 1000000;
                             locations.Add(item);
                         }
                         locations.AddRange(LocationDB.Locations.Where(x => x.VisitDay == 0 && x.VisitPeriod == 14 && x.Infeasible == false).ToList());
