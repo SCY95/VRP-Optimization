@@ -18,6 +18,8 @@ namespace VrpTest.Struct
         public int VisitPeriod { get; set; }
         public bool Selected { get; set; }//        
         public bool Infeasible { get; set; }
+        public long Endorsement { get; set; }
+        public int Visibility { get; set; }
 
         public Location(int clientRef, string name, Position position,
             int visitDay, int visitPeriod,

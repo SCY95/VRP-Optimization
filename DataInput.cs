@@ -45,8 +45,7 @@ namespace VrpTest
                     VCMinMax[i] = Convert.ToInt32(item);
                     Console.WriteLine(Convert.ToInt32(item));
                     i++;
-                }
-                
+                }                
             }            
         }
 
