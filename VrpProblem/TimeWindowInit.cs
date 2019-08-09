@@ -12,9 +12,9 @@ namespace VrpTest
 {
     public partial class VrpProblem
     {
-        static void TimeWindowInit(in Day day,
-            in RoutingModel routing,
-            in RoutingIndexManager manager)
+        static void TimeWindowInit( Day day,
+             RoutingModel routing,
+             RoutingIndexManager manager)
         {
             RoutingDimension timeDimension = routing.GetMutableDimension("Time");
             timeDimension.SetGlobalSpanCostCoefficient(100);

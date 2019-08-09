@@ -9,10 +9,10 @@ namespace VrpTest
 {
     public interface IDataOutput
     {
-        void PrintSolution(in Day day,
-            in RoutingModel routing,
-            in RoutingIndexManager manager,
-            in Assignment solution);
+        void PrintSolution( Day day,
+            RoutingModel routing,
+            RoutingIndexManager manager,
+            Assignment solution);
 
         int PrintStatus(RoutingModel routing);
     }

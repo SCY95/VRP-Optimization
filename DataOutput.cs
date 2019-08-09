@@ -9,10 +9,10 @@ namespace VrpTest
 {
     public class DataOutput : IDataOutput
     {
-        public void PrintSolution(in Day day,
-            in RoutingModel routing,
-            in RoutingIndexManager manager,
-            in Assignment solution)
+        public void PrintSolution(Day day,
+            RoutingModel routing,
+            RoutingIndexManager manager,
+            Assignment solution)
         {
             PrintToConsole(day, routing, manager, solution);
             //ShowOnMap(day, routing, manager, solution);
@@ -43,10 +43,10 @@ namespace VrpTest
             
         }
 
-        void ShowOnMap(in Day day,
-            in RoutingModel routing,
-            in RoutingIndexManager manager,
-            in Assignment solution)
+        void ShowOnMap( Day day,
+            RoutingModel routing,
+            RoutingIndexManager manager,
+            Assignment solution)
         {
             List<List<int>> routes = new List<List<int>>();
 
@@ -90,10 +90,10 @@ namespace VrpTest
         }
 
         public void PrintToConsole(
-            in Day day,
-            in RoutingModel routing,
-            in RoutingIndexManager manager,
-            in Assignment solution)
+             Day day,
+             RoutingModel routing,
+             RoutingIndexManager manager,
+             Assignment solution)
         {
 
             Console.WriteLine("Day " + day.DayNum);
