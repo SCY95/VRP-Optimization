@@ -2,7 +2,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <LangVersion>7.3</LangVersion>
-    <TargetFrameworks>netcoreapp2.1;net471;netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>netcoreapp2.1;net471</TargetFrameworks>
     <EnableDefaultItems>false</EnableDefaultItems>
     <RestoreSources>../../../packages;$(RestoreSources);https://api.nuget.org/v3/index.json</RestoreSources>
     <AssemblyName>Google.OrTools.VrpTest</AssemblyName>
