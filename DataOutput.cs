@@ -23,10 +23,10 @@ namespace VrpTest
             switch (routing.GetStatus())
             {
                 case 0:
-                    Console.WriteLine("Problem not solved yet.");
+                    Console.WriteLine("Problem is not solved yet.");
                     return 0;            
                 case 1:
-                    Console.WriteLine("Problem solved successfully.");                    
+                    Console.WriteLine("Problem is solved");                    
                     return 1;
                 case 2:
                     Console.WriteLine("No solution found to the problem.");
