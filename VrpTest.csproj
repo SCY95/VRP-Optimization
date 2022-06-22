@@ -52,7 +52,7 @@
     <Content Include="Docs\TimeMatrixLG.json" />
     <None Include="Docs\SQLQueries.sql" />
     <PackageReference Include="Google.OrTools" Version="7.3.7083" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="System.Data.SqlClient" Version="4.6.1" />
   </ItemGroup>
 
